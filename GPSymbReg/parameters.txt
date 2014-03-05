@@ -1,0 +1,26 @@
+﻿<ECF>
+	<Algorithm>	
+		<SteadyStateTournament>
+			<Entry key="tsize">3</Entry>
+		</SteadyStateTournament>
+	</Algorithm>
+
+	<Genotype>
+		<Tree>
+			<Entry key="maxdepth">4</Entry>
+			<Entry key="functionset">sin cos + - / *</Entry>
+			<Entry key="terminalset">X</Entry>
+			
+			<Entry key=“crx.homologous”>1</Entry>
+		</Tree>
+	</Genotype>
+
+	<Registry>
+		<Entry key="population.size">50</Entry>
+		<Entry key="mutation.indprob">0.3</Entry> 
+		<Entry key="term.stagnation">20</Entry>
+		<Entry key="log.level">3</Entry>
+		<Entry key="log.filename">log.txt</Entry>
+	</Registry>
+</ECF>
+
