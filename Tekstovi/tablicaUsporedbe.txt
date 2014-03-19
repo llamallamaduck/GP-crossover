@@ -1,0 +1,6 @@
+					Regresija	Boolean	Programi	TrebaDodatnePodatkeUČvoru	Link
+
+Homologno			+			-		-			-							https://www.dropbox.com/s/2bnnttbcl5anfsf/Homologous%20crossover.pdf
+Determinističko		+			-		-			+							https://www.dropbox.com/s/oakt5emoy5sh14j/probabilistic%20functional%20crossover.pdf
+Probabilističko		+			-		-			+							https://www.dropbox.com/s/oakt5emoy5sh14j/probabilistic%20functional%20crossover.pdf
+Semantičko			+			+		+			-							https://www.dropbox.com/s/ceiysbz9tpn0r9d/semantic-gp.pdf

@@ -1,0 +1,41 @@
+U [1] opisano je homologno križanje koje se temelji na prirodnim svojstvima križanja - homologiji (*) i komplementarnom sparivanju baza (*). Iako ova dva principa djeluju vrlo ograničavajuće na sam proces križanja, oni osiguravaju da se križanje odvija na točno određenim mjestima, čuvajući tako funkcionalnost određenog gena u novostvorenom potomku. Homologno križanje primjenjuje samo jedan od ovih principa - homologiju. Ovaj operator prilikom križanja križa isključivo gene koji se nalaze na istoj poziciji ili gene koji su udaljeni za neku malu vrijednost. Rezultati dobiveni primjenom ovakvog križanja, u usporedbi s operatorima koji prilikom križanja ne uzimaju u obzir poziciju ili udaljenost dva gena, pokazali su kako je homologno križanje općenito bolje. Istraživanje je provedeno nad linearnim genetskim programiranjem primjenjenim na 8D Gaussian problemom (*). Pokazano je kako je ovo križanje također spriječilo prenapuhavanje (eng. bloat) jedinki dobivenih križanjem.
+
+Determinističko križanje (eng. deterministic functional crossover), opisano u [2], ostvaruje križanje dvije jedinke na osnovi funkcijske sličnosti. Ograničenje ovog operatora je to da je primjenjivo samo na probleme simboličke regresije. Kako bi se funkcijska sličnost dva gena, odnosno čvorova stabla koji izgrađuju jedinku, mogla odrediti, za svaki gen zapisuje se minimalna i maksimalna vrijednost koju može poprimiti za podatke iz skupa za učenje. Funkcijska sličnost (u radu nazvana funkcijskom udaljenošću) između dva gena i i j, računa se kao:
+
+//tu će biti normalno napisana formula...
+d_ij = 0.5 * ( abs(max_i - max_j) + abs(min_i - min_j) )
+
+Iako su se rezultati pokazali obećavajućima, primijećen je problem neutralnog križanja, odnosno, naklonost križanju dva čvora potpuno jednakih struktura. Ovakva, neutralna križanja postaju sve češća kako se broj generacije i veličina stabala povećava iz razloga što se vjerojatnost odabira završnog čvora (a i nezavršnog čvora na velikoj dubini) povećava, čime se ujedno povećava i vjerojatnost pronalaska strukturno jednakog podstabla.
+
+Kako bi se riješio problem neutralnog križanja koji se pojavio kod determinističog križanja, u [2] je predloženo probabilističko križanje (eng. probabilistic functional crossover). Jednako kao i kod determinističkog križanja, za svaki čvor u stablu zapisuje se minimalna i maksimalna vrijednost čvora za podatke iz skupa za učenje. Prilikom križanja, nakon što se u prvom stablu nasumično odabere točka križanja izračunava se funkcionalna udaljenost između njega i svakog čvora unutar drugog roditelja (jednako kao i kod determinističkog križanja). Nakon što su dobivene sve moguće udaljenosti, one se normaliziraju. Normalizacija je pogodna iz razloga što se s najvećom vjerojatnošću želi odabrati funkcionalno najbliži čvor. Ovako dobivene normalizirane udaljenosti potom se invertiraju i ponovno normaliziraju u odnosne na te invertirane vrijednosti. Time dobivamo to veću vjerojatnost što je udaljenost između dva čvora manja. Nakon ovih operacija, nasumično, ali s izračunatim vjerojatnostima, odabire se podstablo unutar drugog roditelja koje će se iskoristiti za križanje. Pokazano je kako ovakvo križanje pridonosi većem postotku korisnog križanja, a time i bržoj konvergenciji nego uobičajni operatori, iako je priznato kako je ovakav izračun udaljenosti prilično gruba aproksimacija funkcionalne udaljenosti.
+
+Suprotstavljeno tradicionalnim operatorima križanja u genetskom programiranju koji ignoriraju semantiku samog programa, u [3] opisano je semantičko križanje. 
+Ovo križanje razlikuje nekoliko inačica, od kojih je svaka primjenjiva na određenu vrstu problema. Semantičko križanje definirano je za situacije kada stablo jedinke predstavlja logičku ili realnu funkciju, ili ako je jedinka program. Ukoliko jedinka predstavlja logičku funkciju, rezultat križanja jedinki T1 i T2 jednak je:
+
+T3 = ( T1 * TR ) + ( not(TR) * T2),
+
+gdje je TR nasumično generirana logička funkcija.
+Ukoliko jedinka računa realnu funkciju, rezultat križanja jednak je:
+
+T3 = ( T1 * TR ) + ( (1 - TR) * T2),
+
+gdje je TR nasumično generirana funkcija s kodomenom [0, 1].
+U slučaju kada jedinka predstavlja program, križanje daje slijedeći rezultat:
+
+T3 = IF CONDR THEN T1 ELSE R2,
+
+gdje je CONDR nasumično generiran program čiji je izlaz interpretiran kao logička vrijednost.
+Rezultati ovoga rada pokazuju da je semantički pristup križanju bolji od uobičajnih načina križanja. Prednost prikazanih operatora je svakako činjenica da su primijenjivi na općenite probleme.
+
+--------------------------------------------------------------------------------
+
+(1) homologija - u prirodi, križanje se uvijek događa između organizama koji imaju uglavnom identične sekvence unutar kromosoma
+(2) komplementarno sparivanje baza - dva lanca DNK spajaju se samo ako su im baze komplementarne
+//trebaju li ova objašnjenja? Jesu li previše ne-detaljna?
+(3) 8D Gaussian problem - klasifikacijski problem raspodijele primjera u dvije klase na osnovi 8 nezavisnih ulaznih varijabli
+
+--------------------------------------------------------------------------------
+
+[1] Homologous Crossover in Genetic Programming - Frank D. Francone, Markus Conrads, Wolfgang Banzhaf, Peter Nordin ( https://www.dropbox.com/s/2bnnttbcl5anfsf/Homologous%20crossover.pdf )
+[2] A Probabilistic Functional Crossover Operator for Genetic Programming - Josh C. Bongard ( https://www.dropbox.com/s/oakt5emoy5sh14j/probabilistic%20functional%20crossover.pdf )
+[3] Geometric Semantic Genetic Programming - Alberto Moraglio, Krzysztof Krawiec, Colin G. Johnson ( https://www.dropbox.com/s/ceiysbz9tpn0r9d/semantic-gp.pdf )
