@@ -9,6 +9,7 @@
 #include "ecf/tree/Tree.h"
 #include <cstdio>
 #include "SymbRegEvalOp.h"
+#include "ecf/tree/Add.h"
 
 namespace Tree{
 
@@ -416,6 +417,119 @@ namespace Tree{
 	};
 	typedef boost::shared_ptr<TreeCrxProbabilistic> TreeCrxProbabilisticP;
 
+	class TreeCrxSemantic : public CrossoverOp
+	{
+	public:
+		void TreeCrxSemantic::registerParameters(StateP state)
+		{
+			myGenotype_->registerParameter(state, "crx.semantic", (voidP) new double(0), ECF::DOUBLE);
+		}
+
+
+		bool TreeCrxSemantic::initialize(StateP state)
+		{
+			voidP sptr = myGenotype_->getParameterValue(state, "crx.semantic");
+			probability_ = *((double*)sptr.get());
+			return true;
+		}
+
+
+		int TreeCrxSemantic::calculateSize(int avg)
+		{
+			int sigma = avg - 1;
+			return avg + state_->getRandomizer()->getRandomInteger(-sigma, sigma);
+		}
+
+		//TODO - add type to arguments
+		bool TreeCrxSemantic::mate(GenotypeP gen1, GenotypeP gen2, GenotypeP ch)
+		{
+			Tree* male = (Tree*)(gen1.get());
+			Tree* female = (Tree*)(gen2.get());
+			Tree* child = new Tree();
+
+			int type = 1;
+
+			//logical function
+			if (type == 0){
+
+				//create random tree
+				Tree* randomTree = new Tree();
+				randomTree->growBuild(male->primitiveSet_);
+				//create negated random tree
+				Tree* negatedRandomTree = new Tree();
+				Primitives::Neg* negP = new Primitives::Neg();
+				negatedRandomTree->addFunction((PrimitiveP)negP);
+				negatedRandomTree->addNode(randomTree->at(0));
+
+				//set the root of the child to +
+				Primitives::Add* addP = new Primitives::Add();
+				child->addFunction((PrimitiveP)addP);
+
+				//generate left subtree
+				Tree* leftSubtree = new Tree();
+				Primitives::Mul* mulP = new Primitives::Mul();
+				leftSubtree->addFunction((PrimitiveP)mulP);
+				leftSubtree->addNode(new Node(male->at(0)));
+				leftSubtree->addNode(randomTree->at(0));
+
+				//append left subtree
+				child->addNode(leftSubtree->at(0));
+
+				//create right subtree
+				Tree* rightSubtree = new Tree();
+				rightSubtree->addFunction((PrimitiveP)mulP);
+				rightSubtree->addNode(negatedRandomTree->at(0));
+				rightSubtree->addNode(new Node(female->at(0)));
+
+				//append right subtree
+				child->addNode(rightSubtree->at(0));
+			}
+			//symbolic regression
+			else if (type == 1){
+				//create random tree
+				Tree* randomTree = new Tree();
+				randomTree->growBuild(male->primitiveSet_);
+				//create negated random tree
+				Tree* negatedRandomTree = new Tree();
+				Primitives::Sub* subP = new Primitives::Sub();
+				negatedRandomTree->addFunction((PrimitiveP)subP);
+				Primitives::Terminal* one = new Primitives::Terminal();
+				one->setValue((void*)1);
+				negatedRandomTree->addTerminal((PrimitiveP)one);
+				negatedRandomTree->addNode(randomTree->at(0));
+
+				//set the root of the child to +
+				Primitives::Add* addP = new Primitives::Add();
+				child->addFunction((PrimitiveP)addP);
+
+				//generate left subtree
+				Tree* leftSubtree = new Tree();
+				Primitives::Mul* mulP = new Primitives::Mul();
+				leftSubtree->addFunction((PrimitiveP)mulP);
+				leftSubtree->addNode(new Node(male->at(0)));
+				leftSubtree->addNode(randomTree->at(0));
+
+				//append left subtree
+				child->addNode(leftSubtree->at(0));
+
+				//create right subtree
+				Tree* rightSubtree = new Tree();
+				rightSubtree->addFunction((PrimitiveP)mulP);
+				rightSubtree->addNode(negatedRandomTree->at(0));
+				rightSubtree->addNode(female->at(0));
+
+				//append right subtree
+				child->addNode(rightSubtree->at(0));
+			}
+			//program
+			else if (type == 2){
+				//todo
+			}
+			return true;
+		}
+	};
+	typedef boost::shared_ptr<TreeCrxSemantic> TreeCrxSemanticP;
+
 	class MyTree : public Tree
 	{
 	public:
@@ -426,7 +540,7 @@ namespace Tree{
 			crx = Tree::getCrossoverOp();
 
 			// dodati nas crx operator:
-			crx.push_back((CrossoverOpP)(new TreeCrxProbabilistic));
+			crx.push_back((CrossoverOpP)(new TreeCrxSemantic));
 
 			return crx;
 		}
