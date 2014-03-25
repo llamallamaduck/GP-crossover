@@ -486,6 +486,7 @@ namespace Tree{
 			}
 			//symbolic regression
 			else if (type == 1){
+
 				//create random tree
 				Tree* randomTree = new Tree();
 				randomTree->growBuild(male->primitiveSet_);
@@ -501,6 +502,7 @@ namespace Tree{
 				//set the root of the child to +
 				Primitives::Add* addP = new Primitives::Add();
 				child->addFunction((PrimitiveP)addP);
+
 
 				//generate left subtree
 				Tree* leftSubtree = new Tree();
@@ -522,8 +524,22 @@ namespace Tree{
 				child->addNode(rightSubtree->at(0));
 			}
 			//program
-			else if (type == 2){
-				//todo
+			else if (type == 2) {
+				PrimitiveSetP primitives = male->primitiveSet_;
+
+				int numberOfArguments;
+				int numberOfTries = 0;
+				PrimitiveP root;
+				//find a primitive that has exactly two arguments
+				do {
+					root = primitives->getRandomPrimitive();
+					numberOfArguments = root->getNumberOfArguments();
+					numberOfTries++;
+				} while (numberOfArguments != 2 || numberOfTries <= 10);
+				//create the child tree
+				child->addNode(new Node(root));
+				child->addNode(new Node(male->at(0)));
+				child->addNode(female->at(0));
 			}
 			return true;
 		}
@@ -540,7 +556,7 @@ namespace Tree{
 			crx = Tree::getCrossoverOp();
 
 			// dodati nas crx operator:
-			crx.push_back((CrossoverOpP)(new TreeCrxSemantic));
+			crx.push_back((CrossoverOpP)(new TreeCrxDeterministic));
 
 			return crx;
 		}
@@ -562,6 +578,7 @@ int main(int argc, char **argv)
 
 	Tree::MyTree*  tree = new Tree::MyTree;
 	state->addGenotype((MyTreeP)tree);
+
 
 	state->initialize(argc, argv);
 	state->run();
