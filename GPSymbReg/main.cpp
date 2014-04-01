@@ -556,7 +556,10 @@ namespace Tree{
 			crx = Tree::getCrossoverOp();
 
 			// dodati nas crx operator:
+			crx.push_back((CrossoverOpP)(new TreeCrxHomologous));
 			crx.push_back((CrossoverOpP)(new TreeCrxDeterministic));
+			crx.push_back((CrossoverOpP)(new TreeCrxProbabilistic));
+			crx.push_back((CrossoverOpP)(new TreeCrxSemantic));
 
 			return crx;
 		}
