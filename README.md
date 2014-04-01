@@ -4,8 +4,8 @@ implementirano:
 - homologno
 - determinističko
 - probabilističko
-- dio semantičkog (boolean + regresija)
-
+- semantičko
+-------------------------------------------
 TO-DO:
-- semantičko za programe
+- naći način za ugurati parametar o tipu stabla za semantičko križanje (boolean, regresija ili program)
 - problemi za testiranje
