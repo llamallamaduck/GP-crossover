@@ -346,7 +346,8 @@ namespace Tree{
 
 				//calculate d'
 				for (int i = 0; i < probabilisticDistancesIndices.size(); i++){
-					probabilisticDistancesValues[i] /= sumOfAllDistances;
+					double value = probabilisticDistancesValues[i] / sumOfAllDistances;
+					probabilisticDistancesValues[i] = value;
 				}
 
 				//calculate p
@@ -356,7 +357,8 @@ namespace Tree{
 				}
 
 				for (int i = 0; i < probabilisticDistancesIndices.size(); i++){
-					probabilisticDistancesValues[i] = (1 - probabilisticDistancesValues[i]) / sumOfAllInvertedDistances;
+					double value = (1 - probabilisticDistancesValues[i]) / sumOfAllInvertedDistances;
+					probabilisticDistancesValues[i] = value;
 				}
 
 				srand((unsigned)time(NULL));
@@ -517,7 +519,13 @@ namespace Tree{
 				*val = 1;
 				one->setValue(val);
 				negatedRandomTree->addTerminal((PrimitiveP)one);
-				negatedRandomTree->addNode(randomTree->at(0));
+				for (int i = 0; i < randomTree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(randomTree->at(i)->primitive_));
+					negatedRandomTree->push_back(node);
+				}
+
+				ECF_LOG(state_, 3, "Negated random tree: " + negatedRandomTree->toString());
 
 				//set the root of the child to +
 				Primitives::Add* addP = new Primitives::Add();
@@ -528,20 +536,46 @@ namespace Tree{
 				Tree* leftSubtree = new Tree();
 				Primitives::Mul* mulP = new Primitives::Mul();
 				leftSubtree->addFunction((PrimitiveP)mulP);
-				leftSubtree->addNode(new Node(male->at(0)));
-				leftSubtree->addNode(randomTree->at(0));
+				for (int i = 0; i < male->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(male->at(i)->primitive_));
+					leftSubtree->push_back(node);
+				}
+				for (int i = 0; i < randomTree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(randomTree->at(i)->primitive_));
+					leftSubtree->push_back(node);
+				}
 
 				//append left subtree
-				child->addNode(leftSubtree->at(0));
+				for (int i = 0; i < leftSubtree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(leftSubtree->at(i)->primitive_));
+					child->push_back(node);
+				}
 
 				//create right subtree
 				Tree* rightSubtree = new Tree();
 				rightSubtree->addFunction((PrimitiveP)mulP);
-				rightSubtree->addNode(negatedRandomTree->at(0));
-				rightSubtree->addNode(female->at(0));
+				for (int i = 0; i < negatedRandomTree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(negatedRandomTree->at(i)->primitive_));
+					rightSubtree->push_back(node);
+				}
+				for (int i = 0; i < female->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(female->at(i)->primitive_));
+					rightSubtree->push_back(node);
+				}
 
 				//append right subtree
-				child->addNode(rightSubtree->at(0));
+				for (int i = 0; i < rightSubtree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(rightSubtree->at(i)->primitive_));
+					child->push_back(node);
+				}
+
+				ECF_LOG(state_, 3, "CHILD: " + child->toString());
 			}
 			//program
 			else if (type == 2) {
