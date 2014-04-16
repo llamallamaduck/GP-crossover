@@ -67,13 +67,15 @@ namespace Tree{
 				uint subtreeSize = calculateSize(male->at(mIndex)->size_);
 
 				//choose the closest subtree to males breaking point, having size < 1 + 2 * subtreeSize
-				int distance = (mIndex - femaleSizeIndexes.at(0)[0]);
-				fIndex = femaleSizeIndexes.at(0)[0];
+				int distance = (mIndex - femaleSizeIndexes.at(1)[0]);
+				fIndex = femaleSizeIndexes.at(1)[0];
 
 				//j iterates over sizes
-				for (uint j = 0; j < (1 + 2 * subtreeSize) || j < (uint)femaleSizeIndexes.size(); j++){
+				for (uint j = 1; j < (1 + 2 * subtreeSize) && j < femaleSizeIndexes.size(); j++){
+					if (distance == 0)
+						break;
 					//index iterates over subtrees of j size
-					for (uint index = 0; index < (uint)femaleSizeIndexes[j].size(); index++){
+					for (uint index = 0; index < femaleSizeIndexes[j].size(); index++){
 						int tmpDistance = (mIndex - femaleSizeIndexes.at(j)[index]);
 						if (abs(tmpDistance) < abs(distance)){
 							distance = tmpDistance;
@@ -190,14 +192,15 @@ namespace Tree{
 
 				//choose the closest subtree to males breaking point
 				double maleMax = male->at(mIndex)->primitive_->maxComputedValue;
-				double femaleMax = female->at(femaleSizeIndexes.at(0)[0])->primitive_->maxComputedValue;
+				double femaleMax = female->at(femaleSizeIndexes.at(1)[0])->primitive_->maxComputedValue;
 				double maleMin = male->at(mIndex)->primitive_->minComputedValue;
-				double femaleMin = female->at(femaleSizeIndexes.at(0)[0])->primitive_->minComputedValue;
+				double femaleMin = female->at(femaleSizeIndexes.at(1)[0])->primitive_->minComputedValue;
 
 				double distance = 0.5 * (abs(maleMax - femaleMax) + abs(maleMin - femaleMin));
+				fIndex = femaleSizeIndexes.at(1)[0];
 
 				//j iterates over sizes
-				for (uint j = 0; j < (1 + 2 * subtreeSize) || j < (uint)femaleSizeIndexes.size(); j++){
+				for (uint j = 1; j < (1 + 2 * subtreeSize) && j < (uint)femaleSizeIndexes.size(); j++){
 					//index iterates over subtrees of j size
 					for (uint index = 0; index < (uint)femaleSizeIndexes[j].size(); index++){
 						femaleMax = female->at(femaleSizeIndexes[j].at(index))->primitive_->maxComputedValue;
@@ -310,8 +313,12 @@ namespace Tree{
 
 			uint nTries = 0;
 			while (1) {
-				//probabilisticDistances[i] contains probabilistic distance of i-th node from chosen male node
-				vector<double> probabilisticDistances;
+				//probabilisticDistancesIndices[i] contains a female index whose distance 
+				//is stored in probabilisticDistancesValues[i]
+				vector<int> probabilisticDistancesIndices;
+				//probabilisticDistancesValues[i] contains probabilistic distance of 
+				//probabilisticDistancesValues[i]-th node from chosen male node
+				vector<double> probabilisticDistancesValues;
 
 				// choose random crx point in male parent
 				mIndex = state_->getRandomizer()->getRandomInteger(0, mRange - 1);
@@ -324,30 +331,32 @@ namespace Tree{
 				double sumOfAllDistances = 0;
 
 				//j iterates over sizes
-				for (uint j = 0; j < (1 + 2 * subtreeSize) || j < (uint)femaleSizeIndexes.size(); j++){
+				for (uint j = 1; j < (1 + 2 * subtreeSize) && j < femaleSizeIndexes.size(); j++){
 					//index iterates over subtrees of j size
-					for (uint index = 0; index < (uint)femaleSizeIndexes[j].size(); index++){
+					for (uint index = 0; index < femaleSizeIndexes[j].size(); index++){
+
 						double femaleMax = female->at(femaleSizeIndexes[j].at(index))->primitive_->maxComputedValue;
 						double femaleMin = female->at(femaleSizeIndexes[j].at(index))->primitive_->minComputedValue;
 						double distance = 0.5 * (abs(maleMax - femaleMax) + abs(maleMin - femaleMin));
-						probabilisticDistances[femaleSizeIndexes[j].at(index)] = distance;
+						probabilisticDistancesIndices.push_back(femaleSizeIndexes[j].at(index));
+						probabilisticDistancesValues.push_back(distance);
 						sumOfAllDistances += distance;
 					}
 				}
 
 				//calculate d'
-				for (int i = 0; i < probabilisticDistances.size(); i++){
-					probabilisticDistances[i] /= sumOfAllDistances;
+				for (int i = 0; i < probabilisticDistancesIndices.size(); i++){
+					probabilisticDistancesValues[i] /= sumOfAllDistances;
 				}
 
 				//calculate p
 				double sumOfAllInvertedDistances = 0;
-				for (int i = 0; i < probabilisticDistances.size(); i++){
-					sumOfAllInvertedDistances += 1 - probabilisticDistances[i];
+				for (int i = 0; i < probabilisticDistancesIndices.size(); i++){
+					sumOfAllInvertedDistances += 1 - probabilisticDistancesValues[i];
 				}
 
-				for (int i = 0; i < probabilisticDistances.size(); i++){
-					probabilisticDistances[i] = (1 - probabilisticDistances[i]) / sumOfAllInvertedDistances;
+				for (int i = 0; i < probabilisticDistancesIndices.size(); i++){
+					probabilisticDistancesValues[i] = (1 - probabilisticDistancesValues[i]) / sumOfAllInvertedDistances;
 				}
 
 				srand((unsigned)time(NULL));
@@ -356,11 +365,11 @@ namespace Tree{
 				double minDiff = 1;
 				fIndex = 0;
 
-				for (int i = 0; i < probabilisticDistances.size(); i++){
-					double tempDiff = abs(probabilisticDistances[i] - p);
+				for (int i = 0; i < probabilisticDistancesIndices.size(); i++){
+					double tempDiff = abs(probabilisticDistancesValues[i] - p);
 					if (tempDiff < minDiff){
 						minDiff = tempDiff;
-						fIndex = i;
+						fIndex = probabilisticDistancesIndices[i];
 					}
 				}
 
@@ -454,6 +463,10 @@ namespace Tree{
 
 				//create random tree
 				Tree* randomTree = new Tree();
+				randomTree->maxDepth_ = male->maxDepth_;
+				randomTree->minDepth_ = male->minDepth_;
+				randomTree->initMaxDepth_ = male->initMaxDepth_;
+				randomTree->initMinDepth_ = male->initMinDepth_;
 				randomTree->growBuild(male->primitiveSet_);
 				//create negated random tree
 				Tree* negatedRandomTree = new Tree();
@@ -489,13 +502,20 @@ namespace Tree{
 
 				//create random tree
 				Tree* randomTree = new Tree();
+				randomTree->maxDepth_ = male->maxDepth_;
+				randomTree->minDepth_ = male->minDepth_;
+				randomTree->initMaxDepth_ = male->initMaxDepth_;
+				randomTree->initMinDepth_ = male->initMinDepth_;
 				randomTree->growBuild(male->primitiveSet_);
+				ECF_LOG(state_, 5, "Random tree: " + randomTree->toString());
 				//create negated random tree
 				Tree* negatedRandomTree = new Tree();
 				Primitives::Sub* subP = new Primitives::Sub();
 				negatedRandomTree->addFunction((PrimitiveP)subP);
 				Primitives::Terminal* one = new Primitives::Terminal();
-				one->setValue((void*)1);
+				int* val = (int*)malloc(sizeof(int));
+				*val = 1;
+				one->setValue(val);
 				negatedRandomTree->addTerminal((PrimitiveP)one);
 				negatedRandomTree->addNode(randomTree->at(0));
 
@@ -549,6 +569,17 @@ namespace Tree{
 	class MyTree : public Tree
 	{
 	public:
+
+		MyTree(void) {
+			name_ = "MyTree";
+		}
+
+		MyTree* copy()
+		{
+			MyTree *newObject = new MyTree(*this);
+			return newObject;
+		}
+
 		vector<CrossoverOpP> getCrossoverOp()
 		{
 			vector<CrossoverOpP> crx;
@@ -580,12 +611,14 @@ int main(int argc, char **argv)
 
 
 	Tree::MyTree*  tree = new Tree::MyTree;
-	state->addGenotype((MyTreeP)tree);
+	state->addGenotype((GenotypeP)tree);
 
 
 	state->initialize(argc, argv);
 	state->run();
 
 	Population p = *(state->getPopulation());
+
+
 	return 0;
 }
