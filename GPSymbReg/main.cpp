@@ -344,9 +344,21 @@ namespace Tree{
 					}
 				}
 
+				if (sumOfAllDistances == 0)
+				{
+					nTries++;
+					if (nTries > 4) {
+						ECF_LOG(state_, 5, "TreeCrxProbabilistic not successful.");
+						return false;
+					}
+					continue;
+				}
+
 				//calculate d'
 				for (int i = 0; i < probabilisticDistancesIndices.size(); i++){
 					double value = probabilisticDistancesValues[i] / sumOfAllDistances;
+					if (value < 0.000000000001)
+						value = 0;
 					probabilisticDistancesValues[i] = value;
 				}
 
@@ -461,7 +473,7 @@ namespace Tree{
 			int type = 1;
 
 			//logical function
-			if (type == 0){
+		/*	if (type == 0){
 
 				//create random tree
 				Tree* randomTree = new Tree();
@@ -470,11 +482,29 @@ namespace Tree{
 				randomTree->initMaxDepth_ = male->initMaxDepth_;
 				randomTree->initMinDepth_ = male->initMinDepth_;
 				randomTree->growBuild(male->primitiveSet_);
+				ECF_LOG(state_, 5, "Random tree: " + randomTree->toString());
+
 				//create negated random tree
 				Tree* negatedRandomTree = new Tree();
-				Primitives::Neg* negP = new Primitives::Neg();
-				negatedRandomTree->addFunction((PrimitiveP)negP);
-				negatedRandomTree->addNode(randomTree->at(0));
+				PrimitiveP subP(new Primitives::Sub);
+				Node* nodeSub = new Node();
+				nodeSub->setPrimitive(subP);
+				negatedRandomTree->addNode(nodeSub);
+				PrimitiveP one(new Primitives::Terminal);
+				int* val = (int*)malloc(sizeof(int));
+				*val = 1;
+				one->setValue(val);
+				one->setName("1");
+				Node* nodeOne = new Node();
+				nodeOne->setPrimitive(one);
+				negatedRandomTree->addNode(nodeOne);
+				for (int i = 0; i < randomTree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(randomTree->at(i)->primitive_));
+					negatedRandomTree->push_back(node);
+				}
+
+				ECF_LOG(state_, 3, "Negated random tree: " + negatedRandomTree->toString());
 
 				//set the root of the child to +
 				Primitives::Add* addP = new Primitives::Add();
@@ -498,9 +528,9 @@ namespace Tree{
 
 				//append right subtree
 				child->addNode(rightSubtree->at(0));
-			}
-			//symbolic regression
-			else if (type == 1){
+			}*/
+			//symbolic regression or boolean
+			if (type == 0 || type == 1){
 
 				//create random tree
 				Tree* randomTree = new Tree();
@@ -509,33 +539,44 @@ namespace Tree{
 				randomTree->initMaxDepth_ = male->initMaxDepth_;
 				randomTree->initMinDepth_ = male->initMinDepth_;
 				randomTree->growBuild(male->primitiveSet_);
-				ECF_LOG(state_, 5, "Random tree: " + randomTree->toString());
+				//ECF_LOG(state_, 5, "Random tree: " + randomTree->toString());
+
 				//create negated random tree
 				Tree* negatedRandomTree = new Tree();
-				Primitives::Sub* subP = new Primitives::Sub();
-				negatedRandomTree->addFunction((PrimitiveP)subP);
-				Primitives::Terminal* one = new Primitives::Terminal();
+				PrimitiveP subP(new Primitives::Sub);
+				Node* nodeSub = new Node();
+				nodeSub->setPrimitive(subP);
+				negatedRandomTree->addNode(nodeSub);
+				PrimitiveP one(new Primitives::Terminal);
 				int* val = (int*)malloc(sizeof(int));
 				*val = 1;
 				one->setValue(val);
-				negatedRandomTree->addTerminal((PrimitiveP)one);
+				one->setName("1");
+				Node* nodeOne = new Node();
+				nodeOne->setPrimitive(one);
+				negatedRandomTree->addNode(nodeOne);
 				for (int i = 0; i < randomTree->size(); i++)
 				{
 					NodeP node = static_cast<NodeP> (new Node(randomTree->at(i)->primitive_));
 					negatedRandomTree->push_back(node);
 				}
 
-				ECF_LOG(state_, 3, "Negated random tree: " + negatedRandomTree->toString());
+				//ECF_LOG(state_, 3, "Negated random tree: " + negatedRandomTree->toString());
 
 				//set the root of the child to +
-				Primitives::Add* addP = new Primitives::Add();
-				child->addFunction((PrimitiveP)addP);
-
+				PrimitiveP addP(new Primitives::Add);
+				//child->addFunction((PrimitiveP)addP);
+				Node* nodeAdd = new Node();
+				nodeAdd->setPrimitive(addP);
+				child->addNode(nodeAdd);
 
 				//generate left subtree
 				Tree* leftSubtree = new Tree();
-				Primitives::Mul* mulP = new Primitives::Mul();
-				leftSubtree->addFunction((PrimitiveP)mulP);
+				PrimitiveP mulP(new Primitives::Mul);
+				Node* nodeMul = new Node();
+				nodeMul->setPrimitive(mulP);
+				leftSubtree->addNode(nodeMul);
+				//leftSubtree->addFunction((PrimitiveP)mulP);
 				for (int i = 0; i < male->size(); i++)
 				{
 					NodeP node = static_cast<NodeP> (new Node(male->at(i)->primitive_));
@@ -556,7 +597,7 @@ namespace Tree{
 
 				//create right subtree
 				Tree* rightSubtree = new Tree();
-				rightSubtree->addFunction((PrimitiveP)mulP);
+				rightSubtree->addNode(nodeMul);
 				for (int i = 0; i < negatedRandomTree->size(); i++)
 				{
 					NodeP node = static_cast<NodeP> (new Node(negatedRandomTree->at(i)->primitive_));
@@ -575,7 +616,7 @@ namespace Tree{
 					child->push_back(node);
 				}
 
-				ECF_LOG(state_, 3, "CHILD: " + child->toString());
+				//ECF_LOG(state_, 3, "CHILD: " + child->toString());
 			}
 			//program
 			else if (type == 2) {
@@ -589,7 +630,7 @@ namespace Tree{
 					root = primitives->getRandomPrimitive();
 					numberOfArguments = root->getNumberOfArguments();
 					numberOfTries++;
-				} while (numberOfArguments != 2 || numberOfTries <= 10);
+				} while (numberOfArguments != 2 && numberOfTries <= 10);
 				//create the child tree
 				child->addNode(new Node(root));
 				child->addNode(new Node(male->at(0)));
