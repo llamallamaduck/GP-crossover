@@ -1,0 +1,18 @@
+Homologno križanje:
+	- 8d gaussian problem: klasifikacijski problem raspodijele primjera u dvije klase na osnovi 8 nezavisnih ulaznih varijabli
+
+Determinističko križanje:
+	- simbolička regresija
+
+Probabilističko križanje:
+ 	- simbolička regresija
+
+ Semantičko križanje:
+ 	Boolean funkcije:
+ 		- standard GP benchmark (?)
+
+ 	Regresija:
+ 		- polinomi s jednom varijablom od 3 do 10 stupnja
+
+ 	Programi:
+ 		- klasifikacija
