@@ -39,6 +39,16 @@ bool PrimitiveSet::initialize(StateP state)
 	prim = (PrimitiveP) (new Primitives::Min);
 	mAllPrimitives_[prim->getName()] = prim;
 
+	prim = (PrimitiveP)(new Primitives::And);
+	mAllPrimitives_[prim->getName()] = prim;
+
+	prim = (PrimitiveP)(new Primitives::Or);
+	mAllPrimitives_[prim->getName()] = prim;
+
+	prim = (PrimitiveP)(new Primitives::Not);
+	mAllPrimitives_[prim->getName()] = prim;
+
+
 	prim_iter primIter;
 	for(primIter = mAllPrimitives_.begin(); primIter != mAllPrimitives_.end(); ++primIter)
 		primIter->second->initialize(state);

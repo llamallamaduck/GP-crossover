@@ -41,7 +41,6 @@ namespace Tree
 				randomTree->initMaxDepth_ = male->initMaxDepth_;
 				randomTree->initMinDepth_ = male->initMinDepth_;
 				randomTree->growBuild(male->primitiveSet_);
-				ECF_LOG(state_, 5, "Random tree: " + randomTree->toString());
 
 				//create negated random tree
 				Tree* negatedRandomTree = new Tree();
@@ -62,8 +61,6 @@ namespace Tree
 					NodeP node = static_cast<NodeP> (new Node(randomTree->at(i)->primitive_));
 					negatedRandomTree->push_back(node);
 				}
-
-				ECF_LOG(state_, 3, "Negated random tree: " + negatedRandomTree->toString());
 
 				//set the root of the child to +
 				PrimitiveP addP(new Primitives::Add);
