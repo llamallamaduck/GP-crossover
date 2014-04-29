@@ -2,6 +2,11 @@
 #include "Tree.h"
 #include "TreeCrxSemantic.h"
 
+#include "And.h"
+#include "Or.h"
+#include "Not.h"
+
+
 namespace Tree
 {
 	void TreeCrxSemantic::registerParameters(StateP state)
@@ -31,8 +36,83 @@ namespace Tree
 
 			int type = 0;
 
-			//symbolic regression or boolean
-			if (type == 0 || type == 1)
+			//boolean
+			if (type == 0)
+			{
+				//create random tree
+				Tree* randomTree = new Tree();
+				randomTree->maxDepth_ = male->maxDepth_;
+				randomTree->minDepth_ = male->minDepth_;
+				randomTree->initMaxDepth_ = male->initMaxDepth_;
+				randomTree->initMinDepth_ = male->initMinDepth_;
+				randomTree->growBuild(male->primitiveSet_);
+
+				//create negated random tree
+				Tree* negatedRandomTree = new Tree();
+				PrimitiveP subP(new Primitives::Not);
+				Node* nodeSub = new Node();
+				nodeSub->setPrimitive(subP);
+				negatedRandomTree->addNode(nodeSub);
+				for (int i = 0; i < randomTree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(randomTree->at(i)->primitive_));
+					negatedRandomTree->push_back(node);
+				}
+
+				//set the root of the child to +
+				PrimitiveP addP(new Primitives::Or);
+				Node* nodeAdd = new Node();
+				nodeAdd->setPrimitive(addP);
+				child->addNode(nodeAdd);
+
+				//generate left subtree
+				Tree* leftSubtree = new Tree();
+				PrimitiveP mulP(new Primitives::And);
+				Node* nodeMul = new Node();
+				nodeMul->setPrimitive(mulP);
+				leftSubtree->addNode(nodeMul);
+				//leftSubtree->addFunction((PrimitiveP)mulP);
+				for (int i = 0; i < male->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(male->at(i)->primitive_));
+					leftSubtree->push_back(node);
+				}
+				for (int i = 0; i < randomTree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(randomTree->at(i)->primitive_));
+					leftSubtree->push_back(node);
+				}
+
+				//append left subtree
+				for (int i = 0; i < leftSubtree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(leftSubtree->at(i)->primitive_));
+					child->push_back(node);
+				}
+
+				//create right subtree
+				Tree* rightSubtree = new Tree();
+				rightSubtree->addNode(nodeMul);
+				for (int i = 0; i < negatedRandomTree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(negatedRandomTree->at(i)->primitive_));
+					rightSubtree->push_back(node);
+				}
+				for (int i = 0; i < female->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(female->at(i)->primitive_));
+					rightSubtree->push_back(node);
+				}
+
+				//append right subtree
+				for (int i = 0; i < rightSubtree->size(); i++)
+				{
+					NodeP node = static_cast<NodeP> (new Node(rightSubtree->at(i)->primitive_));
+					child->push_back(node);
+				}
+			}
+			//symbolic regression
+			if (type == 1)
 			{
 				//create random tree
 				Tree* randomTree = new Tree();
@@ -114,7 +194,6 @@ namespace Tree
 					child->push_back(node);
 				}
 			}
-
 			//program
 			else if (type == 2) 
 			{

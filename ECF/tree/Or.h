@@ -20,31 +20,31 @@ namespace Tree {
 		typedef OrT<bool> Or;
 
 		template <class T>
-		Ort<T>::OrT(void)
-			{
-				nArguments_ = 2;
-				name_ = "OR";
-			}
+		OrT<T>::~OrT(void)
+		{	}
 
 		template <class T>
-		void Ort<T>::execute(void* result, Tree& tree)
-			{
-				std::vector<bool>& or = *(std::vector<bool>*)result;
-				uint size = (uint)or.size();
-
-				std::vector<bool> arg1(size), arg2(size);
-
-				getNextArgument(&arg1, tree);
-				getNextArgument(&arg2, tree);
-
-				for (uint i = 0; i < size; i++)
-					or[i] = arg1[i] || arg2[i];
-			}
+		OrT<T>::OrT(void)
+		{
+			nArguments_ = 2;
+			name_ = "OR";
+		}
 
 		template <class T>
-		Ort<T>::~Or(void)
-			{	}
-	};
+		void OrT<T>::execute(void* result, Tree& tree)
+		{
+			std::vector<bool>& or = *(std::vector<bool>*)result;
+			uint size = (uint)or.size();
+					
+			std::vector<bool> arg1(size), arg2(size);
+
+			getNextArgument(&arg1, tree);
+			getNextArgument(&arg2, tree);
+
+			for (uint i = 0; i < size; i++)
+				or[i] = arg1[i] || arg2[i];
+		}
+	}
 }
 
 #endif

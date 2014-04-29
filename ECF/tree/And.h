@@ -20,6 +20,9 @@ namespace Tree {
 		};
 		typedef AndT<bool> And;
 
+		template <class T>
+		AndT<T>::~AndT(void)
+		{	}
 
 		template <class T>
 		AndT<T>::AndT(void)
@@ -29,7 +32,7 @@ namespace Tree {
 		}
 
 		template <class T>
-		void AndT<T>::execute(void* result, Tree::Tree& tree)
+		void AndT<T>::execute(void* result, Tree& tree)
 		{
 			std::vector<bool>& and = *(std::vector<bool>*)result;
 			uint size = (uint)and.size();
@@ -42,9 +45,6 @@ namespace Tree {
 			for (uint i = 0; i < size; i++)
 				and[i] = arg1[i] && arg2[i];
 		}
-
-		template <class T>
-		AndT<T>::~AndT(void)
-		{	};
+	}
 }
 #endif

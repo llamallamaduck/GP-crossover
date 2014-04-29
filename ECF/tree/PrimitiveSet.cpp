@@ -1,6 +1,8 @@
 #include "../ECF_base.h"
 #include "Tree.h"
-
+#include "And.h"
+#include "Or.h"
+#include "Not.h"
 
 namespace Tree
 {
