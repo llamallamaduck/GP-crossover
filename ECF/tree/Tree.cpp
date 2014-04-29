@@ -18,6 +18,10 @@
 #include "TreeCrxContextPreserved.h"
 #include "TreeCrxSizeFair.h"
 #include "TreeCrxOnePoint.h"
+#include "TreeCrxHomologous.h";
+#include "TreeCrxDeterministic.h";
+#include "TreeCrxProbabilistic.h";
+#include "TreeCrxSemantic.h";
 
 
 namespace Tree
@@ -54,6 +58,11 @@ std::vector<CrossoverOpP> Tree::getCrossoverOp()
 	crx.push_back((CrossoverOpP) (new TreeCrxUniform));
 	crx.push_back((CrossoverOpP) (new TreeCrxSizeFair));
 	crx.push_back((CrossoverOpP) (new TreeCrxOnePoint));
+	crx.push_back((CrossoverOpP)(new TreeCrxHomologous));
+	crx.push_back((CrossoverOpP)(new TreeCrxDeterministic));
+	crx.push_back((CrossoverOpP) (new TreeCrxProbabilistic));
+	crx.push_back((CrossoverOpP) (new TreeCrxSemantic));
+
 	return crx;
 }
 
