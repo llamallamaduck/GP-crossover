@@ -36,6 +36,6 @@ Rezultati ovoga rada pokazuju da je semantički pristup križanju bolji od uobi�
 
 --------------------------------------------------------------------------------
 
-[1] Homologous Crossover in Genetic Programming - Frank D. Francone, Markus Conrads, Wolfgang Banzhaf, Peter Nordin ( https://www.dropbox.com/s/2bnnttbcl5anfsf/Homologous%20crossover.pdf )
+[1] Homologous Crossover in Genetic Programming - Frank D. Francone, Markus Conrads, Wolfgang Banzhaf, Peter Nordin ( https://www.dropbox.com/s/2bnnttbcl5anfsf/Homologous%20crossover.pdf  https://www.dropbox.com/s/mheiumjitqpcld1/size%20fair%20and%20homologous.pdf)
 [2] A Probabilistic Functional Crossover Operator for Genetic Programming - Josh C. Bongard ( https://www.dropbox.com/s/oakt5emoy5sh14j/probabilistic%20functional%20crossover.pdf )
 [3] Geometric Semantic Genetic Programming - Alberto Moraglio, Krzysztof Krawiec, Colin G. Johnson ( https://www.dropbox.com/s/ceiysbz9tpn0r9d/semantic-gp.pdf )

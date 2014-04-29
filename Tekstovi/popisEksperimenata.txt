@@ -1,5 +1,6 @@
 Homologno križanje:
-	- 8d gaussian problem: klasifikacijski problem raspodijele primjera u dvije klase na osnovi 8 nezavisnih ulaznih varijabli
+	- polinomi 5. i 6. stupnja
+	- učenje boolean 6 i 11-multiplexer funkcija
 
 Determinističko križanje:
 	- simbolička regresija
