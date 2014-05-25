@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: diplomski.aux
+The style file: unsrt.bst
+Database file #1: literatura.bib
+Warning--entry type for "crxSimple" isn't style-file defined
+--line 85 of file literatura.bib
+Warning--empty publisher in nenr
+Warning--empty publisher in luke
+Warning--empty year in rigo
+Warning--empty journal in onePointExp
+Warning--empty journal in crxDeter
+Warning--empty journal in crxSem
+Warning--empty year in crxSem
+Warning--empty journal in ecf
+Warning--empty year in ecf
+Warning--empty journal in bool
+You've used 14 entries,
+            1791 wiz_defined-function locations,
+            507 strings with 5525 characters,
+and the built_in function-call counts, 1846 in all, are:
+= -- 140
+> -- 53
+< -- 0
++ -- 27
+- -- 13
+* -- 53
+:= -- 313
+add.period$ -- 38
+call.type$ -- 14
+change.case$ -- 10
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 117
+empty$ -- 221
+format.name$ -- 13
+if$ -- 405
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 17
+newline$ -- 69
+num.names$ -- 13
+pop$ -- 76
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 42
+stack$ -- 0
+substring$ -- 0
+swap$ -- 9
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 10
+while$ -- 13
+width$ -- 16
+write$ -- 125
+(There were 11 warnings)

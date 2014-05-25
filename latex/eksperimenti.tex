@@ -1,0 +1,139 @@
+U ovom poglavlju biti će opisana istraživanja provedena u sklopu ovog rada. Za istraživanja je korišteno radno okruženje ECF (\textit{eng. Evolutionary Computation Framework}) koje je za potrebe ovog rada nadograđeno potrebnim, nedostajućim  operatorima križanja.
+
+\section{ECF}
+ECF \cite{ecf} (\textit{eng. Evolutionary Computation Framework}) predstavlja okruženje napisano u jeziku C++ za rješavanje različitih problema evolucijskog računanja. Za potrebe ovog rada, najznačajnije korišten dio ECF-a uključuje stablasti genotip (\textit{eng. tree}), zajedno s njegovim operatorima križanja i mutacije. Dio koji je nedostajao ovom okruženju za provedbu kasnije opisanih eksperimenata uključuje implementaciju homolognog, determinističkog, probabilističkog i semantičkog križanja. Iz tog razloga, kao praktičan dio ovog rada, ECF je nadograđen sa spomenutim operatorima križanja.
+
+\section{Problemi za ispitivanje}
+
+Kako bi se pokazala učinkovitost različitih operatora križanja nad različitim vrstama problema, ispitivanja su provedena nad različitim problemima simboličke regresije i logičke i programske domene. U nastavku je za svaku vrstu problema opisan specifičan problem koji je kasnije korišten za provedbu istraživanja. Nakon toga dana je detaljna analiza dobivenih rezultata, koja sadrži međusobnu usporedbu učinkovitosti različitih operatora križanja za svaki pojedini problem.
+
+\subsection{Logičke funkcije}
+
+Za ispitivanje učinkovitosti operatora nad logičkim funkcijama korišten je problem evolucije kriptografski sigurnih logičkih funkcija \cite{bool}. Cilj je pronaći neku logičku funkciju koja će imati dobra kriptografska svojstva. Svojstva koja posjeduje dobra kriptografska logička funkcija uključuju:
+
+\begin{itemize}
+\item{balansiranost - funkcija je balansirana ukoliko ima jednak broj istinitih i lažnih vrijednosti}
+\item{visoku nelinearnost - linearnost logičke funkcije definira se kao postojanje $a_0,a_1,...,a_n \in \{0, 1\}$ tako da je $f(b_1,...,b_n) =  a_0 \oplus (a_1 \wedge b_1) \oplus ... \oplus (a_n \wedge b_n)$ za sve $b_1,....,b_n \in \{0, 1\}$}
+\item{visok algebarski stupanj - algebarski stupanj logičke funkcije jednak je broju varijabli izraza s najvećim brojem varijabli u algebarskom normalnom obliku funkcije}
+\item{visok algebarski imunitet - algebarski imunitet definiran je kao minimalni broj ne-nul funkcija $g$ takvih da su $fg = 0$ ili $(f\oplus 1)g=0$}
+\item{visok korelacijski imunitet - korelacijski imunitet funkcije $f$ je maksimalna vrijednost $m$ takva da $| F\^(\omega) |= 0$ za sve vrijednosti Hammingove težine $\omega \leq m$ }
+\end{itemize}
+
+Budući da je nemoguće stvoriti logičku funkciju koja posjeduje sva ova svojstva, algoritmu se postavlja zadatak pronalaska dobre kombinacije nekih od ovih svojstava.
+
+\subsection{Simbolička regresija}
+Simbolička regresija je postupak pronalaženja matematičkog izraza iz danih empirijskih podataka. Za potrebe ovih mjerenja korištena je stablasta jedinka koja predstavlja jedan matematički izraz. Taj izraz se iz jedinke može jednostavno isčitati \textit{in-order} obilaskom stabla. Na slici \ref{symbTree} prikazana je jedinka koja predstavlja matematički izraz $cos(x-y) + (x / y)$.
+
+\begin{figure}[H]
+ 	\centering
+
+\begin{tikzpicture}
+	[sibling distance=25mm, level distance=15mm,
+	every node/.style={fill=blue!20,circle,draw,drop shadow, minimum height=1cm}]
+
+	\node   {\textbf{+}}
+    		child {node {$cos$}
+    			child {node {-}
+    				child {node {x}}
+    				child {node {y}}
+    			}
+    		}
+    		child {node {\textbf{$/$}}
+			child {node  {x}}
+			child {node  {y}}	
+		};
+	};
+
+\end{tikzpicture}
+
+
+	\caption{Primjer jedinke koja rješava problem simboličke regresije koja predstavlja izraz $cos(x-y) + (x / y)$}
+	\label{symbTree}
+\end{figure}
+
+U tablici \ref{bla} su dani izrazi koji su bili ciljna funkcija u provedenim istraživanjima, zajedno s njihovim intervalom domene i oznakama koje su kasnije korištene za jednostavnije referenciranje.
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    oznaka & izraz & interval domene \\ \hline
+    symb1 & $log(x+1)+log(x^2+1)$ & $x \in [0, 20]$\\ \hline
+    symb2 & $sin(x) + sin(y^2)$ & $x, y \in [-10, 10]$\\ \hline
+    symb3 & $2 \cdot sin(x) \cdot cos(y)$ & $x, y \in [-10, 10]$\\ \hline
+    symb4 & $x \cdot y + sin((x+1) \cdot (y-1))$ & $x, y \in [-10, 10]$\\ \hline
+    symb5 & \Large{ $\frac{8}{2 + x^2 + y^2}$ }& $x, y \in [-10, 10]$\\ \hline
+    symb6 & $\frac{x^3}{5} + \frac{y^3}{2} - x - y$ & $x, y \in [-10, 10]$\\ \hline
+    \end{tabular}
+    
+    \caption{Popis problema simboličke regresije}
+    \label{bla}
+\end{table}
+
+\subsection{Programi}
+Programski problem korišten za evaluaciju operatora križanja bio je problem umjetnog mrava (\textit{eng. Artificial Ant Problem}). Rješenje ovog problema jest evoluirati program koji opisuje ponašanje mrava u nekoj okolini koja sadrži hranu. Dobar program bi trebao biti sposoban pronaći i pojesti što više hrane iz okoline. Jedinka je u ovom slučaju također predstavljena kao stablo. Primjer jedinke prikazan je na slici \ref{ant}. 
+
+\begin{figure}[H]
+	\centering
+
+\begin{tikzpicture}
+[sibling distance=50mm, level distance=25mm,
+every node/.style={fill=blue!20,rectangle, rounded corners,draw,drop shadow, minimum height=1.5cm}]
+
+
+  \node {ifFoodAhead}
+      child {node {moveForward}}
+      child {node {Prog2}
+        child {node {turnRight}}
+        child {node {ifFoodAhead}
+        	child{node {moveForward}}
+        	child{node {turnLeft}}
+        }
+      };
+\end{tikzpicture}
+
+	\caption{Primjer jedinke programa umjetnog mrava}
+	\label{ant}
+\end{figure}
+
+Nezavršni znakovi koji grade jednu ovakvu jedinku su:
+
+\begin{enumerate}
+
+  \item \textbf{If food ahead} - provjerava da li se nalazi hrana ispred mrava - ako da izvršava lijevu granu, ako ne, izvršava desnu granu.
+  \item \textbf{Prog2} - slijedno izvršava lijevu, te zatim desnu granu.
+  \item \textbf{Prog3} - slijedno izvršava (s lijeva na desno) svaku od 3 pridružene grane.
+
+\end{enumerate}
+
+Završni znakovi koji grade ovu jedinku su:
+\begin{enumerate}
+
+  \item \textbf{move forward} - pomiče mrava za jedno mjesto unaprijed.
+  \item \textbf{turn right} - okreće mrava u desno.
+  \item \textbf{turn left} - okreće mrava u lijevo.
+
+\end{enumerate}
+
+%Pseudokod koji predstavlja ponašane jedinke prikazane na slici \ref{ant} prikazan je na \ref{pseudokod}.
+
+%\begin{algorith m}
+%\eIf {food ahead} {
+%	move forward;
+%} {
+%	turn right;\\
+%	\eIf {food ahead} {
+%		move forward;
+%	} {
+%		turn left;
+%	}
+%}
+
+%	\caption{Pseudokod jedinke prikazane na slici \ref{ant}}
+%	\label{pseudokod}
+%	\centering
+%\end{algorithm}
+
+
+\section{Rezultati}

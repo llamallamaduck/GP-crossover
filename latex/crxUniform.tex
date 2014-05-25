@@ -1,0 +1,130 @@
+Uniformno križanje predstavljeno je u \cite{crxUniform}. Inspirirano je uniformnim križanjem nestablastih struktura u genetskom algoritmu. U genetskom algoritmu, ovo križanje (budući da su sve jedinke jednakih dužina) prolazi kroz oba roditelja te na svakoj poziciji nasumično odabire gen iz prvog ili drugog roditelja te ga ugrađuje u dijete. Kada bi u genetskom programiranju sve jedinke bile potpuno jednakog oblika, ovo križanje funkcioniralo bi potpuno jednako. No, budući da je to vrlo rijedak slučaj, potrebno je, kao i u križanju s jednom točkom prekida, pronaći zajedničko područje dva roditelja. Nakon što je to područje pronađeno, s lakoćom se smiju izmjenjivati čvorovi roditeljskih stabala - no pritom je potrebno paziti na broj djece koji taj čvor posjeduje. Na slici \ref{crxUni} prikazan je primjer jednog mogućeg rezultata uniformnog križanja.
+
+\begin{figure}[H]
+ 	\centering
+
+
+\begin{tikzpicture}
+	[sibling distance=25mm, level distance=15mm,
+	every node/.style={fill=blue!20,circle,draw,drop shadow, minimum height=1cm}]
+
+\begin{scope}[xshift=0cm]
+
+	\node  [fill=yellow!20]  {\textbf{+}}
+    		child {node [fill=yellow!20]  {$cos$}
+    			child {node  [fill=yellow!20] {-}
+    				child {node{x}}
+    				child {node{y}}
+    			}
+    		}
+    		child {node [fill=yellow!20]  {\textbf{$\cdot$}}
+        		child {node [fill=yellow!20]  {2}}
+        		child {node [fill=yellow!20]  {y}}
+      		};
+	};
+\end{scope}
+
+\begin{scope}[xshift=7cm]
+	\node  [fill=yellow!20]  {\textbf{+}}
+    		child {node  [fill=yellow!20] {$sin$}
+        		child {node  [fill=yellow!20] {y}}
+      		}
+    		child {node [fill=yellow!20] {\textbf{$/$}}
+			child {node [fill=yellow!20]  {x}}
+			child {node [fill=yellow!20]  {y}}	
+		};
+	};
+\end{scope}
+
+\end{tikzpicture}
+
+
+	\caption{Zajedničko područje dva roditelja}
+	\label{crxOnePointCommon}
+\end{figure}
+
+\begin{figure}[H]
+ 	\centering
+
+
+\begin{tikzpicture}
+	[sibling distance=25mm, level distance=15mm,
+	every node/.style={fill=blue!20,circle,draw,drop shadow, minimum height=1cm}]
+
+\begin{scope}[xshift=0cm]
+
+	\node {\textbf{+}}
+    		child {node [fill=red!20]  {$sin$}
+    				child {node{-}
+    					child {node {x}}
+    					child {node {y}}
+    			}
+    		}
+    		child {node  [fill=red!20] {\textbf{$/$}}
+        		child {node [fill=red!20]  {x}}
+        		child {node {y}}
+      		};
+	};
+\end{scope}
+
+\begin{scope}[xshift=7cm]
+	\node   {\textbf{+}}
+    		child {node  [fill=red!20] {$sin$}
+        		child {node  [fill=red!20] {y}}
+      		}
+    		child {node  [fill=red!20]  {\textbf{$\cdot$}}
+			child {node  {x}}
+			child {node  {y}}	
+		};
+	};
+\end{scope}
+
+\end{tikzpicture}
+
+
+	\caption{Mogući rezultati križanja roditelja sa slike \ref{crxOnePointCommon}}
+	\label{crxUni}
+\end{figure}
+
+Velika prednost ovog križanja je velika stopa razmjene genetskog materijala. Budući da se čvorovi koji će završiti u djetetu biraju uniformno, s omjerima vjerojatnosti 1:1, velika je vjerojatnost da će dijete sadržavati 50\% genetskog materijala prvog roditelja i 50\% genetskog materijala drugog roditelja. Ovo je vrlo pogodno za brzo napredovanje algoritma.
+
+\subsection{Dosadašnji rezultati}
+Autor ovog križanja proveo je eksperimente nad paritetnim problemom 4 varijable. Cilj ovog problema je pronaći logičku funkciju koja je istinita za parni broj istinitih varijabli. Tablica istinitosti za ovaj problem prikazana je na tablici ispod (\ref{truthTable}).
+
+\begin{table}[H]
+\centering
+
+\begin{tabular} {a b c d | p}
+A & B & C & D & P \\
+\hline
+0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 0 & 1 \\
+0 & 1 & 1 & 1 & 0 \\
+1 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 1 & 0 \\
+1 & 1 & 0 & 0 & 1 \\
+1 & 1 & 0 & 1 & 0 \\
+1 & 1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+
+	\caption{Tablica istinitosti za paritetni problem 4 varijable}
+	\label{truthTable}
+\end{table}
+
+Eksperimentima je dokazano kako za razliku od jednostavnog križanja i križanja s jednom točkom prekida, u kojima je prosječna stopa razmjene genetskog materijala oko 5\%, ovo križanje uistinu ima konstantnu stopu razmjene genetskog materijala od oko 50\%.
+
+Pokazano je kako jednostavno križanje pretragu prostora rješenja odvija lokalno, nasljeđujući većinu genetskog materijala od jednog roditelja. Jednostavno križanje nije idealno za brzo pretraživanje prostora - bolje je za fino ugođavanje prilično dobrog rješenja. Osim toga, jednostavno križanje vrlo lako zapne u nekom od lokalnih optimuma. 
+
+Križanje s jednom točkom prekida bolje se nosi s veličinom prostora pretrage, no nakon nekog vremena počinje sagledavati sve manji dio prostora - lokalizirajući tako pretragu s povećanjem vjerojatnosti zapinjanja u lokalnom optimumu.
+
+Uniformno križanje prelazi preko ovih problema. Za razliku od jednostavnog križanja, ono nije pristrano na križanje listova ili podstabala. Ovime omogućuje slobodniju i raznolikiju izmjenu genetskog materijala između roditelja, ubrzavajući tako konvergenciju rješenja u globalni optimum. Također, pokazano je kako nakon nekog vremena, sve jednike populacije budu otprilike jednake veličine, što kod upotrebe jednostavnog križanja i križanja s jednom točkom prekida nije slučaj. Osim navedenih svojstava, nije uočena prevelika razlika u samoj uspješnosti križanja da pronađe dobro rješenje problema - rad se pretežito fokusirao na razliku u količini izmijenjenog genetskog materijala.
+

@@ -1,0 +1,67 @@
+Jednostavno križanje (\textit{eng. subtree crossover}) predstavljeno je u \cite{crxSimple}. Ovo križanje ujedno je i najjednostavnije i najkorištenije križanje u genetskom programiranju.
+
+Nova jedinka nastaje spajanjem dvaju nasumično odabranih podstabala roditelja. U svakom roditelju odabire se po jedna točka prekida koja označava mjesta na kojima će se dogoditi križanje.
+
+Često, odabir točaka prekida ne odvija se uniformno. Naime, tipični čvorovi stabala imaju prosječni faktor grananja \footnote{broj djece pojedinog čvora} (\textit{eng. branching factor}) jednakim barem 2, što uzrokuje da je većina čvorova nekog stabla u stvari list, odnosno, završni znak. Posljedično, ukoliko bi ovo križanje biralo točke prekida na uniforman način, došlo bi do vrlo male količine razmijenjenog genetskog materijala: nerijetko bi se dogodilo da križanjem nastane nova jedinka koja je gotovo identična jednom od roditelja - od tog roditelja, razlikovala bi se u samo jednom listu koji pripada onom drugom roditelju. Kako bi se razriješio ovaj problem, Koza \cite{koza} je predložio kasnije često korišten pristup - prilikom odabira točke prekida, postavlja se vjerojatnost odabira nezavršnog čvora na 0.9, a vjerojatnost odabira lista stabla kao točke prekida na 0.1.
+
+Ovakvim križanjem, dobivaju se dvije različite, nove jedinke. Iako neke implementacije ovog operatora uzimaju oba dva djeteta u novu generaciju, češće je slučaj da se uzima samo jedno dijete. Na slici \ref{crxSimple} prikazan je primjer jednostavnog križanja.
+
+\begin{figure}[H]
+ 	\centering
+
+
+\begin{tikzpicture}
+	[sibling distance=25mm, level distance=15mm,
+	every node/.style={fill=blue!20,circle,draw,drop shadow, minimum height=1cm}]
+	
+	
+	\node  {\textbf{+}}
+    		child {node {a}}
+    		child {node [fill=green!20]  {\textbf{$sin$}}
+        		child {node  {x}}
+      		};
+	};
+
+\begin{scope}[xshift=7cm, yshift=0cm]
+	\node {\textbf{+}}
+    		child {node {$cos$}
+        		child {node {y}}
+      		}
+     		child {node [fill=yellow!20]  {\textbf{$\cdot$}}
+        		child {node {2}}
+        		child {node {y}}
+      		};
+	};
+\end{scope}
+
+\begin{scope}[xshift=0cm, yshift=5cm]
+
+	\node {\textbf{+}}
+    		child {node {a}}
+    		child {node [fill=yellow!20]  {\textbf{$\cdot$}}
+        		child {node {2}}
+        		child {node {y}}
+      		};
+	};
+\end{scope}
+
+\begin{scope}[xshift=7cm, yshift=5cm]
+	\node {\textbf{+}}
+    		child {node {$cos$}
+        		child {node {y}}
+      		}
+    		child {node [fill=green!20] {\textbf{$sin$}}
+			child {node {x}}};
+	};
+\end{scope}
+
+\end{tikzpicture}
+
+
+	\caption{Primjer jednostavnog križanja stabala}
+	\label{crxSimple}
+\end{figure}
+
+Na prvom roditelju (gornji lijevi kut) odabrana točka prekida označena je žutom bojom, a na drugom roditelju zelenom bojom. Na donjem dijelu slike vidljivi su rezultati križanja - dva moguća potomka nastala križanjem ova dva roditelja. Lijevo dijete nastalo je spajanjem podstabla prvom roditelja koje se nalazilo iznad točke prekida i podstabla drugog roditelja koje se nalazilo ispod njegove točke prekida. Desno dijete nastalo je suprotnom kombinacijom - spojeno je podstablo ispod točke prekida prvog roditelja i podstablo iznad točke prekida drugog roditelja.
+
+Budući da je ovaj operator križanja najstariji operator, u daljnjem tekstu uglavnom će služiti kao osnovna usporedba učinkovitosti. Za očekivati je da će svaki drugi operator predstavljen u idućim poglavljima donijeti poboljšanja u odnosu na ovaj operator.

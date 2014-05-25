@@ -1,0 +1,46 @@
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=5.5em, text badly centered, node distance=4cm, inner sep=2pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=17em, text centered, rounded corners, minimum height=2.5em, node distance=1.5cm, auto]
+
+\tikzstyle{blockD} = [rectangle, draw, fill=blue!20, 
+    text width=17em, text centered, rounded corners, minimum height=2.5em, node distance=3.5cm, auto]
+
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=4cm,
+    minimum height=2em]
+    
+\begin{tikzpicture}
+    % Place nodes
+    \node [block] (init) {brojGeneracija = 0, \\ n = veličina populacije};
+    \node [block, right of=init] (gen) {stvaranje početne populacije};
+    \node [block, right of=gen] (dobrota) {izračun dobrote svih jedinki};
+    \node [decision, below of=dobrota] (zaustav) {zadovoljen kriterij zaustavljanja?};
+   
+    \node [blockD, below of = zaustav] (brIter) {iteracija = 0};
+ \node [cloud, right of=zaustav] (kraj) {kraj};
+
+    \node [block, below of=brIter] (selekcija) {selekcija jedinki};
+    \node [block, below of=selekcija] (krizanje) {križanje jedinki};
+    \node [block, below of=krizanje] (mutacija) {mutacija novonastale jedinke};
+    \node [block, below of=mutacija] (kr) {izračun dobrote novonastale jedinke};
+    \node [block, below of=kr] (incrIter) {iteracija++};
+    \node [decision, below of=incrIter] (bla) {iteracija == n?};
+
+    \node [blockD, below of=bla] (genplus) {brojGeneracija++};
+	%lines
+	\path [line] (init) -- (gen);
+	\path [line] (gen) -- (dobrota);
+	\path [line] (dobrota) -- (zaustav);
+	\path [line] (zaustav) -- node {da} (kraj);
+	\path [line] (zaustav) -- node {ne} (brIter);
+	\path [line] (brIter) -- (selekcija);
+	\path [line] (selekcija) -- (krizanje);
+	\path [line] (krizanje) -- (mutacija);
+	\path [line] (mutacija) -- (kr);
+	\path [line] (kr) -- (incrIter);
+	\path [line] (incrIter) -- (bla);
+	\path [line] (bla) -- node {da} (genplus);
+	\path [line] (bla) -- node {ne} (dobrota);
+
+\end{tikzpicture}

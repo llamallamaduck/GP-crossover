@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{koza}
+John~R. Koza.
+\newblock {\em Genetic Programming: On the Programming of Computers by Natural
+  Selection}.
+\newblock MIT Press, 1992.
+
+\bibitem{nenr}
+Marko {\v C}upi{\'c}; Bojana Dalbelo Ba{\v s}i{\'c};~Marin Golub.
+\newblock {\em Neizrazito, evolucijsko i neurora{\v c}unarstvo}.
+\newblock 2013.
+
+\bibitem{luke}
+S.~Luke; L. Spector~L. Spector.
+\newblock {\em A comparison of crossover and mutation in genetic pro-
+  gramming}.
+\newblock 1997.
+
+\bibitem{rigo}
+David R. White;~Simon Poulding.
+\newblock {\em A Rigorous Evaluation of Crossover and Mutation in Genetic
+  Programming}.
+\newblock Dept. of Computer Science, University of York.
+
+\bibitem{crxSimple}
+http://dces.essex.ac.uk/staff/rpoli/gp-field-guide/24recombinationandmutation.html#7\_4.
+
+\bibitem{crxOnePoint}
+R.~Poli; W. B. Langdon W.~B. Langdon.
+\newblock A new schema theory for genetic programming with one-point crossover
+  and point mutation.
+\newblock {\em Genetic Programming 1997: Proceedings of the Second Annual
+  Conference}, 1997.
+
+\bibitem{onePointExp}
+Riccardo~Poli;W.B. Langdon.
+\newblock Genetic programming with one-point crossover and point genetic
+  programming with one-point crossover and point genetic programming with
+  one-point crossover and point genetic programming with one-point crossover
+  and point genetic programming with one-point crossover and point mutation.
+\newblock 1997.
+
+\bibitem{crxContext}
+Patrik D'haeseleer.
+\newblock Context preserving crossover in genetic programming.
+\newblock {\em Proceedings of the 1994 IEEE World Congress on Computational
+  Intelligence}, 1994.
+
+\bibitem{crxSizeFair}
+W.~B. Langdon.
+\newblock Size fair and homologous tree crossovers for tree genetic
+  programming.
+\newblock {\em Genetic Programming and Evolvable Machines}, 2000.
+
+\bibitem{crxUniform}
+Riccardo Poli;~W.B. Langdon.
+\newblock On the search properties of different crossover operators in genetic
+  programming.
+\newblock {\em Genetic Programming 1998: Proceedings of the Third Annual
+  Conference}, 1998.
+
+\bibitem{crxDeter}
+Josh~C. Bongard.
+\newblock A probabilistic functional crossover operator for genetic
+  programming.
+\newblock 2010.
+
+\bibitem{crxSem}
+Alberto Moraglio; Krzysztof Krawiec; Colin~G. Johnson.
+\newblock Geometric semantic genetic programming.
+
+\bibitem{ecf}
+Domagoj Jakobovi{\'c}.
+\newblock Ecf: http://gp.zemris.fer.hr/ecf/.
+
+\bibitem{bool}
+Stjepan Picek; Domagoj Jakobovic;~Marin Golub.
+\newblock Evolving cryptographically sound boolean functions.
+\newblock 2013.
+
+\end{thebibliography}
