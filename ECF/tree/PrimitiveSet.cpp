@@ -3,6 +3,9 @@
 #include "And.h"
 #include "Or.h"
 #include "Not.h"
+#include "Sqrt.h"
+#include "Log.h"
+#include "If.h"
 
 namespace Tree
 {
@@ -43,13 +46,16 @@ bool PrimitiveSet::initialize(StateP state)
 
 	prim = (PrimitiveP)(new Primitives::And);
 	mAllPrimitives_[prim->getName()] = prim;
-
 	prim = (PrimitiveP)(new Primitives::Or);
 	mAllPrimitives_[prim->getName()] = prim;
-
 	prim = (PrimitiveP)(new Primitives::Not);
 	mAllPrimitives_[prim->getName()] = prim;
-
+	prim = (PrimitiveP)(new Primitives::If);
+	mAllPrimitives_[prim->getName()] = prim;
+	prim = (PrimitiveP)(new Primitives::Sqrt);
+	mAllPrimitives_[prim->getName()] = prim;
+	prim = (PrimitiveP)(new Primitives::Log);
+	mAllPrimitives_[prim->getName()] = prim;
 
 	prim_iter primIter;
 	for(primIter = mAllPrimitives_.begin(); primIter != mAllPrimitives_.end(); ++primIter)
