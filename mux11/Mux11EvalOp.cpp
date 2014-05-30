@@ -25,23 +25,23 @@ FitnessP Mux11EvalOp::evaluate(IndividualP individual)
 	double value = 0;
 
 	for (uint a = 0; a < 8; a++) {
-		int a0 = a & 1;
-		int a1 = a & 2;
-		int a2 = a & 4;
+		bool a0 = a & 1;
+		bool a1 = a & 2;
+		bool a2 = a & 4;
 
 		tree->setTerminalValue("a0", &a0);
 		tree->setTerminalValue("a1", &a1);
 		tree->setTerminalValue("a2", &a2);
 
 		for (uint i = 0; i < 256; i++) {
-			int d0 = i & 1;
-			int d1 = i & 2;
-			int d2 = i & 4;
-			int d3 = i & 8;
-			int d4 = i & 16;
-			int d5 = i & 32;
-			int d6 = i & 64;
-			int d7 = i & 128;
+			bool d0 = i & 1;
+			bool d1 = i & 2;
+			bool d2 = i & 4;
+			bool d3 = i & 8;
+			bool d4 = i & 16;
+			bool d5 = i & 32;
+			bool d6 = i & 64;
+			bool d7 = i & 128;
 
 			tree->setTerminalValue("d0", &d0);
 			tree->setTerminalValue("d1", &d1);
@@ -52,7 +52,7 @@ FitnessP Mux11EvalOp::evaluate(IndividualP individual)
 			tree->setTerminalValue("d6", &d6);
 			tree->setTerminalValue("d7", &d7);
 
-			int functionValue = 0;
+			bool functionValue = 0;
 
 			switch (a) {
 			case 0: functionValue = d0;
@@ -73,9 +73,9 @@ FitnessP Mux11EvalOp::evaluate(IndividualP individual)
 				break;
 			}
 
-			double result;
+			bool result;
 			tree->execute(&result);
-			value += abs(result - functionValue);
+			value += abs((int)result - (int)functionValue);
 		}
 	}
 
