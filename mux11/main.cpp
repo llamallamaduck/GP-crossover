@@ -22,14 +22,14 @@ public:
 
 	void execute(void* result, Tree::Tree& tree)
 	{
-		bool or = (bool)result;
+		bool* or = (bool*)result;
 
 		bool arg1, arg2;
 
 		getNextArgument(&arg1, tree);
 		getNextArgument(&arg2, tree);
 
-		or = arg1 || arg2;
+		*or = arg1 || arg2;
 	}
 
 	~Or()
@@ -48,14 +48,14 @@ public:
 
 	void execute(void* result, Tree::Tree& tree)
 	{
-		bool xor = (bool)result;
+		bool* xor = (bool*)result;
 
 		bool arg1, arg2;
 
 		getNextArgument(&arg1, tree);
 		getNextArgument(&arg2, tree);
 
-		xor = (arg1 && !arg2) || (!arg1 && arg2);
+		*xor = (arg1 && !arg2) || (!arg1 && arg2);
 	}
 
 	~Xor()
@@ -75,14 +75,14 @@ public:
 
 	void execute(void* result, Tree::Tree& tree)
 	{
-		bool and = (bool)result;
+		bool* and = (bool*)result;
 
 		bool arg1, arg2;
 
 		getNextArgument(&arg1, tree);
 		getNextArgument(&arg2, tree);
 
-		and = (arg1 && arg2);
+		*and = (arg1 && arg2);
 	}
 
 	~And()
@@ -101,13 +101,13 @@ public:
 
 	void execute(void* result, Tree::Tree& tree)
 	{
-		bool not = (bool)result;
+		bool* not = (bool*)result;
 
-		bool arg1, arg2;
+		bool arg1;
 
 		getNextArgument(&arg1, tree);
 
-		not = !arg1;
+		*not = !arg1;
 	}
 
 	~Not()
@@ -126,7 +126,7 @@ public:
 
 	void execute(void* result, Tree::Tree& tree)
 	{
-		bool res = (bool)result;
+		bool* res = (bool*)result;
 
 		bool arg, res1, res2;
 		getNextArgument(&arg, tree);
@@ -134,10 +134,10 @@ public:
 		getNextArgument(&res2, tree);
 
 		if (arg) {
-			res = res1;
+			*res = res1;
 		}
 		else {
-			res = res2;
+			*res = res2;
 		}
 	}
 

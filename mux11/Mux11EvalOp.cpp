@@ -22,7 +22,7 @@ FitnessP Mux11EvalOp::evaluate(IndividualP individual)
 	// (you can also use boost smart pointers:)
 	//TreeP tree = boost::static_pointer_cast<Tree::Tree> (individual->getGenotype());
 
-	double value = 0;
+	int value = 0;
 
 	for (uint a = 0; a < 8; a++) {
 		bool a0 = a & 1;
@@ -32,7 +32,7 @@ FitnessP Mux11EvalOp::evaluate(IndividualP individual)
 		tree->setTerminalValue("a0", &a0);
 		tree->setTerminalValue("a1", &a1);
 		tree->setTerminalValue("a2", &a2);
-
+		
 		for (uint i = 0; i < 256; i++) {
 			bool d0 = i & 1;
 			bool d1 = i & 2;
@@ -52,7 +52,7 @@ FitnessP Mux11EvalOp::evaluate(IndividualP individual)
 			tree->setTerminalValue("d6", &d6);
 			tree->setTerminalValue("d7", &d7);
 
-			bool functionValue = 0;
+			bool functionValue = false;
 
 			switch (a) {
 			case 0: functionValue = d0;
@@ -75,10 +75,19 @@ FitnessP Mux11EvalOp::evaluate(IndividualP individual)
 
 			bool result;
 			tree->execute(&result);
-			value += abs((int)result - (int)functionValue);
+			
+			int intResult = 0;
+			if (result) {
+				intResult = 1;
+			}
+			int intFunctionValue = 0;
+			if (functionValue) {
+				intFunctionValue = 1;
+			}
+			value += abs(intResult - intFunctionValue);
 		}
 	}
-
+	//cout << tree->toString();
 	fitness->setValue(value);
 	return fitness;
 }
