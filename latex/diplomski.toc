@@ -39,11 +39,13 @@
 \contentsline {subsubsection}{Logi\IeC {\v c}ke funkcije}{33}{subsection.3.9.1}
 \contentsline {subsubsection}{Simboli\IeC {\v c}ka regresija}{34}{figure.caption.25}
 \contentsline {subsubsection}{Programi}{35}{figure.caption.26}
-\contentsline {chapter}{\numberline {4}Ispitivanja}{36}{chapter.4}
-\contentsline {section}{\numberline {4.1}ECF}{36}{section.4.1}
-\contentsline {section}{\numberline {4.2}Problemi za ispitivanje}{36}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Logi\IeC {\v c}ke funkcije}{37}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Simboli\IeC {\v c}ka regresija}{37}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Programi}{38}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Rezultati}{39}{section.4.3}
-\contentsline {chapter}{\numberline {5}Literatura}{40}{chapter.5}
+\contentsline {chapter}{\numberline {4}Ispitivanja}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}ECF}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}Problemi za ispitivanje}{37}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Logi\IeC {\v c}ke funkcije}{38}{subsection.4.2.1}
+\contentsline {subsubsection}{Multiplekser problem}{38}{subsection.4.2.1}
+\contentsline {subsubsection}{Evolucija kriptografski sigurnih logi\IeC {\v c}kih funkcija}{39}{table.caption.29}
+\contentsline {subsection}{\numberline {4.2.2}Simboli\IeC {\v c}ka regresija}{39}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Programi}{40}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Rezultati}{41}{section.4.3}
+\contentsline {chapter}{\numberline {5}Literatura}{42}{chapter.5}

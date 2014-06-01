@@ -4,7 +4,7 @@ The top-level auxiliary file: diplomski.aux
 The style file: unsrt.bst
 Database file #1: literatura.bib
 Warning--entry type for "crxSimple" isn't style-file defined
---line 85 of file literatura.bib
+--line 93 of file literatura.bib
 Warning--empty publisher in nenr
 Warning--empty publisher in luke
 Warning--empty year in rigo
@@ -15,45 +15,45 @@ Warning--empty year in crxSem
 Warning--empty journal in ecf
 Warning--empty year in ecf
 Warning--empty journal in bool
-You've used 14 entries,
+You've used 15 entries,
             1791 wiz_defined-function locations,
-            507 strings with 5525 characters,
-and the built_in function-call counts, 1846 in all, are:
-= -- 140
-> -- 53
+            511 strings with 5634 characters,
+and the built_in function-call counts, 1975 in all, are:
+= -- 151
+> -- 57
 < -- 0
-+ -- 27
-- -- 13
-* -- 53
-:= -- 313
-add.period$ -- 38
-call.type$ -- 14
-change.case$ -- 10
++ -- 29
+- -- 14
+* -- 56
+:= -- 337
+add.period$ -- 41
+call.type$ -- 15
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 117
-empty$ -- 221
-format.name$ -- 13
-if$ -- 405
+cite$ -- 25
+duplicate$ -- 125
+empty$ -- 235
+format.name$ -- 14
+if$ -- 433
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 17
-newline$ -- 69
-num.names$ -- 13
-pop$ -- 76
+int.to.str$ -- 15
+missing$ -- 18
+newline$ -- 74
+num.names$ -- 14
+pop$ -- 79
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 42
+skip$ -- 45
 stack$ -- 0
 substring$ -- 0
-swap$ -- 9
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 10
-while$ -- 13
-width$ -- 16
-write$ -- 125
+while$ -- 14
+width$ -- 17
+write$ -- 135
 (There were 11 warnings)

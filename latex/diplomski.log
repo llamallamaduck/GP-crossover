@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.25)  21 MAY 2014 22:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.25)  1 JUN 2014 12:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1258,14 +1258,14 @@ l.85 	}
        ;
 ? 
 Missing character: There is no ; in font nullfont!
-[15] <./slike/even3par.png, id=367, 1002.74625pt x 400.49625pt>
+[15] <./slike/even3par.png, id=370, 1002.74625pt x 400.49625pt>
 File: ./slike/even3par.png Graphic file (type png)
 
 <use ./slike/even3par.png>
 Package pdftex.def Info: ./slike/even3par.png used on input line 103.
 (pdftex.def)             Requested size: 401.0914pt x 160.19566pt.
 
-<./slike/even4par.png, id=368, 1011.78pt x 404.51125pt>
+<./slike/even4par.png, id=373, 1011.78pt x 404.51125pt>
 File: ./slike/even4par.png Graphic file (type png)
 
 <use ./slike/even4par.png>
@@ -1278,7 +1278,7 @@ l.19 	}
 ? 
 Missing character: There is no ; in font nullfont!
 [16 <./slike/even3par.png> <./slike/even4par.png>] [17]
-<./slike/robot.png, id=385, 1113.15875pt x 359.3425pt>
+<./slike/robot.png, id=392, 1113.15875pt x 359.3425pt>
 File: ./slike/robot.png Graphic file (type png)
  <use ./slike/robot.png>
 Package pdftex.def Info: ./slike/robot.png used on input line 44.
@@ -1288,7 +1288,7 @@ Overfull \hbox (4.23788pt too wide) in paragraph at lines 44--45
  [][] 
  []
 
-[18] <./slike/robotIt.png, id=394, 1126.2075pt x 385.44pt>
+[18] <./slike/robotIt.png, id=403, 1126.2075pt x 385.44pt>
 File: ./slike/robotIt.png Graphic file (type png)
 
 <use ./slike/robotIt.png>
@@ -1300,7 +1300,7 @@ Overfull \hbox (9.45729pt too wide) in paragraph at lines 55--56
  []
 
 [19 <./slike/robot.png> <./slike/robotIt.png>]
-<./slike/mux.png, id=401, 1145.27875pt x 370.38374pt>
+<./slike/mux.png, id=412, 1145.27875pt x 370.38374pt>
 File: ./slike/mux.png Graphic file (type png)
  <use ./slike/mux.png>
 Package pdftex.def Info: ./slike/mux.png used on input line 67.
@@ -1310,7 +1310,7 @@ Overfull \hbox (17.08565pt too wide) in paragraph at lines 67--68
  [][] 
  []
 
-<./slike/ants.png, id=403, 1120.185pt x 359.3425pt>
+<./slike/ants.png, id=416, 1120.185pt x 359.3425pt>
 File: ./slike/ants.png Graphic file (type png)
  <use ./slike/ants.png>
 Package pdftex.def Info: ./slike/ants.png used on input line 79.
@@ -1456,7 +1456,7 @@ a rje^^Tsenja odvija lo-kalno, naslje[]duju^^Sci
  []
 
 ) (./crxHomologous.tex [25]
-<./slike/crxHomo.png, id=444, 742.775pt x 385.44pt>
+<./slike/crxHomo.png, id=460, 742.775pt x 385.44pt>
 File: ./slike/crxHomo.png Graphic file (type png)
  <use ./slike/crxHomo.png>
 Package pdftex.def Info: ./slike/crxHomo.png used on input line 15.
@@ -1507,7 +1507,7 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
 (Font)              size <5> substituted on input line 8.
 
-<./slike/deto.png, id=459, 703.62875pt x 757.83125pt>
+<./slike/deto.png, id=476, 703.62875pt x 757.83125pt>
 File: ./slike/deto.png Graphic file (type png)
  <use ./slike/deto.png>
 Package pdftex.def Info: ./slike/deto.png used on input line 18.
@@ -1539,7 +1539,7 @@ Overfull \hbox (2.5738pt too wide) in paragraph at lines 4--5
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 7.
 
-<./slike/semBool1.png, id=486, 1092.08pt x 413.545pt>
+<./slike/semBool1.png, id=505, 1092.08pt x 413.545pt>
 File: ./slike/semBool1.png Graphic file (type png)
 
 <use ./slike/semBool1.png>
@@ -1558,78 +1558,97 @@ l.37 ... usporedilo genetsko programiranje (\texit
 
 ? 
 [32 <./slike/semBool1.png>]
-<./slike/semBoolTable.png, id=504, 764.8575pt x 591.20876pt>
+<./slike/semBoolTable.png, id=525, 764.8575pt x 591.20876pt>
 File: ./slike/semBoolTable.png Graphic file (type png)
 
 <use ./slike/semBoolTable.png>
 Package pdftex.def Info: ./slike/semBoolTable.png used on input line 47.
 (pdftex.def)             Requested size: 382.42781pt x 295.60365pt.
  [33]
-<./slike/semSymbTable.png, id=512, 635.37375pt x 396.48125pt>
+<./slike/semSymbTable.png, id=535, 635.37375pt x 396.48125pt>
 File: ./slike/semSymbTable.png Graphic file (type png)
 
 <use ./slike/semSymbTable.png>
 Package pdftex.def Info: ./slike/semSymbTable.png used on input line 58.
 (pdftex.def)             Requested size: 254.14499pt x 158.58968pt.
- [34 <./slike/semBoolTable.png> <./slike/semSymbTable.png>] <./slike/semProg.pn
-g, id=519, 842.14626pt x 395.4775pt>
+ [34 <./slike/semBoolTable.png>]
+<./slike/semProg.png, id=544, 842.14626pt x 395.4775pt>
 File: ./slike/semProg.png Graphic file (type png)
 
 <use ./slike/semProg.png>
 Package pdftex.def Info: ./slike/semProg.png used on input line 71.
 (pdftex.def)             Requested size: 421.0721pt x 197.73827pt.
-)) [35 <./slike/semProg.png>]
+)) [35 <./slike/semSymbTable.png> <./slike/semProg.png>] [36]
 Poglavlje 4.
-(./eksperimenti.tex [36
+(./eksperimenti.tex
+
+Package caption Warning: \label without proper \caption on input line 34.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `muxPicture' on page 37 undefined on input line 13.
+
+
+Overfull \hbox (6.93549pt too wide) in paragraph at lines 13--14
+\OT1/cmr/m/n/12 pro-ve-deni su eks-pe-ri-menti nad 6 - mul-ti-plek-ser i 11 - m
+ul-ti-plek-ser pro-blemu [[]]. Op^^Scenito,
+ []
+
+[37
 
 ]
-Overfull \hbox (27.42407pt too wide) in paragraph at lines 16--17
+Overfull \hbox (24.55173pt too wide) in paragraph at lines 45--52
+ [][] 
+ []
+
+[38]
+Overfull \hbox (27.42407pt too wide) in paragraph at lines 62--63
 []\OT1/cmr/m/n/12 visoku ne-li-ne-ar-nost - li-ne-ar-nost logi^^Tcke funk-cije 
 de-fi-nira se kao pos-to-ja-nje $\OML/cmm/m/it/12 a[]; a[]; :::; a[] \OMS/cmsy/
 m/n/12 2
  []
 
 
-LaTeX Warning: Command \^ invalid in math mode on input line 19.
+LaTeX Warning: Command \^ invalid in math mode on input line 65.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ...@spacefactor \spacefactor }\accent 
                                                   #1 #2\egroup \spacefactor ...
-l.19 ...maksimalna vrijednost $m$ takva da $| F\^(
+l.65 ...maksimalna vrijednost $m$ takva da $| F\^(
                                                   \omega) |= 0$ za sve vrije...
 
 ? 
 ! You can't use `\spacefactor' in math mode.
 \add@accent ...}\accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.19 ...maksimalna vrijednost $m$ takva da $| F\^(
+l.65 ...maksimalna vrijednost $m$ takva da $| F\^(
                                                   \omega) |= 0$ za sve vrije...
 
 ? 
 Missing character: There is no è in font cmex10!
 ! Extra }, or forgotten \endgroup.
-l.45 	}
+l.91 	}
        ;
 ? 
 Missing character: There is no ; in font nullfont!
-[37] [38]) [39]
+[39] [40]) [41]
 Poglavlje 5.
 (./diplomski.bbl
 ! You can't use `macro parameter character #' in horizontal mode.
-l.27 ...eld-guide/24recombinationandmutation.html#
+l.33 ...eld-guide/24recombinationandmutation.html#
                                                   7\_4.
 ? 
 
-Overfull \hbox (36.07953pt too wide) in paragraph at lines 27--28
+Overfull \hbox (36.07953pt too wide) in paragraph at lines 33--34
 []\OT1/cmr/m/n/12 http://dces.essex.ac.uk/staff/rpoli/gp-field-guide/24recombin
 ationandmutation.html7[]4. 
  []
 
-[40
+[42
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
- [41]
+ [43]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
  (./diplomski.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 75.
@@ -1642,20 +1661,26 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.5pt have occurred.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 75.
  ) 
 Here is how much of TeX's memory you used:
- 25424 strings out of 493315
- 449672 string characters out of 6137903
- 583930 words of memory out of 5000000
- 28282 multiletter control sequences out of 15000+600000
- 12955 words of font info for 47 fonts, out of 8000000 for 9000
+ 25464 strings out of 493315
+ 450356 string characters out of 6137903
+ 585127 words of memory out of 5000000
+ 28315 multiletter control sequences out of 15000+600000
+ 13301 words of font info for 48 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  53i,14n,69p,1195b,1646s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
 , replaced by a fixed one
@@ -1678,11 +1703,12 @@ exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 /2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
 2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on diplomski.pdf (42 pages, 873486 bytes).
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on diplomski.pdf (44 pages, 889668 bytes).
 PDF statistics:
- 647 PDF objects out of 1000 (max. 8388607)
- 553 compressed objects within 6 object streams
- 151 named destinations out of 1000 (max. 500000)
+ 695 PDF objects out of 1000 (max. 8388607)
+ 585 compressed objects within 6 object streams
+ 157 named destinations out of 1000 (max. 500000)
  502 words of extra memory for PDF output out of 10000 (max. 10000000)
 

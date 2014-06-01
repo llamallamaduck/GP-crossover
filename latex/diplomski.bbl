@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{kokan}
+Ivan Kokan.
+\newblock Primjena genetskog programiranja za rje{\v s}avanje problema
+  prijanjanja proteina.
+\newblock {\em Diplomski rad}, 2010.
+
 \bibitem{koza}
 John~R. Koza.
 \newblock {\em Genetic Programming: On the Programming of Computers by Natural
