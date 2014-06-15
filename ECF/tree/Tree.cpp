@@ -377,12 +377,22 @@ void Tree::execute(void *result)
 
 void Tree::addNode(Node *node)
 {
+	/*uint size = this->size();
+	uint capacity = this->capacity();
+	if (size == capacity) {
+		this->resize(size + 1);
+	}*/
 	this->push_back(static_cast<NodeP> (node));
 }
 
 
 void Tree::addNode(NodeP node)
 {
+	/*uint size = this->size();
+	uint capacity = this->capacity();
+	if (size == capacity) {
+		this->resize(size + 1);
+	}*/
 	this->push_back(node);
 }
 
@@ -459,6 +469,9 @@ void Tree::update()
  */
 uint Tree::setSize(int iNode)
 {
+	if (iNode >= size()) {
+		return 0;
+	}
 	int myNode = iNode;
 	int mySize = 1;
 	for(int i = 0; i < this->at(myNode)->primitive_->getNumberOfArguments(); i++) {
@@ -476,6 +489,10 @@ uint Tree::setSize(int iNode)
  */
 void Tree::setDepth(int myDepth)
 {
+	if (iNode_ >= size()) {
+		return;
+	}
+
 	int index = iNode_;
 	int nArgs = this->at( iNode_ )->primitive_->getNumberOfArguments();
 	for(int i = 0; i < nArgs; i++) {

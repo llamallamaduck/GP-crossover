@@ -2,7 +2,7 @@
 #include "Tree.h"
 #include "TreeMutSubtree.h"
 #include <stdio.h>
-
+#include <cmath>
 
 namespace Tree
 {
@@ -69,7 +69,10 @@ bool TreeMutSubtree::mutate(GenotypeP gene)
 	Tree* newTree = tree->copy();
 	newTree->clear();
 	newTree->initMinDepth_ = 0;
-	newTree->initMaxDepth_ = copyTree->maxDepth_ - chosenNodeDepth;
+	if (chosenNodeDepth > tree->maxDepth_) {
+		return false;
+	}
+	newTree->initMaxDepth_ = abs((int)tree->maxDepth_ - (int)chosenNodeDepth);
 
 	if(state_->getRandomizer()->getRandomInteger(0, 1) % 2 == 0)
 		newTree->fullBuild(copyTree->primitiveSet_);
