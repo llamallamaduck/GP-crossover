@@ -34,7 +34,7 @@ namespace Tree
 			Tree* female = (Tree*)(gen2.get());
 			Tree* child = (Tree*)(ch.get());
 
-			int type = 2;
+			int type = 1;
 
 			//boolean
 			if (type == 0)
