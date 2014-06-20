@@ -85,4 +85,9 @@ Stjepan Picek; Domagoj Jakobovic;~Marin Golub.
 \newblock Evolving cryptographically sound boolean functions.
 \newblock 2013.
 
+\bibitem{jakobovic}
+Domagoj Jakobovi{\'c}.
+\newblock Raspoređivanje zasnovano na prilagodljivim pravilima.
+\newblock {\em Doktorska disertacija}, 2005.
+
 \end{thebibliography}

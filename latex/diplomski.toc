@@ -46,6 +46,14 @@
 \contentsline {subsubsection}{Multiplekser problem}{38}{subsection.4.2.1}
 \contentsline {subsubsection}{Evolucija kriptografski sigurnih logi\IeC {\v c}kih funkcija}{39}{table.caption.29}
 \contentsline {subsection}{\numberline {4.2.2}Simboli\IeC {\v c}ka regresija}{39}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Programi}{40}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Rezultati}{41}{section.4.3}
-\contentsline {chapter}{\numberline {5}Literatura}{42}{chapter.5}
+\contentsline {subsubsection}{Klasi\IeC {\v c}na simboli\IeC {\v c}ka regresija}{39}{subsection.4.2.2}
+\contentsline {subsubsection}{Evolucija funkcije prioriteta za uporabu unutar pravila raspore\IeC {\dj }ivanja}{40}{table.caption.31}
+\contentsline {subsection}{\numberline {4.2.3}Programi}{41}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Rezultati}{42}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Usporedba u\IeC {\v c}inkovitosti pojedina\IeC {\v c}nih operatora kri\IeC {\v z}anja}{42}{subsection.4.3.1}
+\contentsline {subsubsection}{Logi\IeC {\v c}ke funkcije}{42}{subsection.4.3.1}
+\contentsline {subsubsection}{Simboli\IeC {\v c}ka regresija}{43}{figure.caption.33}
+\contentsline {subsubsection}{Programi}{50}{figure.caption.39}
+\contentsline {subsubsection}{Sveukupni rezultati}{56}{figure.caption.48}
+\contentsline {subsection}{\numberline {4.3.2}Usporedba u\IeC {\v c}inkovitosti kombinacije operatora kri\IeC {\v z}anja}{56}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Literatura}{58}{chapter.5}
