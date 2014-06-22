@@ -5,7 +5,7 @@
 \contentsline {section}{\numberline {2.2}Stablasta jedinka}{6}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Stablo kao program}{6}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Stablo kao logi\IeC {\v c}ki izraz}{7}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Stablo kao matemati\IeC {\v c}ki izraz}{8}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Stablo kao aritmeti\IeC {\v c}ki izraz}{8}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Dobrota jedinke}{8}{section.2.3}
 \contentsline {section}{\numberline {2.4}Operatori selekcije}{9}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Generacijska selekcija}{9}{subsection.2.4.1}
@@ -43,7 +43,7 @@
 \contentsline {section}{\numberline {4.1}ECF}{37}{section.4.1}
 \contentsline {section}{\numberline {4.2}Problemi za ispitivanje}{37}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Logi\IeC {\v c}ke funkcije}{38}{subsection.4.2.1}
-\contentsline {subsubsection}{Multiplekser problem}{38}{subsection.4.2.1}
+\contentsline {subsubsection}{Multipleksor problem}{38}{subsection.4.2.1}
 \contentsline {subsubsection}{Evolucija kriptografski sigurnih logi\IeC {\v c}kih funkcija}{39}{table.caption.29}
 \contentsline {subsection}{\numberline {4.2.2}Simboli\IeC {\v c}ka regresija}{39}{subsection.4.2.2}
 \contentsline {subsubsection}{Klasi\IeC {\v c}na simboli\IeC {\v c}ka regresija}{39}{subsection.4.2.2}
@@ -52,8 +52,11 @@
 \contentsline {section}{\numberline {4.3}Rezultati}{42}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Usporedba u\IeC {\v c}inkovitosti pojedina\IeC {\v c}nih operatora kri\IeC {\v z}anja}{42}{subsection.4.3.1}
 \contentsline {subsubsection}{Logi\IeC {\v c}ke funkcije}{42}{subsection.4.3.1}
-\contentsline {subsubsection}{Simboli\IeC {\v c}ka regresija}{43}{figure.caption.33}
-\contentsline {subsubsection}{Programi}{50}{figure.caption.39}
-\contentsline {subsubsection}{Sveukupni rezultati}{56}{figure.caption.48}
-\contentsline {subsection}{\numberline {4.3.2}Usporedba u\IeC {\v c}inkovitosti kombinacije operatora kri\IeC {\v z}anja}{56}{subsection.4.3.2}
-\contentsline {chapter}{\numberline {5}Literatura}{58}{chapter.5}
+\contentsline {subsubsection}{Simboli\IeC {\v c}ka regresija}{48}{figure.caption.40}
+\contentsline {subsubsection}{Programi}{58}{figure.caption.53}
+\contentsline {subsubsection}{Sveukupni rezultati}{64}{figure.caption.63}
+\contentsline {subsection}{\numberline {4.3.2}Usporedba u\IeC {\v c}inkovitosti kombinacije operatora kri\IeC {\v z}anja}{65}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Zaklju\IeC {\v c}ak}{67}{chapter.5}
+\contentsline {chapter}{\numberline {6}Literatura}{68}{chapter.6}
+\contentsline {chapter}{\numberline {7}Sa\IeC {\v z}etak}{70}{chapter.7}
+\contentsline {chapter}{\numberline {8}Abstract}{71}{chapter.8}

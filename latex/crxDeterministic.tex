@@ -29,7 +29,7 @@ Također, pokazano je da ovo križanje ne podržava prekomjeran rast jedinki tij
 
 \section{Probabilističko križanje}
 
-Kako bi se riješio problem neutralnog križanja koji se pojavio kod determinističkog križanja, u \cite{crxDeter} je predloženo probabilističko križanje (eng. probabilistic functional crossover). Jednako kao i kod determinističkog križanja, za svaki čvor u stablu zapisuje se minimalna i maksimalna vrijednost čvora za podatke iz skupa za učenje (izraz \ref{udaljenost}).
+Kako bi se riješio problem neutralnog križanja koji se pojavio kod determinističkog križanja, u \cite{crxDeter} je predloženo probabilističko križanje (\textit{eng. probabilistic functional crossover}). Jednako kao i kod determinističkog križanja, za svaki čvor u stablu zapisuje se minimalna i maksimalna vrijednost čvora za podatke iz skupa za učenje (izraz \ref{udaljenost}).
 
 Prilikom križanja, nakon što se u prvom stablu nasumično odabere točka križanja izračunava se funkcionalna udaljenost između njega i svakog čvora unutar drugog roditelja (jednako kao i kod determinističkog križanja). Nakon što su dobivene sve moguće udaljenosti, one se normaliziraju prema \ref{norm}:
 
@@ -38,7 +38,7 @@ Prilikom križanja, nakon što se u prvom stablu nasumično odabere točka križ
  \large{ d '_{i,j} = \frac{d_{i,j}}{\sum_{k=1}^{s} d_{i,k}} }
 \end{equation}
  
-Normalizacija je pogodna iz razloga što se s najvećom vjerojatnošću želi odabrati funkcionalno najbliži čvor. Ovako dobivene normalizirane udaljenosti potom se invertiraju i ponovno normaliziraju u odnosne na te invertirane vrijednosti prema \ref{prob}:
+Normalizacija je pogodna iz razloga što se s najvećom vjerojatnošću želi odabrati funkcionalno najbliži čvor. Ovako dobivene normalizirane udaljenosti potom se invertiraju i ponovno normaliziraju u odnosu na te invertirane vrijednosti prema \ref{prob}:
  
  \begin{equation} 
 \label{prob}

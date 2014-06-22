@@ -4,7 +4,7 @@ Ovo križanje razlikuje nekoliko inačica, od kojih je svaka primjenjiva na odre
 Ukoliko jedinka predstavlja logičku funkciju, semantičko križanje definirano je kao:
  \begin{equation} 
 \label{log}
- \large{ (T1 \land T2) \vee   (\overline{TR} \land T2) },
+ \large{ (T1 \land TR) \vee   (\overline{TR} \land T2) },
 \end{equation}
 gdje T1 i T2 predstavljaju roditelje koji sudjeluju u križanju, a TR predstavlja nasumično generirano stablo. Na slici \ref{semBool} prikazana je shema semantičkog križanja za logičke funckije.
 
@@ -19,7 +19,7 @@ gdje T1 i T2 predstavljaju roditelje koji sudjeluju u križanju, a TR predstavlj
      Analogno ovome, za realne funkcije, odnosno, simboličku regresiju, semantičko križanje predstavljeno je sljedećim izrazom:
  \begin{equation} 
 \label{log}
- \large{ (T1 \cdot T2) +   ((1-TR) \cdot T2) }.
+ \large{ (T1 \cdot TR) +   ((1-TR) \cdot T2) }.
 \end{equation}
 Za slučaj kada jedinka predstavlja program, semantičko križanje definira se kao:
  \begin{equation} 
@@ -34,7 +34,7 @@ Glavna prednost ovog semantičkog operatora je činjenica da je, za razliku od n
 
 \subsection{Dosadašnji rezultati}
 
-Eksperimenti u \cite{crxSem} provedeni su nad sve tri vrste problema za koje je ovaj operator definiran; logičke funkcije, simboličku regresiju i programe. Ovo istraživanje je usporedilo genetsko programiranje (\texit{GP}) sa semantičkim genetskim programiranjem (\textit{eng. semantic genetic programming - SGP}) i semantičkim stohastičkim planinskim penjačem (\textit{semantic stochastic hill climber - SSHC}). Također, napravljena je usporedba s algoritmom genetskog programiranja koje se vrti jednako dugo kao i SGP i SSHC za pojedini problem (\textit{GPt}). U nastavku su opisani dobiveni rezultati za pojedinu vrstu problema.
+Eksperimenti u \cite{crxSem} provedeni su nad sve tri vrste problema za koje je ovaj operator definiran; logičke funkcije, simboličku regresiju i programe. Ovo istraživanje je usporedilo genetsko programiranje (\texit{GP}) sa semantičkim genetskim programiranjem (\textit{eng. semantic genetic programming - SGP}) i lokalnom pretragom (\textit{semantic stochastic hill climber - SSHC}). Također, napravljena je usporedba s algoritmom genetskog programiranja koje se vrti jednako dugo kao i SGP i SSHC za pojedini problem (\textit{GPt}). U nastavku su opisani dobiveni rezultati za pojedinu vrstu problema.
 
 \subsubsection{Logičke funkcije}
 

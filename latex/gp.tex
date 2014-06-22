@@ -1,6 +1,6 @@
 Genetsko programiranje podvrsta je genetskog algoritma. Najveća razlika između genetskog programiranja i genetskog algoritma je ta da je kod genetskog algoritma rješenje, odnosno jedinka, nepromjenjive duljine tijekom čitavog procesa evolucije.
 
-U genetskom algoritmu, jedinka je predstavljena nizom informacija, primjerice nizom znamenki ili znakova, dok je kod genetskog programiranja jedinka predstavljena nekim slobodnijim oblikom, najčešće stablastom strukturom. Stablasta struktura pritom može predstavljati izvršivi program ili pak neki logički ili matematički izraz. Osim najčešće stablaste strukture, jedinka genetskog programiranja također može biti predstavljena i linearno, nizom informacija promjenjive duljine (primjerice, u slučaju da jedinka predstavlja program, može biti predstavljena nizom izvršivih instrukcija).
+U genetskom algoritmu jedinka je predstavljena nizom informacija, primjerice nizom znamenki ili znakova, dok je kod genetskog programiranja jedinka predstavljena nekim slobodnijim oblikom, najčešće stablastom strukturom. Stablasta struktura pritom može predstavljati izvršivi program ili pak neki logički ili matematički izraz. Osim najčešće stablaste strukture, jedinka genetskog programiranja također može biti predstavljena i linearno, nizom informacija promjenjive duljine (primjerice, u slučaju da jedinka predstavlja program, može biti predstavljena nizom izvršivih instrukcija).
 
 \section{Tijek algoritma}
 
@@ -8,7 +8,7 @@ Sam algoritam genetskog programiranja oponaša prirodnu evoluciju. Nakon stvaran
 
 Algoritam započinje inicijalizacijom početne populacije rješenja, odnosno jedinki. Nakon stvaranje početne populacije, potrebno je evaluirati svaku zasebnu jedinku. Evaluacija se pritom odnosi na izračun dobrote (\textit{eng. fitness}) jedinke; svojstva koje govori o tome koliko je ona kvalitetno rješenje. Pomoću dobrote, jedinke su međusobno usporedive.
 
-Inicijalizacijom populacije započinje prva generacija algoritma. Na početku svake generacije provjerava se da li je zadovoljen kriterij zaustavljanja algoritma. Ukoliko je, algoritam završava sa svojim izvođenjem, a u suprotnom, sljedeći korak algoritma je selekcija jedinki. 
+Inicijalizacijom populacije započinje prva generacija algoritma. Na početku svake generacije provjerava se da li je zadovoljen kriterij zaustavljanja algoritma. Ukoliko jest, algoritam završava sa svojim izvođenjem, a u suprotnom, sljedeći korak algoritma je selekcija jedinki. 
 Selekcijom se odabiru jedinke koje će preživjeti i sudjelovati u križanju u ulozi roditelja, te jedinka koja će biti zamijenjena njihovim potomkom.
 
 Nakon dobivanja nove jedinke križanjem, ona se mutira s određenom vjerojatnosti mutacije te se izračunava njena nova dobrota.
@@ -24,7 +24,7 @@ Ova tri operatora; selekcija, mutacija i križanje, predstavljaju imitaciju evol
 \end{figure}
 
 \section{Stablasta jedinka}
-Najčešći oblik jedinke korišten u genetskom programiranju je stablo. Razlog zašto je tome tako je činjenica da se stablo može interpretirati na više različitih način. Stablo je pogodno za prikaz programskih jedinki, kao i prikaz jedinki koji predstavljaju neki matematički ili logički izraz.
+Najčešći oblik jedinke korišten u genetskom programiranju je stablo. Razlog zašto je tome tako je činjenica da se stablo može interpretirati na više različitih načina. Stablo je pogodno za prikaz programskih jedinki, kao i prikaz jedinki koji predstavljaju neki matematički ili logički izraz.
 
 
 \subsection{Stablo kao program}
@@ -115,7 +115,7 @@ Osim programa, stablo može reprezentirati i neki logički izraz. Pri tome, neza
 \end{figure}
 
 
-\subsection{Stablo kao matematički izraz}
+\subsection{Stablo kao aritmetički izraz}
 
 Jednako kao i logičke izraze, stablo može predstavljati neki matematički izraz. Kao i u prethodnom slučaju, matematički izraz se iz stabla može izlučiti \textit{in-order} obilaskom. Na slici \ref{matTree} prikazana je jedna takva jedinka.
 

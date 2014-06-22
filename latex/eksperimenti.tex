@@ -9,8 +9,8 @@ Kako bi se pokazala učinkovitost različitih operatora križanja nad različiti
 
 \subsection{Logičke funkcije}
 
-\subsubsection{Multiplekser problem}
-Kako bi se ispitala učinkovitost operatora križanja nad evolucijom logičkih funkcija, provedeni su eksperimenti nad 6 - multiplekser i 11 - multiplekser problemu \cite{koza}. Općenito, cilj $n$ - multiplekser problema je pronaći logičku funkciju koja za danih $n$ bitova (od kojih je određen broj adresnih i podatkovnih bitova) generira odgovarajući ulaz. Na slici \ref{muxPicture} prikazan je 6 - multiplekser, koji za 2 adresna bita na izlaz propušta jedan od 4 podatkovna bita.
+\subsubsection{Multipleksor problem}
+Kako bi se ispitala učinkovitost operatora križanja nad evolucijom logičkih funkcija, provedeni su eksperimenti nad 6 - multipleksor i 11 - multipleksor problemu \cite{koza}. Općenito, cilj $n$ - multipleksor problema je pronaći logičku funkciju koja za danih $n$ bitova (od kojih je određen broj adresnih i podatkovnih bitova) generira odgovarajući ulaz. Na slici \ref{muxPicture} prikazan je 6 - multipleksor, koji za 2 adresna bita na izlaz propušta jedan od 4 podatkovna bita.
 
 \begin{figure}[H]
 \centering
@@ -29,28 +29,28 @@ Kako bi se ispitala učinkovitost operatora križanja nad evolucijom logičkih f
   \draw[|-o] (2,6) node[anchor=south] {$a_1$} -- (2,3.5);
 
   % Rectangle
-  \draw (0,0) rectangle node {Multiplekser} (3,4);
+  \draw (0,0) rectangle node {Multipleksor} (3,4);
 \end{tikzpicture}
 \label{muxPicture}
-\caption{6 - multiplekser}
+\caption{6 - multipleksor}
 \end{figure}
 
 Primjerice, za adresne bitove $a_0=1$ i $a_1=0$, na izlaz bi se pustio drugi po redu podatkovni bit (01 binarno = 1 decimalno), odnosno $d_1$.
 
-U tablici \ref{muxTable} prikazani su korišteni parametri za predstavljene 6 i 11 - multiplekser probleme.
+U tablici \ref{muxTable} prikazani su korišteni parametri za predstavljene 6 i 11 - multipleksor probleme.
 
 \begin{table}[H]
  	\centering
 
     \begin{tabular}{| l | l | l |}
     \hline
-   problem & 6 - multiplekser & 11 - multiplekser \\ \hline
+   problem & 6 - multipleksor & 11 - multipleksor \\ \hline
    skup završnih znakova & $\{a_0, a_1, d_0, d_1, d_2, d_3 \}$ & $\{a_0, a_1, a_2, d_0, d_1, d_2, d_3, d_4, d_5, d_6, d_7 \}$\\ \hline
    skup nezavršnih znakova & $\{ AND, OR, NOT, IF \}$  & $\{ AND, OR, NOT, IF \}$ \\ \hline
    funkcija dobrote & broj netočnih izlaza & broj netočnih izlaza \\ \hline
     \end{tabular}
     
-    \caption{Parametri $n$ multiplekser problema}
+    \caption{Parametri $n$ multipleksor problema}
     \label{muxTable}
 \end{table}
 
@@ -124,7 +124,7 @@ Cilj ovog problema jest pronaći funkciju prioriteta koja će se upotrijebiti un
 
 
 \subsection{Programi}
-Programski problem korišten za evaluaciju operatora križanja bio je problem umjetnog mrava (\textit{eng. Artificial Ant Problem}). Rješenje ovog problema jest evoluirati program koji opisuje ponašanje mrava u nekoj okolini koja sadrži hranu. Dobar program bi trebao biti sposoban pronaći i pojesti što više hrane iz okoline. Jedinka je u ovom slučaju također predstavljena kao stablo. Primjer jedinke prikazan je na slici \ref{ant}. Dobrota jedne ovakve jedinke jednaka je broju pojedene hrane u testnoj, prilikom učenja ne viđenoj okolini.
+Programski problem korišten za evaluaciju operatora križanja bio je problem umjetnog mrava (\textit{eng. Artificial Ant Problem}). Rješenje ovog problema jest evoluirati program koji opisuje ponašanje mrava u nekoj okolini koja sadrži hranu. Dobar program bi trebao biti sposoban pronaći i pojesti što više hrane iz okoline. Jedinka je u ovom slučaju također predstavljena kao stablo. Primjer jedinke prikazan je na slici \ref{ant}. Dobrota jedne ovakve jedinke jednaka je broju pojedene hrane u ispitnoj, prilikom učenja neviđenoj okolini.
 
 \begin{figure}[H]
 	\centering
@@ -168,43 +168,53 @@ Završni znakovi koji grade ovu jedinku su:
 
 \end{enumerate}
 
-%Pseudokod koji predstavlja ponašane jedinke prikazane na slici \ref{ant} prikazan je na \ref{pseudokod}.
-
-%\begin{algorith m}
-%\eIf {food ahead} {
-%	move forward;
-%} {
-%	turn right;\\
-%	\eIf {food ahead} {
-%		move forward;
-%	} {
-%		turn left;
-%	}
-%}
-
-%	\caption{Pseudokod jedinke prikazane na slici \ref{ant}}
-%	\label{pseudokod}
-%	\centering
-%\end{algorithm}
-
 
 \section{Rezultati}
-\subsection{Usporedba učinkovitosti pojedinačnih operatora križanja}
+
 U ovom poglavlju dan je pregled provedenih eksperimenata u sklopu ovog rada. Za svaki problem dani su parametri izvođenja pojedinog eksperimenta, te su grafički i opisno prikazani njegovi rezultati.
 
 Valja napomenuti kako se semantičko križanje koristilo u kombinaciji s jednostavnim križanjem s omjerom vjerojatnosti semantičko križanje : jednostavno križanje = 1 : 9. Razlog ovome je to što se nakon izvršavanja semantičkog križanja nije provodilo pojednostavljivanje stabala što je dovodilo do eksponencijalnog rasta stabala jedinki.
+
+\subsection{Usporedba učinkovitosti pojedinačnih operatora križanja}
+
+Ovo potpoglavlje prikazuje razliku učinkovitosti operatora pri isključivom korištenju jednog operatora.
+
 \subsubsection{Logičke funkcije}
+
+Za logičke funkcije, provedeni su eksperimenti koji su međusobno usporedili jednostavno križanje, križanje s jednom točkom prekida, križanje s očuvanjem konteksta, križanje prvedno s obzirom na veličinu, uniformno, homologno i semantičko križanje.
+
 \textbf{6 - multipleksor}
 
-Na slici \ref{muxbox} prikazani su rezultati usporedbe operatora nad problemom 6 - multipleksor. Za ovaj eksperiment korišteni su konstanti parametri:
+Na slici \ref{muxbox} i u tablici \ref{mux6table} prikazani su rezultati usporedbe operatora nad problemom 6 - multipleksor. Za ovaj eksperiment korišteni su konstanti parametri:
 \begin{itemize}
 \item{veličina populacije = 400}
 \item{broj generacija = 15}
 \item{faktor mutacije = 0.4}
+\item{nezavršni znakovi: \textit{AND, OR, NOT, IF}}
+\item{završni znakovi: \textit{$a_0, a_1, d_0, d_1, d_2, d_3$}}
 \end{itemize}
 
 
 Razlog uporabe ovako malog broja generacije jest činjenica da je ovaj problem donekle jednostavan, te za veći broj generacija u većini slučajeva svaki operator uspije pronaći točno rješenje ovog problema. Kako bi usporedba učinkovitosti operatora bila moguća, evolucija je prekinuta na petnaestoj generaciji.
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator}  & \textbf{prosječan broj pogrešaka} & \textbf{rang}\\ \hline
+    simple & 3.9 & 1\\ \hline
+    one point & 5.36666 & 6\\ \hline
+    context preserved & 4.83333 & 5\\ \hline
+    size fair & 4.6 & 4\\ \hline
+    uniform & 4.2 & 2\\ \hline
+    homologous & 4.3 & 3\\ \hline
+    semantic & 13.96666 & 7\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom 6 - multipleksor}
+    \label{mux6table}
+\end{table}
 
 Iz rezultata je uočljivo kako je kombinacija semantičkog i jednostavnog križanja u omjeru 1:9 daleko sporije konvergirala točnom rješenju nego ostali operatori. Razlog ovome je vjerojatno činjenica što ovaj operator spaja dvije roditeljske jedinke u novu, čime se u biti ne modificira ponašanje dobre jedinke, već udvostručava donekle dobro ponašanje dvije dobre jedinke.
 
@@ -217,28 +227,167 @@ Iz rezultata je uočljivo kako je kombinacija semantičkog i jednostavnog križa
 
 \textbf{11 - multipleksor}
 
+Na slici \ref{mux11box} i u tablici \ref{mux11table} prikazani su rezultati usporedbe operatora nad problemom 11 - multipleksor. Za ovaj eksperiment korišteni su konstanti parametri:
+\begin{itemize}
+\item{veličina populacije = 200}
+\item{broj evaluacija = 8000}
+\item{faktor mutacije = 0.3}
+\item{nezavršni znakovi: \textit{AND, OR, NOT, IF}}
+\item{završni znakovi: \textit{$a_0, a_1, a_2, d_0, d_1, d_2, d_3, d_4, d_5, d_6, d_7$}}
+\end{itemize}
+
+Iz rezultata je vidljivo kako se u ovom slučaju kao najbolje križanje pokazalo jednostavno. Jednako kao i za prethodni 6 - multipleksor problem, semantičko križanje je postiglo daleko najgore rezultate. Iz ovoga se može zaključiti kako semantičko križanje zasigurno nije odgovarajuće križanje za evoluiranje funkcije multipleksora. Ostali operatori postigli su sasvim zadovoljavajuće rezultate, s prosječnim brojem pogrešaka ne prerazličitim od onog kod jednostavnog križanja.
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječan broj pogrešaka} & \textbf{rang}\\ \hline
+    simple & 427.333333 &1\\ \hline
+    one point & 486.9666667 & 6\\ \hline
+    context preserved & 461.7 & 4\\ \hline
+    size fair & 431.7666667 & 2\\ \hline
+    uniform & 459.4 & 3\\ \hline
+    homologous & 476.533333 & 5\\ \hline
+    semantic & 727.133333 & 7\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom 11 - multipleksor}
+    \label{mux11table}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0cm 4cm 0cm 0cm, scale=0.6]{./slike/boxPlots/mux11.eps}
+	\caption{Usporedba učinkovitosti pojedinačnih operatora križanja na problem 11 - multipleksora}
+	\label{mux11box}
+\end{figure}
 
 \textbf{Evolucija kriptografski sigurnih logičkih funkcija - inačica 1}
 
+Inačice ovog eksperimenta razlikuju se u izračunu funkcije dobrote - u ovom slučaju, funkcija dobrote u obzir uzima balans i nelinearnost evouirane funkcije. Za ovaj eksperiment korišteni su konstanti parametri:
+\begin{itemize}
+\item{veličina populacije = 250}
+\item{broj evaluacija = 3750}
+\item{faktor mutacije = 0.3}
+\item{nezavršni znakovi: \textit{AND OR NOT IF XOR}}
+\item{završni znakovi: \textit{$v_0, v_1, v_2, v_3, v_4, v_5, v_6, v_7$}}
+\end{itemize}
+
+Na slici \ref{bool1box} i u tablici \ref{bool1table} prikazani su rezultati provedenog eksperimenta. Vidljivo je kako je najbolje rezultate postiglo semantičko križanje, odnosno njegova kombinacija s jednostavnim križanjem u omjeru 1:9.
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječna dobrota} & \textbf{rang}\\ \hline
+    simple & 110.7628 & 2\\ \hline
+    one point & 110.16325 & 6\\ \hline
+    context preserved & 110.36455 & 5\\ \hline
+    size fair & 110.5621 & 4\\ \hline
+    uniform & 109.66655 & 7\\ \hline
+    homologous & 110.76225 & 3\\ \hline
+    semantic & 113.03155 & 1\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom evolucije sigurnih logičkih funkcija inačice 1}
+    \label{bool1table}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0cm 4cm 0cm 0cm, scale=0.5]{./slike/boxPlots/bool1.eps}
+	\caption{Usporedba učinkovitosti pojedinačnih operatora križanja na problem evolucije kriptografski sigurnih logičkih funkcija inačice 1}
+	\label{bool1box}
+\end{figure}
 
 
 \textbf{Evolucija kriptografski sigurnih logičkih funkcija - inačica 4}
 
+U izračunu dobrote ove inačice eksperimenta, funkcija dobrote u obzir uzima transparentnost i balansiranost evoluirane funkcije. Jednako kao i za prethodnu inačicu, za  ovaj eksperiment korišteni su konstanti parametri:
+\begin{itemize}
+\item{veličina populacije = 250}
+\item{broj evaluacija = 3750}
+\item{faktor mutacije = 0.3}
+\item{nezavršni znakovi: \textit{AND, OR, NOT, IF, XOR}}
+\item{završni znakovi: \textit{$v_0, v_1, v_2, v_3, v_4, v_5, v_6, v_7$}}
+\end{itemize}
+
+Na slici \ref{bool4box} i u tablici \ref{bool4table} prikazani su rezultati provedenog eksperimenta. Vidljivo je kako je najbolje rezultate postiglo semantičko križanje, odnosno njegova kombinacija s jednostavnim križanjem u omjeru 1:9.
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječna dobrota} & \textbf{rang}\\ \hline
+    simple & 1.155601 & 2\\ \hline
+    one point & 1.1233465 & 7\\ \hline
+    context preserved & 1.135981 & 5\\ \hline
+    size fair & 1.1428195 & 3\\ \hline
+    uniform & 1.1313985 & 6\\ \hline
+    homologous & 1.1318275 & 4\\ \hline
+    semantic & 1.1785795 & 1\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom evolucije sigurnih logičkih funkcija inačice 4}
+    \label{bool4table}
+\end{table}
+
+
+Iz prethodna dva eksperimenta može se zaključiti kako je za evoluciju kriptografski sigurnih funkcija najučinkovitije semantičko križanje u kombinaciji s jednostavnim u omjeru od 1:9. Osim toga, za obje inačice križanje s jednom točkom prekida i homologno križanje u obje inačice se pokazalo podjednako neučinkovito.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0cm 4cm 0cm 0cm, scale=0.6]{./slike/boxPlots/bool4.eps}
+	\caption{Usporedba učinkovitosti pojedinačnih operatora križanja na problem evolucije kriptografski sigurnih logičkih funkcija inačice 4}
+	\label{bool4box}
+\end{figure}
+
+
 \subsubsection{Simbolička regresija}
+
+Za probleme simboličke regresije, provedeni su eksperimenti koji su međusobno usporedili jednostavno križanje, križanje s jednom točkom prekida, križanje s očuvanjem konteksta, križanje prvedno s obzirom na veličinu, uniformno, homologno, semantičko, determinističko i probabilističko križanje.
 
 \textbf{Klasična simbolička regresija}
 
 
 Na grafovima u nastavku prikazana je učinkovitost pojedinih operatora križanja na probleme klasične simboličke regresije predstavljene na početku poglavlja. Svaki eksperiment pokrenut je 30 puta. U ovom slučaju, potrebno je minimizirati funkciju dobrote koja se računa kao srednja kvadratna pogreška. U svim slučajevima, probabilističko križanje pokazalo se kao daleko najlošije - dobrota jedinki dobivenih ovim križanjem redovito je odskakala od ostalih za jedan red veličine. Radi toga, na grafovima u nastavku nije uključeno to križanje iz razloga što bi pokvarilo njihovu razlučivost.
 
-Na slici \ref{symb1box} prikazana je učinkovitost operatora križanja prilikom rješavanja prvog problema simboličke regresije (symb1). Za ovaj eksperiment korišteni su konstanti parametri:
+Na slici \ref{symb1box} i u tablici \ref{symb1table} prikazana je učinkovitost operatora križanja prilikom rješavanja prvog problema simboličke regresije (symb1). Za ovaj eksperiment korišteni su konstanti parametri:
 \begin{itemize}
 \item{veličina populacije = 400}
 \item{broj generacija = 200}
 \item{faktor mutacije = 0.5}
+\item{nezavršni znakovi: \textit{log, +, -, *}}
+\item{završni znakovi: \textit{x, 1}}
 \end{itemize}
 
 Vidljivo je kako je za ovaj problem daleko najučinkovitiji bio operator semantičkog križanja, odnosno kombinacije semantičkog i jednostavnog križanja u omjeru 1:9. 
+
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječan mse} & \textbf{rang}\\ \hline
+    simple & 1.1640448 & 2\\ \hline
+    one point & 1.51229653 & 5\\ \hline
+    context preserved & 1.24346859 & 4\\ \hline
+    size fair & 1.20032193 & 3\\ \hline
+    uniform & 1.6424551 & 7\\ \hline
+    homologous & 1.61777947 & 6\\ \hline
+    deterministic & 2.05143647 & 8\\ \hline
+    probabilistic & 18.9694257 & 9\\ \hline
+    semantic & 0.15859317 & 1\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom simboličke regresije symb1}
+    \label{symb1table}
+\end{table}
 
 \begin{figure}[H]
 	\centering
@@ -248,6 +397,39 @@ Vidljivo je kako je za ovaj problem daleko najučinkovitiji bio operator semanti
 \end{figure}
 
 
+
+Na slici \ref{symb2box} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb2. Za ovaj eksperiment korišteni su konstanti parametri:
+\begin{itemize}
+\item{veličina populacije = 100}
+\item{broj generacija = 50}
+\item{faktor mutacije = 0.2}
+\item{nezavršni znakovi: \textit{sin, *, +, -, /}}
+\item{završni znakovi: \textit{x, y}}
+\end{itemize} 
+
+Na slici \ref{symb2box} i u tablici \ref{symb2table} jednostavno križanje, križanje pravedno s obzirom na veličinu i kombinacija semantičkog i jednostavnog križanja postigli su najbolje rezultate. Ostali operatori su se pokazali kao znatno lošiji prilikom rješavanja ovog problema.
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječan mse}  & \textbf{rang}\\ \hline
+    simple & 0.63482333 & 2\\ \hline
+    one point & 6.42120233 & 8\\ \hline
+    context preserved & 3.91961233 & 6\\ \hline
+    size fair & 2.00416533 & 3\\ \hline
+    uniform & 5.22795233 & 7\\ \hline
+    homologous & 3.87709267 & 4\\ \hline
+    deterministic &3.877177 & 5\\ \hline
+    probabilistic & 10.622653 & 9\\ \hline
+    semantic & 0.35 & 1\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom simboličke regresije symb2}
+    \label{symb2table}
+\end{table}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim=0cm 4cm 0cm 0cm, scale=0.6]{./slike/boxPlots/symb2.eps}
@@ -255,16 +437,26 @@ Vidljivo je kako je za ovaj problem daleko najučinkovitiji bio operator semanti
 	\label{symb2box}
 \end{figure}
 
+\begin{table}[H]
+ 	\centering
 
-Na slici \ref{symb2box} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb2. Za ovaj eksperiment korišteni su konstanti parametri:
-\begin{itemize}
-\item{veličina populacije = 100}
-\item{broj generacija = 50}
-\item{faktor mutacije = 0.2}
-\end{itemize} 
-
-Na slici \ref{symb2box} jednostavno križanje, križanje pravedno s obzirom na veličinu i kombinacija semantičkog i jednostavnog križanja postigli su najbolje rezultate. Ostali operatori su se pokazali kao znatno lošiji prilikom rješavanja ovog problema.
-
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječan mse} & \textbf{rang}\\ \hline
+    simple & $5.85 \cdot 10^{-16}$ & 4\\ \hline
+    one point & $7.25 \cdot 10^{-16}$ & 2\\ \hline
+    context preserved & $7.51 \cdot 10^{-16}$ & 1 \\ \hline
+    size fair & $6.92 \cdot 10^{-16}$ & 5\\ \hline
+    uniform & $9.84 \cdot 10^{-4}$ & 6\\ \hline
+    homologous & $6.59 \cdot 10^{-16}$ & 3\\ \hline
+    deterministic & 0.00506083 & 7\\ \hline
+    probabilistic & 2.115236 & 9\\ \hline
+    semantic & 0.43794267 & 8\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom simboličke regresije symb3}
+    \label{symb3table}
+\end{table}
 
 \begin{figure}[H]
 	\centering
@@ -273,15 +465,39 @@ Na slici \ref{symb2box} jednostavno križanje, križanje pravedno s obzirom na v
 	\label{symb3box}
 \end{figure}
 
-Na slici \ref{symb3box} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb3. Za ovaj eksperiment korišteni su konstanti parametri:
+Na slici \ref{symb3box} i u tablici \ref{symb3table} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb3. Za ovaj eksperiment korišteni su konstanti parametri:
 \begin{itemize}
 \item{veličina populacije = 400}
 \item{broj generacija = 50}
 \item{faktor mutacije = 0.3}
+\item{nezavršni znakovi: \textit{sin, cos, *, +, -, /}}
+\item{završni znakovi: \textit{x, y, 2}}
 \end{itemize} 
 
 Vidljivo je kako je ovaj problem ispao prilično lagan za sve operatore - jedini operator koji je bio nešto neučinkovitiji bio je semantički operator križanja (odnosno, njegova kombinacija s jednostavnim križanjem u omjeru 1:9) koji u nekoliko pokretanja nije uspio pronaći točno rješenje.
 
+
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječan mse} & \textbf{rang}\\ \hline
+    simple & 2.41714067 & 1\\ \hline
+    one point & 5.04846467 & 5\\ \hline
+    context preserved & 4.18721767 & 3\\ \hline
+    size fair & 4.65854867 & 4\\ \hline
+    uniform & 6.54341 & 8\\ \hline
+    homologous & 5.10899367 & 7\\ \hline
+    deterministic & 5.08627433 & 6\\ \hline
+    probabilistic & 12.6361467 & 9\\ \hline
+    semantic & 3.01135367 & 2\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom simboličke regresije symb4}
+    \label{symb4table}
+\end{table}
 
 \begin{figure}[H]
 	\centering
@@ -290,15 +506,37 @@ Vidljivo je kako je ovaj problem ispao prilično lagan za sve operatore - jedini
 	\label{symb4box}
 \end{figure}
 
-Na slici \ref{symb4box} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb4. Za ovaj eksperiment korišteni su konstanti parametri:
+Na slici \ref{symb4box} i u tablici \ref{symb4table} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb4. Za ovaj eksperiment korišteni su konstanti parametri:
 \begin{itemize}
 \item{veličina populacije = 500}
 \item{broj generacija = 200}
 \item{faktor mutacije = 0.2}
+\item{nezavršni znakovi: \textit{sin, *, +, -, /}}
+\item{završni znakovi: \textit{x, y, 1}}
 \end{itemize} 
 
 Vidiljivo je kako su statistički najbolji operatori jednostavno križanje i kombinacija semantičkog i jednostavnog križanja u omjeru 1:9. 
 
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječan mse} & \textbf{rang}\\ \hline
+    simple & 0 & 1\\ \hline
+    one point & 0.45233554 & 6\\ \hline
+    context preserved & 0.4976853 & 7\\ \hline
+    size fair & 0.1873526 & 5\\ \hline
+    uniform & 0.82343434 & 8\\ \hline
+    homologous & 0.13171603 & 2\\ \hline
+    deterministic & 0.16171175 & 4\\ \hline
+    probabilistic & 6.62850393 & 9\\ \hline
+    semantic & 0.13773753 & 3\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom simboličke regresije symb5}
+    \label{symb5table}
+\end{table}
 
 \begin{figure}[H]
 	\centering
@@ -308,29 +546,53 @@ Vidiljivo je kako su statistički najbolji operatori jednostavno križanje i kom
 \end{figure}
 
 
-Na slici \ref{symb5box} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb5. Za ovaj eksperiment korišteni su konstanti parametri:
+Na slici \ref{symb5box} i u tablici \ref{symb5table} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb5. Za ovaj eksperiment korišteni su konstanti parametri:
 \begin{itemize}
 \item{veličina populacije = 500}
 \item{broj generacija = 200}
 \item{faktor mutacije = 0.4}
+\item{nezavršni znakovi: \textit{+, -, *, /}}
+\item{završni znakovi: \textit{x, y, 2, 8}}
 \end{itemize} 
 
 U prosjeku, rješenje ovog problema uspješno su pronašli svi operatori. Operatori uniformnog križanja, križanja s jednom točkom prekida i križanja s očuvanjem konteksta pritom su u nekim slučajevima dali nešto lošija rješenja.
 
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječan mse} & \textbf{rang}\\ \hline
+    simple & 30.74722 & 3\\ \hline
+    one point & 85.10854 & 8\\ \hline
+    context preserved & 62.8004967 & 7\\ \hline
+    size fair & 27.2267493 & 2\\ \hline
+    uniform & 51.4587133 & 5\\ \hline
+    homologous & 59.151755 & 6\\ \hline
+    deterministic & 46.65838 & 4\\ \hline
+    probabilistic & 1078.74643 & 9\\ \hline
+    semantic & 15.9178143 & 1\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom simboličke regresije symb6}
+    \label{symb6table}
+\end{table}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[trim=0cm 4cm 0cm 0cm, scale=0.6]{./slike/boxPlots/symb6.eps}
+	\includegraphics[trim=0cm 4cm 0cm 0cm, scale=0.5]{./slike/boxPlots/symb6.eps}
 	\caption{Usporedba učinkovitosti pojedinačnih operatora križanja na problem simboličke regresije symb6}
 	\label{symb6box}
 \end{figure}
 
 
-Na slici \ref{symb6box} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb6. Za ovaj eksperiment korišteni su konstanti parametri:
+Na slici \ref{symb6box} i u tablici \ref{symb6table} prikazana je usporedba učinkovitosti operatora na problemu simboličke regresije symb6. Za ovaj eksperiment korišteni su konstanti parametri:
 \begin{itemize}
 \item{veličina populacije = 300}
 \item{broj generacija = 200}
 \item{faktor mutacije = 0.4}
+\item{nezavršni znakovi: \textit{ +, -, *, /}}
+\item{završni znakovi: \textit{x, y, 2, 5}}
 \end{itemize} 
 
 Za ovaj problem, najbolje se pokazalo semantičko križanje u kombinaciji s jednostavnim križanjem, koje je u prosjeku uvijek našlo točno rješenje.
@@ -343,18 +605,49 @@ U svim prethodno prikazanim rezultatima, najčešće se kao najučinkovitiji ope
 \textbf{Evolucija funkcije prioriteta za uporabu unutar pravila raspoređivanja}
 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0cm 4cm 0cm 0cm, scale=0.6]{./slike/boxPlots/symb6.eps}
+	\caption{Usporedba učinkovitosti pojedinačnih operatora križanja na problem simboličke regresije symb6}
+	\label{symb6box}
+\end{figure}
+
 
 \subsubsection{Programi}
+
+Za programe, provedeni su eksperimenti koji su međusobno usporedili jednostavno križanje, križanje s jednom točkom prekida, križanje s očuvanjem konteksta, križanje prvedno s obzirom na veličinu, uniformno, homologno i semantičko križanje.
+
 \textbf{Problem umjetnog mrava}
 
-Na slici \ref{antbox} prikazana je usporedba učinkovitosti operatora križanja na rješavanje problema umjetnoga mrava. Prikazane vrijednosti su vrijednosti na skupu za učenje, a konstantni parametri korišteni za ovaj eksperiment su:
+Na slici \ref{antbox} i u tablici \ref{anttable} prikazana je usporedba učinkovitosti operatora križanja na rješavanje problema umjetnoga mrava. Prikazane vrijednosti su vrijednosti na skupu za učenje, a konstantni parametri korišteni za ovaj eksperiment su:
 \begin{itemize}
 \item{veličina populacije = 400}
 \item{broj generacija = 100}
 \item{faktor mutacije = 0.4}
+\item{nezavršni znakovi: \textit{Prog2, Prog3, IfFoodAhead}}
+\item{završni znakovi: \textit{left, right, move}}
 \end{itemize} 
 
 Budući da je cilj algoritma maksimizirati funkciju dobrote (koja se računa kao količina pojedene hrane unutar okoline za učenje), na grafu \ref{antbox} vidljivo je kako je najučinkovitiji operator za tu zadaću jednostavno križanje. Odmah nakon njega dolazi kombinacija semantičkog i jednostavnog križanja u omjeru 1:9 te križanje pravedno s obzirom na veličinu. Križanje s jednom točkom prekida pokazalo se kao najgore u ovom slučaju.
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječna količina pojedene hrane} & \textbf{rang}\\ \hline
+    simple & 70.3 & 1\\ \hline
+    one point & 59.4 & 7\\ \hline
+    context preserved & 61.8 & 5\\ \hline
+    size fair & 66.4 & 3\\ \hline
+    uniform & 61.4 & 6\\ \hline
+    homologous & 62.4 & 4\\ \hline
+    semantic & 68 & 2\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti količine pojedene hrane za problem umjetnog mrava}
+    \label{anttable}
+\end{table}
 
 \begin{figure}[H]
 	\centering
@@ -433,7 +726,7 @@ Općenita usporedba svih pojedinačnih operatora križanja prikazana je na tabli
 
     \begin{tabular}{| l | l | l |}
     \hline
-   problem & 6 - multiplekser & 11 - multiplekser \\ \hline
+   problem & 6 - multipleksor & 11 - multipleksor \\ \hline
    skup završnih znakova & $\{a_0, a_1, d_0, d_1, d_2, d_3 \}$ & $\{a_0, a_1, a_2, d_0, d_1, d_2, d_3, d_4, d_5, d_6, d_7 \}$\\ \hline
    skup nezavršnih znakova & $\{ AND, OR, NOT, IF \}$  & $\{ AND, OR, NOT, IF \}$ \\ \hline
    funkcija dobrote & broj netočnih izlaza & broj netočnih izlaza \\ \hline
