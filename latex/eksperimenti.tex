@@ -171,13 +171,13 @@ Završni znakovi koji grade ovu jedinku su:
 
 \section{Rezultati}
 
-U ovom poglavlju dan je pregled provedenih eksperimenata u sklopu ovog rada. Za svaki problem dani su parametri izvođenja pojedinog eksperimenta, te su grafički i opisno prikazani njegovi rezultati.
+U ovom poglavlju dan je pregled provedenih eksperimenata u sklopu ovog rada. Za svaki problem dani su parametri izvođenja pojedinog eksperimenta, te su grafički i opisno prikazani njegovi rezultati. Za sve eksperimente, jednaka su dva parametra - selekcija je turnirnska s veličinom turira 3, a korištena mutacija je mutacija podstabala (\textit{eng. subtree mutation}) kod koje se nasumično odabrano podstablo jedinke mijenja nasumično generiranim, novim podstablom. Svaki eksperiment, ukoliko nije drugačije naznačeno, proveden je 30 puta.
 
 Valja napomenuti kako se semantičko križanje koristilo u kombinaciji s jednostavnim križanjem s omjerom vjerojatnosti semantičko križanje : jednostavno križanje = 1 : 9. Razlog ovome je to što se nakon izvršavanja semantičkog križanja nije provodilo pojednostavljivanje stabala što je dovodilo do eksponencijalnog rasta stabala jedinki.
 
 \subsection{Usporedba učinkovitosti pojedinačnih operatora križanja}
 
-Ovo potpoglavlje prikazuje razliku učinkovitosti operatora pri isključivom korištenju jednog operatora.
+Ovo potpoglavlje prikazuje razliku učinkovitosti operatora u slučaju isključivog korištenja jednog operatora. Svaki eksperiment podrazumijevao je da su svi parametri, osim operatora križanja nepromijenjivi za svaku iteraciju.
 
 \subsubsection{Logičke funkcije}
 
@@ -266,7 +266,7 @@ Iz rezultata je vidljivo kako se u ovom slučaju kao najbolje križanje pokazalo
 
 \textbf{Evolucija kriptografski sigurnih logičkih funkcija - inačica 1}
 
-Inačice ovog eksperimenta razlikuju se u izračunu funkcije dobrote - u ovom slučaju, funkcija dobrote u obzir uzima balans i nelinearnost evouirane funkcije. Za ovaj eksperiment korišteni su konstanti parametri:
+Inačice ovog eksperimenta razlikuju se u izračunu funkcije dobrote - u ovom slučaju, funkcija dobrote u obzir uzima balans i nelinearnost evouirane funkcije. Radi duljine izvršavanja evolucije ovakvih funkcija, za svaki operator, eksperiment je pokrenut 20 puta. Za ovaj eksperiment korišteni su konstanti parametri:
 \begin{itemize}
 \item{veličina populacije = 250}
 \item{broj evaluacija = 3750}
@@ -306,7 +306,7 @@ Na slici \ref{bool1box} i u tablici \ref{bool1table} prikazani su rezultati prov
 
 \textbf{Evolucija kriptografski sigurnih logičkih funkcija - inačica 4}
 
-U izračunu dobrote ove inačice eksperimenta, funkcija dobrote u obzir uzima transparentnost i balansiranost evoluirane funkcije. Jednako kao i za prethodnu inačicu, za  ovaj eksperiment korišteni su konstanti parametri:
+U izračunu dobrote ove inačice eksperimenta, funkcija dobrote u obzir uzima transparentnost i balansiranost evoluirane funkcije. Jednako kao i za prethodnu inačicu, svaki eksperiment za ovaj problem proveden je 20 puta. Osim toga, za  ovaj eksperiment također su korišteni konstanti parametri:
 \begin{itemize}
 \item{veličina populacije = 250}
 \item{broj evaluacija = 3750}
@@ -354,7 +354,7 @@ Za probleme simboličke regresije, provedeni su eksperimenti koji su međusobno 
 \textbf{Klasična simbolička regresija}
 
 
-Na grafovima u nastavku prikazana je učinkovitost pojedinih operatora križanja na probleme klasične simboličke regresije predstavljene na početku poglavlja. Svaki eksperiment pokrenut je 30 puta. U ovom slučaju, potrebno je minimizirati funkciju dobrote koja se računa kao srednja kvadratna pogreška. U svim slučajevima, probabilističko križanje pokazalo se kao daleko najlošije - dobrota jedinki dobivenih ovim križanjem redovito je odskakala od ostalih za jedan red veličine. Radi toga, na grafovima u nastavku nije uključeno to križanje iz razloga što bi pokvarilo njihovu razlučivost.
+Na grafovima u nastavku prikazana je učinkovitost pojedinih operatora križanja na probleme klasične simboličke regresije predstavljene na početku poglavlja. U ovom slučaju, potrebno je minimizirati funkciju dobrote koja se računa kao srednja kvadratna pogreška. U svim slučajevima, probabilističko križanje pokazalo se kao daleko najlošije - dobrota jedinki dobivenih ovim križanjem redovito je odskakala od ostalih za jedan red veličine. Radi toga, na grafovima u nastavku nije uključeno to križanje iz razloga što bi pokvarilo njihovu razlučivost.
 
 Na slici \ref{symb1box} i u tablici \ref{symb1table} prikazana je učinkovitost operatora križanja prilikom rješavanja prvog problema simboličke regresije (symb1). Za ovaj eksperiment korišteni su konstanti parametri:
 \begin{itemize}
@@ -604,14 +604,44 @@ U svim prethodno prikazanim rezultatima, najčešće se kao najučinkovitiji ope
 
 \textbf{Evolucija funkcije prioriteta za uporabu unutar pravila raspoređivanja}
 
+Na slici \ref{iprojektBox} u tablici \ref{iprojekttable} prikazani su rezultati usporedbe operatora na pronalaženje funkcije prioriteta za uporabu unutar pravila raspoređivanja. Za ovaj eksperiment korišteni su konstanti parametri:
+\begin{itemize}
+\item{veličina populacije = 500}
+\item{broj generacija = 30}
+\item{faktor mutacije = 0.3}
+\item{nezavršni znakovi: \textit{+, -, *, /, pos}}
+\item{završni znakovi: \textit{pt, dd, w, SL, pmin, pavg, PAT, MR, age}}
+\end{itemize} 
+
+\begin{table}[H]
+ 	\centering
+
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{operator} & \textbf{prosječan mse} & \textbf{rang}\\ \hline
+    simple & 16.3648967 & 7\\ \hline
+    one point & 16.2887833 & 5\\ \hline
+    context preserved & 16.1714033 & 2\\ \hline
+    size fair & 16.2214467 & 3\\ \hline
+    uniform & 16.31225 & 6\\ \hline
+    homologous & 16.2229233 & 4\\ \hline
+    deterministic & 16.4651 & 8\\ \hline
+    probabilistic & 21.3100733 & 9\\ \hline
+    semantic & 16.15244 & 1\\ \hline
+    \end{tabular}
+    
+    \caption{Prosječne vrijednosti broja pogrešaka dobivene usporedbom operatora nad problemom pronalaska funkcije prioriteta za uporabu unutar pravila raspoređivanja}
+    \label{iprojekttable}
+\end{table}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[trim=0cm 4cm 0cm 0cm, scale=0.6]{./slike/boxPlots/symb6.eps}
-	\caption{Usporedba učinkovitosti pojedinačnih operatora križanja na problem simboličke regresije symb6}
-	\label{symb6box}
+	\includegraphics[trim=2cm 4cm 2cm 3cm, scale=0.6]{./slike/boxPlots/iprojekt.eps}
+	\caption{Usporedba učinkovitosti pojedinačnih operatora križanja nad problemom pronalaska funkcije prioriteta za uporabu unutar pravila raspoređivanja}
+	\label{iprojektBox}
 \end{figure}
 
+Iz rezultata je vidljivo kako se ponovno kao najbolji operator križanja pokazala kombinacija semantičkog i jednostavnog. Isto kao i za prethodne slučajeve, probabilističko križanje postiglo je znatno lošije rezultate od ostalih operatora. Zanimljivo je također primijetiti kako je jednostavni operator križanja bio jedan od neuspješnijih, iako je u kombinaciji sa semantičkim postigao najbolje rješenje.
 
 \subsubsection{Programi}
 
@@ -726,16 +756,25 @@ Općenita usporedba svih pojedinačnih operatora križanja prikazana je na tabli
 
     \begin{tabular}{| l | l | l |}
     \hline
-   problem & 6 - multipleksor & 11 - multipleksor \\ \hline
-   skup završnih znakova & $\{a_0, a_1, d_0, d_1, d_2, d_3 \}$ & $\{a_0, a_1, a_2, d_0, d_1, d_2, d_3, d_4, d_5, d_6, d_7 \}$\\ \hline
-   skup nezavršnih znakova & $\{ AND, OR, NOT, IF \}$  & $\{ AND, OR, NOT, IF \}$ \\ \hline
-   funkcija dobrote & broj netočnih izlaza & broj netočnih izlaza \\ \hline
+   \textbf{operator} & \textbf{prosječan rang} & \textbf{ukupan rang} \\ \hline
+   simple & 2.25 & 1\\ \hline
+   one point & 5.916667 & 6\\ \hline
+   context preserved & 4.5 & 5 \\ \hline
+   size fair & 3.416667 & 3\\ \hline
+   uniform & 5.91667 & 6\\ \hline
+   homologous & 4.25 & 4\\ \hline
+   deterministic & 6 & 7\\ \hline
+   probabilistic & 9 & 8\\ \hline
+   semantic & 2.916667 & 2\\ \hline
+
+ 
     \end{tabular}
     
     \caption{Prosječan rang učinkovitosti operatora križanja za sve zadane probleme}
     \label{overAllTable}
 \end{table}
 
+U većini slučajeva, najučinkovitiji operator ispao je jednostavni operator križanja. Skoro pa jednako učinkovita pokazala se njegova kombinacija sa semantičkim križanjem. Na trećem mjestu nalazi se križanje pravedno s obzirom na veličinu, koje slijedi homologno križanje. Zanimljivo je primjetiti kako je križanje s jednom točkom prekida ispalo dosta loše, unatoč njegovoj širokoj upotrijebljivosti na rješavanje raznih problema genetskog programiranja. Probabilističko križanje u svim se eksperimentima pokazalo kao najlošije križanje.
 
 \subsection{Usporedba učinkovitosti kombinacije operatora križanja}
 
@@ -752,11 +791,12 @@ Kako bi se pokazala učinkovitost kombinacija operatora križanja, proveden je e
 
 \end{itemize}
 
+
+Iz dobivenih rezultata vidljivo je, kako je najbolja od svih kombinacija ona koja obuhvaća sve operatore osim probabilističkog i križanja s očuvanjem konteksta. Srednja vrijednost najbolje dobrote ovog operatora iznosi 23.9. Ova vrijednost i dalje je dosta lošija od najbolje dobivene prosječne dobrote s isključivim korištenjem semantičkog i jednostavnog križanja u omjeru 1:9.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim=4cm 4cm 0cm 0cm, scale=0.6]{./slike/boxPlots/symb6-combo.eps}
 	\caption{Usporedba učinkovitosti kombinacije operatora križanja na problem simboličke regresije symb6}
 	\label{symb6combo}
 \end{figure}
-
-Iz dobivenih rezultata vidljivo je, kako je najbolja od svih kombinacija ona koja obuhvaća sve operatore osim probabilističkog i križanja s očuvanjem konteksta. Srednja vrijednost najbolje dobrote ovog operatora iznosi 23.9. Ova vrijednost i dalje je dosta lošija od najbolje dobivene prosječne dobrote s isključivim korištenjem semantičkog i jednostavnog križanja u omjeru 1:9.

@@ -53,10 +53,10 @@
 \contentsline {subsection}{\numberline {4.3.1}Usporedba u\IeC {\v c}inkovitosti pojedina\IeC {\v c}nih operatora kri\IeC {\v z}anja}{42}{subsection.4.3.1}
 \contentsline {subsubsection}{Logi\IeC {\v c}ke funkcije}{42}{subsection.4.3.1}
 \contentsline {subsubsection}{Simboli\IeC {\v c}ka regresija}{48}{figure.caption.40}
-\contentsline {subsubsection}{Programi}{58}{figure.caption.53}
-\contentsline {subsubsection}{Sveukupni rezultati}{64}{figure.caption.63}
+\contentsline {subsubsection}{Programi}{59}{figure.caption.54}
+\contentsline {subsubsection}{Sveukupni rezultati}{65}{figure.caption.64}
 \contentsline {subsection}{\numberline {4.3.2}Usporedba u\IeC {\v c}inkovitosti kombinacije operatora kri\IeC {\v z}anja}{65}{subsection.4.3.2}
-\contentsline {chapter}{\numberline {5}Zaklju\IeC {\v c}ak}{67}{chapter.5}
-\contentsline {chapter}{\numberline {6}Literatura}{68}{chapter.6}
-\contentsline {chapter}{\numberline {7}Sa\IeC {\v z}etak}{70}{chapter.7}
-\contentsline {chapter}{\numberline {8}Abstract}{71}{chapter.8}
+\contentsline {chapter}{\numberline {5}Zaklju\IeC {\v c}ak}{68}{chapter.5}
+\contentsline {chapter}{\numberline {6}Literatura}{69}{chapter.6}
+\contentsline {chapter}{\numberline {7}Sa\IeC {\v z}etak}{71}{chapter.7}
+\contentsline {chapter}{\numberline {8}Abstract}{72}{chapter.8}
