@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.25)  22 JUN 2014 19:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.25)  23 JUN 2014 08:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1402,55 +1402,8 @@ l.79 	}
        ;
 ? 
 Missing character: There is no ; in font nullfont!
-[23]
-
-! LaTeX Error: Illegal character in array arg.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.97 \begin{tabular} {a b c d | p}
-                                  
-? 
-
-! LaTeX Error: Illegal character in array arg.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.97 \begin{tabular} {a b c d | p}
-                                  
-? 
-
-! LaTeX Error: Illegal character in array arg.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.97 \begin{tabular} {a b c d | p}
-                                  
-? 
-
-! LaTeX Error: Missing p-arg in array arg.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.97 \begin{tabular} {a b c d | p}
-                                  
-? 
-! Missing # inserted in alignment preamble.
-<to be read again> 
-                   \cr 
-l.97 \begin{tabular} {a b c d | p}
-                                  
-? 
-[24]
-Overfull \hbox (24.76494pt too wide) in paragraph at lines 125--126
+[23] [24]
+Overfull \hbox (24.76494pt too wide) in paragraph at lines 124--125
 []\OT1/cmr/m/n/12 Pokazano je kako jed-nos-tavno kri^^Tzanje pre-tragu pros-tor
 a rje^^Tsenja odvija lo-kalno, naslje[]duju^^Sci
  []
@@ -1597,54 +1550,54 @@ ul-ti-plek-sor pro-blemu [[]]. Op^^Scenito,
 [37
 
 ]
-Overfull \hbox (24.55173pt too wide) in paragraph at lines 45--52
+Overfull \hbox (24.55173pt too wide) in paragraph at lines 48--55
  [][] 
  []
 
 [38]
-Overfull \hbox (27.42407pt too wide) in paragraph at lines 62--63
+Overfull \hbox (27.42407pt too wide) in paragraph at lines 65--66
 []\OT1/cmr/m/n/12 visoku ne-li-ne-ar-nost - li-ne-ar-nost logi^^Tcke funk-cije 
 de-fi-nira se kao pos-to-ja-nje $\OML/cmm/m/it/12 a[]; a[]; :::; a[] \OMS/cmsy/
 m/n/12 2
  []
 
 
-LaTeX Warning: Command \^ invalid in math mode on input line 65.
+LaTeX Warning: Command \^ invalid in math mode on input line 68.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ...@spacefactor \spacefactor }\accent 
                                                   #1 #2\egroup \spacefactor ...
-l.65 ...maksimalna vrijednost $m$ takva da $| F\^(
+l.68 ...maksimalna vrijednost $m$ takva da $| F\^(
                                                   \omega) |= 0$ za sve vrije...
 
 ? 
 ! You can't use `\spacefactor' in math mode.
 \add@accent ...}\accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.65 ...maksimalna vrijednost $m$ takva da $| F\^(
+l.68 ...maksimalna vrijednost $m$ takva da $| F\^(
                                                   \omega) |= 0$ za sve vrije...
 
 ? 
 Missing character: There is no è in font cmex10!
 ! Extra }, or forgotten \endgroup.
-l.93 	}
+l.96 	}
        ;
 ? 
 Missing character: There is no ; in font nullfont!
 [39] [40] [41]
-Overfull \hbox (35.00337pt too wide) in paragraph at lines 178--178
+Overfull \hbox (35.00337pt too wide) in paragraph at lines 181--181
  |[]\OT1/cmr/bx/n/14.4 Usporedba u^^Tcinkovitosti po-je-dina^^Tcnih ope-ra-tora
  kri^^Tzanja| 
  []
 
 
-Overfull \hbox (8.67621pt too wide) in paragraph at lines 180--181
+Overfull \hbox (8.67621pt too wide) in paragraph at lines 183--184
 \OT1/cmr/m/n/12 Ovo pot-po-glav-lje pri-ka-zuje raz-liku u^^Tcinkovitosti ope-r
 a-tora u slu^^Tcaju is-klju^^Tcivog kori^^Tstenja
  []
 
 
-Overfull \hbox (12.30426pt too wide) in paragraph at lines 184--185
+Overfull \hbox (12.30426pt too wide) in paragraph at lines 187--188
 \OT1/cmr/m/n/12 kri^^Tzanje pr-vedno s ob-zi-rom na veli^^Tcinu, uni-for-mno, h
 o-mo-logno i se-manti^^Tcko kri^^Tzanje. 
  []
@@ -1659,7 +1612,7 @@ Package epstopdf Info: Source file: <./slike/boxPlots/mux6.eps>
 (epstopdf)                    size: 11476 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/mux6-eps-
 converted-to.pdf ./slike/boxPlots/mux6.eps>
-(epstopdf)             \includegraphics on input line 223.
+(epstopdf)             \includegraphics on input line 226.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/mux6-eps-converted-to.pdf, id=637, 752.8125pt x 552.0625pt>
@@ -1667,10 +1620,10 @@ File: ./slike/boxPlots/mux6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/mux6-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/mux6-eps-converted-to.pdf used on inp
-ut line 223.
+ut line 226.
 (pdftex.def)             Requested size: 451.69098pt x 262.95291pt.
 
-Overfull \hbox (10.67325pt too wide) in paragraph at lines 223--224
+Overfull \hbox (10.67325pt too wide) in paragraph at lines 226--227
  [][] 
  []
 
@@ -1684,7 +1637,7 @@ f>
 (epstopdf)                    size: 11593 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/mux11-eps
 -converted-to.pdf ./slike/boxPlots/mux11.eps>
-(epstopdf)             \includegraphics on input line 262.
+(epstopdf)             \includegraphics on input line 265.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/mux11-eps-converted-to.pdf, id=662, 752.8125pt x 552.0625pt>
@@ -1692,10 +1645,10 @@ File: ./slike/boxPlots/mux11-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/mux11-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/mux11-eps-converted-to.pdf used on in
-put line 262.
+put line 265.
 (pdftex.def)             Requested size: 451.69098pt x 262.95291pt.
 
-Overfull \hbox (10.67325pt too wide) in paragraph at lines 262--263
+Overfull \hbox (10.67325pt too wide) in paragraph at lines 265--266
  [][] 
  []
 
@@ -1709,7 +1662,7 @@ f>
 (epstopdf)                    size: 12007 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/bool1-eps
 -converted-to.pdf ./slike/boxPlots/bool1.eps>
-(epstopdf)             \includegraphics on input line 301.
+(epstopdf)             \includegraphics on input line 304.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/bool1-eps-converted-to.pdf, id=679, 752.8125pt x 552.0625pt>
@@ -1717,7 +1670,7 @@ File: ./slike/boxPlots/bool1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/bool1-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/bool1-eps-converted-to.pdf used on in
-put line 301.
+put line 304.
 (pdftex.def)             Requested size: 376.40532pt x 219.1252pt.
  [46 <./slike/boxPlots/bool1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./slike/boxPlots/bool4.eps>
@@ -1729,7 +1682,7 @@ f>
 (epstopdf)                    size: 11231 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/bool4-eps
 -converted-to.pdf ./slike/boxPlots/bool4.eps>
-(epstopdf)             \includegraphics on input line 344.
+(epstopdf)             \includegraphics on input line 347.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/bool4-eps-converted-to.pdf, id=698, 752.8125pt x 552.0625pt>
@@ -1737,15 +1690,15 @@ File: ./slike/boxPlots/bool4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/bool4-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/bool4-eps-converted-to.pdf used on in
-put line 344.
+put line 347.
 (pdftex.def)             Requested size: 451.69098pt x 262.95291pt.
 
-Overfull \hbox (10.67325pt too wide) in paragraph at lines 344--345
+Overfull \hbox (10.67325pt too wide) in paragraph at lines 347--348
  [][] 
  []
 
 [47]
-Overfull \hbox (3.05821pt too wide) in paragraph at lines 359--360
+Overfull \hbox (3.05821pt too wide) in paragraph at lines 362--363
 []\OT1/cmr/m/n/12 Na slici [][]4.8[][] i u ta-blici [][]4.7[][] pri-ka-zana je 
 u^^Tcinkovitost ope-ra-tora kri^^Tzanja pri-li-kom rje^^Tsavanja
  []
@@ -1760,7 +1713,7 @@ f>
 (epstopdf)                    size: 12592 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/symb1-eps
 -converted-to.pdf ./slike/boxPlots/symb1.eps>
-(epstopdf)             \includegraphics on input line 394.
+(epstopdf)             \includegraphics on input line 397.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/symb1-eps-converted-to.pdf, id=725, 752.8125pt x 552.0625pt>
@@ -1768,10 +1721,10 @@ File: ./slike/boxPlots/symb1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb1-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/symb1-eps-converted-to.pdf used on in
-put line 394.
+put line 397.
 (pdftex.def)             Requested size: 451.69098pt x 262.95291pt.
 
-Overfull \hbox (10.67325pt too wide) in paragraph at lines 394--395
+Overfull \hbox (10.67325pt too wide) in paragraph at lines 397--398
  [][] 
  []
 
@@ -1785,7 +1738,7 @@ f>
 (epstopdf)                    size: 12268 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/symb2-eps
 -converted-to.pdf ./slike/boxPlots/symb2.eps>
-(epstopdf)             \includegraphics on input line 435.
+(epstopdf)             \includegraphics on input line 438.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/symb2-eps-converted-to.pdf, id=749, 752.8125pt x 552.0625pt>
@@ -1793,10 +1746,10 @@ File: ./slike/boxPlots/symb2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb2-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/symb2-eps-converted-to.pdf used on in
-put line 435.
+put line 438.
 (pdftex.def)             Requested size: 451.69098pt x 262.95291pt.
 
-Overfull \hbox (10.67325pt too wide) in paragraph at lines 435--436
+Overfull \hbox (10.67325pt too wide) in paragraph at lines 438--439
  [][] 
  []
 
@@ -1810,7 +1763,7 @@ f>
 (epstopdf)                    size: 11849 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/symb3-eps
 -converted-to.pdf ./slike/boxPlots/symb3.eps>
-(epstopdf)             \includegraphics on input line 463.
+(epstopdf)             \includegraphics on input line 466.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/symb3-eps-converted-to.pdf, id=764, 752.8125pt x 552.0625pt>
@@ -1818,10 +1771,10 @@ File: ./slike/boxPlots/symb3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb3-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/symb3-eps-converted-to.pdf used on in
-put line 463.
+put line 466.
 (pdftex.def)             Requested size: 451.69098pt x 262.95291pt.
 
-Overfull \hbox (10.67325pt too wide) in paragraph at lines 463--464
+Overfull \hbox (10.67325pt too wide) in paragraph at lines 466--467
  [][] 
  []
 
@@ -1835,7 +1788,7 @@ f>
 (epstopdf)                    size: 11699 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/symb4-eps
 -converted-to.pdf ./slike/boxPlots/symb4.eps>
-(epstopdf)             \includegraphics on input line 504.
+(epstopdf)             \includegraphics on input line 507.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/symb4-eps-converted-to.pdf, id=783, 752.8125pt x 552.0625pt>
@@ -1843,10 +1796,10 @@ File: ./slike/boxPlots/symb4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb4-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/symb4-eps-converted-to.pdf used on in
-put line 504.
+put line 507.
 (pdftex.def)             Requested size: 451.69098pt x 262.95291pt.
 
-Overfull \hbox (10.67325pt too wide) in paragraph at lines 504--505
+Overfull \hbox (10.67325pt too wide) in paragraph at lines 507--508
  [][] 
  []
 
@@ -1860,7 +1813,7 @@ f>
 (epstopdf)                    size: 13251 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/symb5-eps
 -converted-to.pdf ./slike/boxPlots/symb5.eps>
-(epstopdf)             \includegraphics on input line 543.
+(epstopdf)             \includegraphics on input line 547.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/symb5-eps-converted-to.pdf, id=807, 752.8125pt x 552.0625pt>
@@ -1868,10 +1821,10 @@ File: ./slike/boxPlots/symb5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb5-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/symb5-eps-converted-to.pdf used on in
-put line 543.
+put line 547.
 (pdftex.def)             Requested size: 451.69098pt x 262.95291pt.
 
-Overfull \hbox (10.67325pt too wide) in paragraph at lines 543--544
+Overfull \hbox (10.67325pt too wide) in paragraph at lines 547--548
  [][] 
  []
 
@@ -1885,7 +1838,7 @@ f>
 (epstopdf)                    size: 12226 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/symb6-eps
 -converted-to.pdf ./slike/boxPlots/symb6.eps>
-(epstopdf)             \includegraphics on input line 583.
+(epstopdf)             \includegraphics on input line 588.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/symb6-eps-converted-to.pdf, id=826, 752.8125pt x 552.0625pt>
@@ -1893,7 +1846,7 @@ File: ./slike/boxPlots/symb6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb6-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/symb6-eps-converted-to.pdf used on in
-put line 583.
+put line 588.
 (pdftex.def)             Requested size: 376.40532pt x 219.1252pt.
  [56 <./slike/boxPlots/symb6-eps-converted-to.pdf>] [57]
 Package epstopdf Info: Source file: <./slike/boxPlots/iprojekt.eps>
@@ -1905,7 +1858,7 @@ Package epstopdf Info: Source file: <./slike/boxPlots/iprojekt.eps>
 (epstopdf)                    size: 10295 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/iprojekt-
 eps-converted-to.pdf ./slike/boxPlots/iprojekt.eps>
-(epstopdf)             \includegraphics on input line 639.
+(epstopdf)             \includegraphics on input line 644.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/iprojekt-eps-converted-to.pdf, id=854, 752.8125pt x 552.0625p
@@ -1913,10 +1866,10 @@ t>
 File: ./slike/boxPlots/iprojekt-eps-converted-to.pdf Graphic file (type pdf)
  <use ./slike/boxPlots/iprojekt-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/iprojekt-eps-converted-to.pdf used on
- input line 639.
+ input line 644.
 (pdftex.def)             Requested size: 383.40385pt x 211.73756pt.
  [58 <./slike/boxPlots/iprojekt-eps-converted-to.pdf>]
-Overfull \hbox (1.16934pt too wide) in paragraph at lines 661--662
+Overfull \hbox (1.16934pt too wide) in paragraph at lines 666--667
 \OT1/cmr/m/n/12 po-je-dene hrane unu-tar oko-line za u^^Tcenje), na grafu [][]4
 .15[][] vid-ljivo je kako je naju^^Tcinkovitiji
  []
@@ -1930,17 +1883,17 @@ Package epstopdf Info: Source file: <./slike/boxPlots/ant.eps>
 (epstopdf)                    size: 12265 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/ant-eps-c
 onverted-to.pdf ./slike/boxPlots/ant.eps>
-(epstopdf)             \includegraphics on input line 684.
+(epstopdf)             \includegraphics on input line 689.
 Package epstopdf Info: Output file is already uptodate.
 <./slike/boxPlots/ant-eps-converted-to.pdf, id=869, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/ant-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/ant-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/ant-eps-converted-to.pdf used on inpu
-t line 684.
+t line 689.
 (pdftex.def)             Requested size: 451.69098pt x 262.95291pt.
 
-Overfull \hbox (10.67325pt too wide) in paragraph at lines 684--685
+Overfull \hbox (10.67325pt too wide) in paragraph at lines 689--690
  [][] 
  []
 
@@ -1949,7 +1902,7 @@ File: ./slike/cross-validation/trails.png Graphic file (type png)
 
 <use ./slike/cross-validation/trails.png>
 Package pdftex.def Info: ./slike/cross-validation/trails.png used on input line
- 693.
+ 698.
 (pdftex.def)             Requested size: 414.54774pt x 199.24388pt.
  [60 <./slike/boxPlots/ant-eps-converted-to.pdf> <./slike/cross-validation/trai
 ls.png>]
@@ -1958,7 +1911,7 @@ File: ./slike/cross-validation/context.png Graphic file (type png)
 
 <use ./slike/cross-validation/context.png>
 Package pdftex.def Info: ./slike/cross-validation/context.png used on input lin
-e 703.
+e 708.
 (pdftex.def)             Requested size: 426.68265pt x 260.17235pt.
 
 <./slike/cross-validation/homo.png, id=896, 527.0892pt x 364.2408pt>
@@ -1966,7 +1919,7 @@ File: ./slike/cross-validation/homo.png Graphic file (type png)
 
 <use ./slike/cross-validation/homo.png>
 Package pdftex.def Info: ./slike/cross-validation/homo.png used on input line 7
-10.
+15.
 (pdftex.def)             Requested size: 421.67194pt x 291.39304pt.
  [61 <./slike/cross-validation/context.png>] <./slike/cross-validation/onepoint
 .png, id=903, 561.297pt x 346.896pt>
@@ -1974,10 +1927,10 @@ File: ./slike/cross-validation/onepoint.png Graphic file (type png)
 
 <use ./slike/cross-validation/onepoint.png>
 Package pdftex.def Info: ./slike/cross-validation/onepoint.png used on input li
-ne 717.
+ne 722.
 (pdftex.def)             Requested size: 449.03821pt x 277.51717pt.
 
-Overfull \hbox (8.02048pt too wide) in paragraph at lines 717--718
+Overfull \hbox (8.02048pt too wide) in paragraph at lines 722--723
  [][] 
  []
 
@@ -1986,7 +1939,7 @@ File: ./slike/cross-validation/semantic.png Graphic file (type png)
 
 <use ./slike/cross-validation/semantic.png>
 Package pdftex.def Info: ./slike/cross-validation/semantic.png used on input li
-ne 724.
+ne 729.
 (pdftex.def)             Requested size: 421.67194pt x 283.29877pt.
  [62 <./slike/cross-validation/homo.png> <./slike/cross-validation/onepoint.png
 >]
@@ -1995,10 +1948,10 @@ File: ./slike/cross-validation/simple.png Graphic file (type png)
 
 <use ./slike/cross-validation/simple.png>
 Package pdftex.def Info: ./slike/cross-validation/simple.png used on input line
- 731.
+ 736.
 (pdftex.def)             Requested size: 449.8091pt x 287.15317pt.
 
-Overfull \hbox (8.79137pt too wide) in paragraph at lines 731--732
+Overfull \hbox (8.79137pt too wide) in paragraph at lines 736--737
  [][] 
  []
 
@@ -2007,7 +1960,7 @@ File: ./slike/cross-validation/sizefair.png Graphic file (type png)
 
 <use ./slike/cross-validation/sizefair.png>
 Package pdftex.def Info: ./slike/cross-validation/sizefair.png used on input li
-ne 738.
+ne 743.
 (pdftex.def)             Requested size: 434.39146pt x 290.62216pt.
  [63 <./slike/cross-validation/semantic.png> <./slike/cross-validation/simple.p
 ng>]
@@ -2016,17 +1969,17 @@ File: ./slike/cross-validation/uniform.png Graphic file (type png)
 
 <use ./slike/cross-validation/uniform.png>
 Package pdftex.def Info: ./slike/cross-validation/uniform.png used on input lin
-e 745.
+e 750.
 (pdftex.def)             Requested size: 424.75545pt x 292.93478pt.
  [64 <./slike/cross-validation/sizefair.png> <./slike/cross-validation/uniform.
 png>]
-Overfull \hbox (0.4513pt too wide) in paragraph at lines 777--778
+Overfull \hbox (0.4513pt too wide) in paragraph at lines 783--784
 \OT1/cmr/m/n/12 Skoro pa jed-nako u^^Tcinkovita po-ka-zala se nje-gova kom-bi-n
 a-cija sa se-manti^^Tckim kri^^Tzanjem.
  []
 
 
-Overfull \hbox (27.80338pt too wide) in paragraph at lines 779--779
+Overfull \hbox (27.80338pt too wide) in paragraph at lines 785--785
  |[]\OT1/cmr/bx/n/14.4 Usporedba u^^Tcinkovitosti kom-bi-na-cije ope-ra-tora kr
 i^^Tzanja| 
  []
@@ -2041,7 +1994,7 @@ Package epstopdf Info: Source file: <./slike/boxPlots/symb6-combo.eps>
 (epstopdf)                    size: 11219 bytes
 (epstopdf)             Command: <repstopdf --outfile=./slike/boxPlots/symb6-com
 bo-eps-converted-to.pdf ./slike/boxPlots/symb6-combo.eps>
-(epstopdf)             \includegraphics on input line 799.
+(epstopdf)             \includegraphics on input line 805.
 Package epstopdf Info: Output file is already uptodate.
 
 <./slike/boxPlots/symb6-combo-eps-converted-to.pdf, id=939, 752.8125pt x 552.06
@@ -2050,7 +2003,7 @@ File: ./slike/boxPlots/symb6-combo-eps-converted-to.pdf Graphic file (type pdf)
 
  <use ./slike/boxPlots/symb6-combo-eps-converted-to.pdf>
 Package pdftex.def Info: ./slike/boxPlots/symb6-combo-eps-converted-to.pdf used
- on input line 799.
+ on input line 805.
 (pdftex.def)             Requested size: 383.40384pt x 262.95291pt.
 ) [66] [67 <./slike/boxPlots/symb6-combo-eps-converted-to.pdf>]
 Poglavlje 5.
@@ -2114,7 +2067,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
 Here is how much of TeX's memory you used:
  25690 strings out of 493315
  455828 string characters out of 6137903
- 588425 words of memory out of 5000000
+ 588424 words of memory out of 5000000
  28441 multiletter control sequences out of 15000+600000
  13301 words of font info for 48 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -2148,7 +2101,7 @@ ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 13/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 3/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on diplomski.pdf (73 pages, 1337669 bytes).
+Output written on diplomski.pdf (73 pages, 1337596 bytes).
 PDF statistics:
  1081 PDF objects out of 1200 (max. 8388607)
  873 compressed objects within 9 object streams
