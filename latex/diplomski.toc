@@ -1,62 +1,63 @@
 \select@language {croatian}
-\contentsline {chapter}{\numberline {1}Uvod}{3}{chapter.1}
-\contentsline {chapter}{\numberline {2}Genetsko programiranje}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}Tijek algoritma}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}Stablasta jedinka}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Stablo kao program}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Stablo kao logi\IeC {\v c}ki izraz}{7}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Stablo kao aritmeti\IeC {\v c}ki izraz}{8}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Dobrota jedinke}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}Operatori selekcije}{9}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Generacijska selekcija}{9}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Eliminacijska selekcija}{10}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Operatori kri\IeC {\v z}anja}{10}{section.2.5}
-\contentsline {section}{\numberline {2.6}Operatori mutacije}{11}{section.2.6}
-\contentsline {chapter}{\numberline {3}Operatori kri\IeC {\v z}anja}{12}{chapter.3}
-\contentsline {section}{\numberline {3.1}Jednostavno kri\IeC {\v z}anje}{12}{section.3.1}
-\contentsline {section}{\numberline {3.2}Kri\IeC {\v z}anje s jednom to\IeC {\v c}kom prekida}{14}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Dosada\IeC {\v s}nji rezultati}{15}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Kri\IeC {\v z}anje s o\IeC {\v c}uvanjem konteksta}{16}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Kri\IeC {\v z}anje s jakim o\IeC {\v c}uvanjem konteksta}{17}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Kri\IeC {\v z}anje sa slabim o\IeC {\v c}uvanjem konteksta}{17}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Dosada\IeC {\v s}nji rezultati}{18}{subsection.3.3.3}
-\contentsline {subsubsection}{Robot sa sposobnosti izmicanja preprekama}{18}{subsection.3.3.3}
-\contentsline {subsubsection}{Iterirana ina\IeC {\v c}ica robota sa sposobnosti izmicanja preprekama}{19}{figure.caption.15}
-\contentsline {subsubsection}{11 - multipleksor}{20}{figure.caption.16}
-\contentsline {subsubsection}{Centralno sakupljali\IeC {\v s}te hrane}{20}{figure.caption.17}
-\contentsline {section}{\numberline {3.4}Kri\IeC {\v z}anje pravedno s obzirom na veli\IeC {\v c}inu}{21}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Dosada\IeC {\v s}nji rezultati}{22}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Uniformno kri\IeC {\v z}anje}{23}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Dosada\IeC {\v s}nji rezultati}{24}{subsection.3.5.1}
-\contentsline {section}{\numberline {3.6}Homologno kri\IeC {\v z}anje}{25}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Dosada\IeC {\v s}nji rezultati}{27}{subsection.3.6.1}
-\contentsline {section}{\numberline {3.7}Deterministi\IeC {\v c}ko kri\IeC {\v z}anje}{27}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}Dosada\IeC {\v s}nji rezultati}{28}{subsection.3.7.1}
-\contentsline {section}{\numberline {3.8}Probabilisti\IeC {\v c}ko kri\IeC {\v z}anje}{30}{section.3.8}
-\contentsline {subsection}{\numberline {3.8.1}Dosada\IeC {\v s}nji rezultati}{30}{subsection.3.8.1}
-\contentsline {section}{\numberline {3.9}Semanti\IeC {\v c}ko kri\IeC {\v z}anje}{31}{section.3.9}
-\contentsline {subsection}{\numberline {3.9.1}Dosada\IeC {\v s}nji rezultati}{33}{subsection.3.9.1}
-\contentsline {subsubsection}{Logi\IeC {\v c}ke funkcije}{33}{subsection.3.9.1}
-\contentsline {subsubsection}{Simboli\IeC {\v c}ka regresija}{34}{figure.caption.25}
-\contentsline {subsubsection}{Programi}{35}{figure.caption.26}
-\contentsline {chapter}{\numberline {4}Ispitivanja}{37}{chapter.4}
-\contentsline {section}{\numberline {4.1}ECF}{37}{section.4.1}
-\contentsline {section}{\numberline {4.2}Problemi za ispitivanje}{37}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Logi\IeC {\v c}ke funkcije}{38}{subsection.4.2.1}
-\contentsline {subsubsection}{Multipleksor problem}{38}{subsection.4.2.1}
-\contentsline {subsubsection}{Evolucija kriptografski sigurnih logi\IeC {\v c}kih funkcija}{39}{table.caption.29}
-\contentsline {subsection}{\numberline {4.2.2}Simboli\IeC {\v c}ka regresija}{39}{subsection.4.2.2}
-\contentsline {subsubsection}{Klasi\IeC {\v c}na simboli\IeC {\v c}ka regresija}{39}{subsection.4.2.2}
-\contentsline {subsubsection}{Evolucija funkcije prioriteta za uporabu unutar pravila raspore\IeC {\dj }ivanja}{40}{table.caption.31}
-\contentsline {subsection}{\numberline {4.2.3}Programi}{41}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Rezultati}{42}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Usporedba u\IeC {\v c}inkovitosti pojedina\IeC {\v c}nih operatora kri\IeC {\v z}anja}{42}{subsection.4.3.1}
-\contentsline {subsubsection}{Logi\IeC {\v c}ke funkcije}{42}{subsection.4.3.1}
-\contentsline {subsubsection}{Simboli\IeC {\v c}ka regresija}{48}{figure.caption.40}
-\contentsline {subsubsection}{Programi}{59}{figure.caption.54}
-\contentsline {subsubsection}{Sveukupni rezultati}{65}{figure.caption.64}
-\contentsline {subsection}{\numberline {4.3.2}Usporedba u\IeC {\v c}inkovitosti kombinacije operatora kri\IeC {\v z}anja}{65}{subsection.4.3.2}
-\contentsline {chapter}{\numberline {5}Zaklju\IeC {\v c}ak}{68}{chapter.5}
-\contentsline {chapter}{\numberline {6}Literatura}{69}{chapter.6}
-\contentsline {chapter}{\numberline {7}Sa\IeC {\v z}etak}{71}{chapter.7}
-\contentsline {chapter}{\numberline {8}Abstract}{72}{chapter.8}
+\contentsline {chapter}{\numberline {1}Uvod}{5}{chapter.1}
+\contentsline {chapter}{\numberline {2}Genetsko programiranje}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Tijek algoritma}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Stablasta jedinka}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Stablo kao program}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Stablo kao logi\IeC {\v c}ki izraz}{9}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Stablo kao aritmeti\IeC {\v c}ki izraz}{10}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Dobrota jedinke}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}Operatori selekcije}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Generacijska selekcija}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Eliminacijska selekcija}{12}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Operatori kri\IeC {\v z}anja}{12}{section.2.5}
+\contentsline {section}{\numberline {2.6}Operatori mutacije}{13}{section.2.6}
+\contentsline {chapter}{\numberline {3}Operatori kri\IeC {\v z}anja}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}Jednostavno kri\IeC {\v z}anje}{14}{section.3.1}
+\contentsline {section}{\numberline {3.2}Kri\IeC {\v z}anje s jednom to\IeC {\v c}kom prekida}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Dosada\IeC {\v s}nji rezultati}{17}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Kri\IeC {\v z}anje s o\IeC {\v c}uvanjem konteksta}{18}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Kri\IeC {\v z}anje s jakim o\IeC {\v c}uvanjem konteksta}{19}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Kri\IeC {\v z}anje sa slabim o\IeC {\v c}uvanjem konteksta}{19}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Dosada\IeC {\v s}nji rezultati}{20}{subsection.3.3.3}
+\contentsline {subsubsection}{Robot sa sposobnosti izmicanja preprekama}{20}{subsection.3.3.3}
+\contentsline {subsubsection}{Iterirana ina\IeC {\v c}ica robota sa sposobnosti izmicanja preprekama}{21}{figure.caption.15}
+\contentsline {subsubsection}{11 - multipleksor}{22}{figure.caption.16}
+\contentsline {subsubsection}{Centralno sakupljali\IeC {\v s}te hrane}{22}{figure.caption.17}
+\contentsline {section}{\numberline {3.4}Kri\IeC {\v z}anje pravedno s obzirom na veli\IeC {\v c}inu}{23}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Dosada\IeC {\v s}nji rezultati}{24}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Uniformno kri\IeC {\v z}anje}{25}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Dosada\IeC {\v s}nji rezultati}{26}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Homologno kri\IeC {\v z}anje}{27}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Dosada\IeC {\v s}nji rezultati}{29}{subsection.3.6.1}
+\contentsline {section}{\numberline {3.7}Deterministi\IeC {\v c}ko kri\IeC {\v z}anje}{29}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Dosada\IeC {\v s}nji rezultati}{30}{subsection.3.7.1}
+\contentsline {section}{\numberline {3.8}Probabilisti\IeC {\v c}ko kri\IeC {\v z}anje}{32}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}Dosada\IeC {\v s}nji rezultati}{32}{subsection.3.8.1}
+\contentsline {section}{\numberline {3.9}Semanti\IeC {\v c}ko kri\IeC {\v z}anje}{33}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Dosada\IeC {\v s}nji rezultati}{35}{subsection.3.9.1}
+\contentsline {subsubsection}{Logi\IeC {\v c}ke funkcije}{35}{subsection.3.9.1}
+\contentsline {subsubsection}{Simboli\IeC {\v c}ka regresija}{36}{figure.caption.25}
+\contentsline {subsubsection}{Programi}{37}{figure.caption.26}
+\contentsline {section}{\numberline {3.10}Tablica primjenjivosti operatora na razli\IeC {\v c}ite vrste problema}{38}{section.3.10}
+\contentsline {chapter}{\numberline {4}Ispitivanja}{39}{chapter.4}
+\contentsline {section}{\numberline {4.1}ECF}{39}{section.4.1}
+\contentsline {section}{\numberline {4.2}Problemi za ispitivanje}{39}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Logi\IeC {\v c}ke funkcije}{40}{subsection.4.2.1}
+\contentsline {subsubsection}{Multipleksor problem}{40}{subsection.4.2.1}
+\contentsline {subsubsection}{Evolucija kriptografski sigurnih logi\IeC {\v c}kih funkcija}{41}{table.caption.30}
+\contentsline {subsection}{\numberline {4.2.2}Simboli\IeC {\v c}ka regresija}{41}{subsection.4.2.2}
+\contentsline {subsubsection}{Klasi\IeC {\v c}na simboli\IeC {\v c}ka regresija}{41}{subsection.4.2.2}
+\contentsline {subsubsection}{Evolucija funkcije prioriteta za uporabu unutar pravila raspore\IeC {\dj }ivanja}{42}{table.caption.32}
+\contentsline {subsection}{\numberline {4.2.3}Programi}{43}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Rezultati}{44}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Usporedba u\IeC {\v c}inkovitosti pojedina\IeC {\v c}nih operatora kri\IeC {\v z}anja}{44}{subsection.4.3.1}
+\contentsline {subsubsection}{Logi\IeC {\v c}ke funkcije}{44}{subsection.4.3.1}
+\contentsline {subsubsection}{Simboli\IeC {\v c}ka regresija}{50}{figure.caption.41}
+\contentsline {subsubsection}{Programi}{61}{figure.caption.55}
+\contentsline {subsubsection}{Sveukupni rezultati}{67}{figure.caption.65}
+\contentsline {subsection}{\numberline {4.3.2}Usporedba u\IeC {\v c}inkovitosti kombinacije operatora kri\IeC {\v z}anja}{67}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Zaklju\IeC {\v c}ak}{70}{chapter.5}
+\contentsline {chapter}{\numberline {6}Literatura}{71}{chapter.6}
+\contentsline {chapter}{\numberline {7}Sa\IeC {\v z}etak}{73}{chapter.7}
+\contentsline {chapter}{\numberline {8}Abstract}{74}{chapter.8}

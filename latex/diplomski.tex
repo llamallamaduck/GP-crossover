@@ -26,12 +26,15 @@
 %\usepackage{courier}
 
 \usepackage[scaled]{helvet}
-\usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\usepackage[colorlinks=true,linkcolor=black, citecolor=black]{hyperref}
 \usepackage{lscape}
 \usepackage{titlesec}
 \usepackage{fullpage}
 \usepackage[parfill]{parskip}
 \usepackage{mathtools}
+
+
+\usepackage{pdfpages}
 
 \renewcommand{\labelitemi}{$\bullet$}
 \renewcommand{\labelitemii}{$\circ$}
@@ -51,6 +54,12 @@
 \begin{spacing}{1.5}
 
 \input{./naslovna.tex}
+
+\includepdf[pages={1}]{./slike/zadatak.pdf}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
 
 \tableofcontents
 
@@ -74,6 +83,8 @@
 \chapter{Literatura}
 \bibliography{literatura}
 \bibliographystyle{unsrt}
+%\bibliographystyle{plainnat}
+
 
 \chapter{Sažetak}
 \input{./sazetak.tex}

@@ -27,3 +27,26 @@ U sljedećim poglavljima, detaljno će biti opisani različiti operatori križan
 
 \section{Semantičko križanje}
 \input{./crxSemantic.tex}
+
+\section{Tablica primjenjivosti operatora na različite vrste problema}
+U tablici \ref{crxtable} prikazana je primjenjivost operatora na različite vrste problema genetskog programiranja. 
+
+\begin{table}[H]
+ 	\centering
+
+    \caption{Tablica primjenjivosti operatora na različite vrste problema}
+    \begin{tabular}{| l | l | l | l |}
+    \hline
+    \textbf{operator - primjenjiv na} & \textbf{logičke funkcije} & \textbf{simbolička regresija} & \textbf{programi}\\ \hline
+    jednostavno & da & da & da\\ \hline
+    s jednom točkom prekida & da & da & da\\ \hline
+    s očuvanjem konteksta  & da & da & da\\ \hline
+    pravedno s obzirom na veličinu  & da & da & da\\ \hline
+    uniformno  & da & da & da\\\hline
+    homologno  & da & da & da\\ \hline
+    determinističko & ne & da & ne\\ \hline
+    probabilističko  & ne & da & ne\\ \hline
+    semantičko  & da & da & da\\ \hline
+    \end{tabular}
+    \label{crxtable}
+\end{table}
