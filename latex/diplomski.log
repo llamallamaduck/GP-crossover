@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.25)  25 JUN 2014 22:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.25)  25 JUN 2014 23:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1211,7 +1211,7 @@ Overfull \hbox (0.94604pt too wide) in paragraph at lines 1--2
 
 [6
 
-] <./slike/blokDijagram.png, id=307, 686.565pt x 833.1125pt>
+] <./slike/blokDijagram.png, id=301, 686.565pt x 833.1125pt>
 File: ./slike/blokDijagram.png Graphic file (type png)
 
 <use ./slike/blokDijagram.png>
@@ -1308,14 +1308,14 @@ l.85 	}
        ;
 ? 
 Missing character: There is no ; in font nullfont!
-[17] <./slike/even3par.png, id=421, 1002.74625pt x 400.49625pt>
+[17] <./slike/even3par.png, id=415, 1002.74625pt x 400.49625pt>
 File: ./slike/even3par.png Graphic file (type png)
 
 <use ./slike/even3par.png>
 Package pdftex.def Info: ./slike/even3par.png used on input line 103.
 (pdftex.def)             Requested size: 401.0914pt x 160.19566pt.
 
-<./slike/even4par.png, id=424, 1011.78pt x 404.51125pt>
+<./slike/even4par.png, id=418, 1011.78pt x 404.51125pt>
 File: ./slike/even4par.png Graphic file (type png)
 
 <use ./slike/even4par.png>
@@ -1328,7 +1328,7 @@ l.19 	}
 ? 
 Missing character: There is no ; in font nullfont!
 [18 <./slike/even3par.png> <./slike/even4par.png>] [19]
-<./slike/robot.png, id=444, 1113.15875pt x 359.3425pt>
+<./slike/robot.png, id=438, 1113.15875pt x 359.3425pt>
 File: ./slike/robot.png Graphic file (type png)
  <use ./slike/robot.png>
 Package pdftex.def Info: ./slike/robot.png used on input line 44.
@@ -1338,7 +1338,7 @@ Overfull \hbox (4.23788pt too wide) in paragraph at lines 44--45
  [][] 
  []
 
-[20] <./slike/robotIt.png, id=454, 1126.2075pt x 385.44pt>
+[20] <./slike/robotIt.png, id=448, 1126.2075pt x 385.44pt>
 File: ./slike/robotIt.png Graphic file (type png)
 
 <use ./slike/robotIt.png>
@@ -1350,7 +1350,7 @@ Overfull \hbox (9.45729pt too wide) in paragraph at lines 55--56
  []
 
 [21 <./slike/robot.png> <./slike/robotIt.png>]
-<./slike/mux.png, id=463, 1145.27875pt x 370.38374pt>
+<./slike/mux.png, id=457, 1145.27875pt x 370.38374pt>
 File: ./slike/mux.png Graphic file (type png)
  <use ./slike/mux.png>
 Package pdftex.def Info: ./slike/mux.png used on input line 67.
@@ -1360,7 +1360,7 @@ Overfull \hbox (17.08565pt too wide) in paragraph at lines 67--68
  [][] 
  []
 
-<./slike/ants.png, id=467, 1120.185pt x 359.3425pt>
+<./slike/ants.png, id=461, 1120.185pt x 359.3425pt>
 File: ./slike/ants.png Graphic file (type png)
  <use ./slike/ants.png>
 Package pdftex.def Info: ./slike/ants.png used on input line 79.
@@ -1459,7 +1459,7 @@ a rje^^Tsenja odvija lo-kalno, naslje[]duju^^Sci
  []
 
 ) (./crxHomologous.tex [27]
-<./slike/crxHomo.png, id=511, 742.775pt x 385.44pt>
+<./slike/crxHomo.png, id=505, 742.775pt x 385.44pt>
 File: ./slike/crxHomo.png Graphic file (type png)
  <use ./slike/crxHomo.png>
 Package pdftex.def Info: ./slike/crxHomo.png used on input line 15.
@@ -1510,7 +1510,7 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
 (Font)              size <5> substituted on input line 8.
 
-<./slike/deto.png, id=527, 703.62875pt x 757.83125pt>
+<./slike/deto.png, id=521, 703.62875pt x 757.83125pt>
 File: ./slike/deto.png Graphic file (type png)
  <use ./slike/deto.png>
 Package pdftex.def Info: ./slike/deto.png used on input line 18.
@@ -1542,7 +1542,7 @@ Overfull \hbox (2.5738pt too wide) in paragraph at lines 4--5
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 7.
 
-<./slike/semBool1.png, id=556, 1092.08pt x 413.545pt>
+<./slike/semBool1.png, id=550, 1092.08pt x 413.545pt>
 File: ./slike/semBool1.png Graphic file (type png)
 
 <use ./slike/semBool1.png>
@@ -1561,21 +1561,21 @@ l.37 ... usporedilo genetsko programiranje (\texit
 
 ? 
 [34 <./slike/semBool1.png>]
-<./slike/semBoolTable.png, id=576, 764.8575pt x 591.20876pt>
+<./slike/semBoolTable.png, id=570, 764.8575pt x 591.20876pt>
 File: ./slike/semBoolTable.png Graphic file (type png)
 
 <use ./slike/semBoolTable.png>
 Package pdftex.def Info: ./slike/semBoolTable.png used on input line 47.
 (pdftex.def)             Requested size: 382.42781pt x 295.60365pt.
  [35]
-<./slike/semSymbTable.png, id=586, 635.37375pt x 396.48125pt>
+<./slike/semSymbTable.png, id=580, 635.37375pt x 396.48125pt>
 File: ./slike/semSymbTable.png Graphic file (type png)
 
 <use ./slike/semSymbTable.png>
 Package pdftex.def Info: ./slike/semSymbTable.png used on input line 58.
 (pdftex.def)             Requested size: 254.14499pt x 158.58968pt.
  [36 <./slike/semBoolTable.png>]
-<./slike/semProg.png, id=596, 842.14626pt x 395.4775pt>
+<./slike/semProg.png, id=590, 842.14626pt x 395.4775pt>
 File: ./slike/semProg.png Graphic file (type png)
 
 <use ./slike/semProg.png>
@@ -1662,7 +1662,7 @@ converted-to.pdf ./slike/boxPlots/mux6.eps>
 (epstopdf)             \includegraphics on input line 226.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/mux6-eps-converted-to.pdf, id=665, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/mux6-eps-converted-to.pdf, id=659, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/mux6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/mux6-eps-converted-to.pdf>
@@ -1687,7 +1687,7 @@ f>
 (epstopdf)             \includegraphics on input line 265.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/mux11-eps-converted-to.pdf, id=690, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/mux11-eps-converted-to.pdf, id=684, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/mux11-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/mux11-eps-converted-to.pdf>
@@ -1712,7 +1712,7 @@ f>
 (epstopdf)             \includegraphics on input line 304.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/bool1-eps-converted-to.pdf, id=707, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/bool1-eps-converted-to.pdf, id=701, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/bool1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/bool1-eps-converted-to.pdf>
@@ -1732,7 +1732,7 @@ f>
 (epstopdf)             \includegraphics on input line 347.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/bool4-eps-converted-to.pdf, id=728, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/bool4-eps-converted-to.pdf, id=722, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/bool4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/bool4-eps-converted-to.pdf>
@@ -1763,7 +1763,7 @@ f>
 (epstopdf)             \includegraphics on input line 397.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/symb1-eps-converted-to.pdf, id=753, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/symb1-eps-converted-to.pdf, id=747, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/symb1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb1-eps-converted-to.pdf>
@@ -1788,7 +1788,7 @@ f>
 (epstopdf)             \includegraphics on input line 438.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/symb2-eps-converted-to.pdf, id=777, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/symb2-eps-converted-to.pdf, id=771, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/symb2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb2-eps-converted-to.pdf>
@@ -1813,7 +1813,7 @@ f>
 (epstopdf)             \includegraphics on input line 466.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/symb3-eps-converted-to.pdf, id=792, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/symb3-eps-converted-to.pdf, id=786, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/symb3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb3-eps-converted-to.pdf>
@@ -1843,7 +1843,7 @@ f>
 (epstopdf)             \includegraphics on input line 518.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/symb4-eps-converted-to.pdf, id=820, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/symb4-eps-converted-to.pdf, id=814, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/symb4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb4-eps-converted-to.pdf>
@@ -1868,7 +1868,7 @@ f>
 (epstopdf)             \includegraphics on input line 548.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/symb5-eps-converted-to.pdf, id=835, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/symb5-eps-converted-to.pdf, id=829, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/symb5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb5-eps-converted-to.pdf>
@@ -1893,7 +1893,7 @@ f>
 (epstopdf)             \includegraphics on input line 589.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/symb6-eps-converted-to.pdf, id=854, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/symb6-eps-converted-to.pdf, id=848, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/symb6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/symb6-eps-converted-to.pdf>
@@ -1913,7 +1913,7 @@ eps-converted-to.pdf ./slike/boxPlots/iprojekt.eps>
 (epstopdf)             \includegraphics on input line 645.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/iprojekt-eps-converted-to.pdf, id=882, 752.8125pt x 552.0625p
+<./slike/boxPlots/iprojekt-eps-converted-to.pdf, id=876, 752.8125pt x 552.0625p
 t>
 File: ./slike/boxPlots/iprojekt-eps-converted-to.pdf Graphic file (type pdf)
  <use ./slike/boxPlots/iprojekt-eps-converted-to.pdf>
@@ -1942,7 +1942,7 @@ Package epstopdf Info: Source file: <./slike/boxPlots/ant.eps>
 onverted-to.pdf ./slike/boxPlots/ant.eps>
 (epstopdf)             \includegraphics on input line 690.
 Package epstopdf Info: Output file is already uptodate.
-<./slike/boxPlots/ant-eps-converted-to.pdf, id=901, 752.8125pt x 552.0625pt>
+<./slike/boxPlots/ant-eps-converted-to.pdf, id=895, 752.8125pt x 552.0625pt>
 File: ./slike/boxPlots/ant-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./slike/boxPlots/ant-eps-converted-to.pdf>
@@ -1954,7 +1954,7 @@ Overfull \hbox (10.67325pt too wide) in paragraph at lines 690--691
  [][] 
  []
 
-[61] <./slike/cross-validation/trails.png, id=909, 829.0975pt x 398.48875pt>
+[61] <./slike/cross-validation/trails.png, id=903, 829.0975pt x 398.48875pt>
 File: ./slike/cross-validation/trails.png Graphic file (type png)
 
 <use ./slike/cross-validation/trails.png>
@@ -1963,7 +1963,7 @@ Package pdftex.def Info: ./slike/cross-validation/trails.png used on input line
 (pdftex.def)             Requested size: 414.54774pt x 199.24388pt.
  [62 <./slike/boxPlots/ant-eps-converted-to.pdf> <./slike/cross-validation/trai
 ls.png>]
-<./slike/cross-validation/context.png, id=925, 533.3526pt x 467.8278pt>
+<./slike/cross-validation/context.png, id=919, 533.3526pt x 467.8278pt>
 File: ./slike/cross-validation/context.png Graphic file (type png)
 
 <use ./slike/cross-validation/context.png>
@@ -1971,7 +1971,7 @@ Package pdftex.def Info: ./slike/cross-validation/context.png used on input lin
 e 709.
 (pdftex.def)             Requested size: 426.68265pt x 374.26274pt.
 
-<./slike/cross-validation/homo.png, id=927, 527.0892pt x 364.2408pt>
+<./slike/cross-validation/homo.png, id=921, 527.0892pt x 364.2408pt>
 File: ./slike/cross-validation/homo.png Graphic file (type png)
 
 <use ./slike/cross-validation/homo.png>
@@ -1979,7 +1979,7 @@ Package pdftex.def Info: ./slike/cross-validation/homo.png used on input line 7
 16.
 (pdftex.def)             Requested size: 421.67194pt x 291.39304pt.
  [63 <./slike/cross-validation/context.png>] <./slike/cross-validation/onepoint
-.png, id=934, 525.162pt x 334.3692pt>
+.png, id=928, 525.162pt x 334.3692pt>
 File: ./slike/cross-validation/onepoint.png Graphic file (type png)
 
 <use ./slike/cross-validation/onepoint.png>
@@ -1987,7 +1987,7 @@ Package pdftex.def Info: ./slike/cross-validation/onepoint.png used on input li
 ne 723.
 (pdftex.def)             Requested size: 420.13017pt x 267.49571pt.
 
-<./slike/cross-validation/semantic.png, id=935, 533.3526pt x 335.8146pt>
+<./slike/cross-validation/semantic.png, id=929, 533.3526pt x 335.8146pt>
 File: ./slike/cross-validation/semantic.png Graphic file (type png)
 
 <use ./slike/cross-validation/semantic.png>
@@ -1996,7 +1996,7 @@ ne 730.
 (pdftex.def)             Requested size: 426.68265pt x 268.65204pt.
  [64 <./slike/cross-validation/homo.png> <./slike/cross-validation/onepoint.png
 >]
-<./slike/cross-validation/simple.png, id=944, 562.2606pt x 358.941pt>
+<./slike/cross-validation/simple.png, id=938, 562.2606pt x 358.941pt>
 File: ./slike/cross-validation/simple.png Graphic file (type png)
 
 <use ./slike/cross-validation/simple.png>
@@ -2008,7 +2008,7 @@ Overfull \hbox (8.79137pt too wide) in paragraph at lines 737--738
  [][] 
  []
 
-<./slike/cross-validation/sizefair.png, id=945, 542.9886pt x 363.2772pt>
+<./slike/cross-validation/sizefair.png, id=939, 542.9886pt x 363.2772pt>
 File: ./slike/cross-validation/sizefair.png Graphic file (type png)
 
 <use ./slike/cross-validation/sizefair.png>
@@ -2017,7 +2017,7 @@ ne 744.
 (pdftex.def)             Requested size: 434.39146pt x 290.62216pt.
  [65 <./slike/cross-validation/semantic.png> <./slike/cross-validation/simple.p
 ng>]
-<./slike/cross-validation/uniform.png, id=954, 530.9436pt x 366.168pt>
+<./slike/cross-validation/uniform.png, id=948, 530.9436pt x 366.168pt>
 File: ./slike/cross-validation/uniform.png Graphic file (type png)
 
 <use ./slike/cross-validation/uniform.png>
@@ -2044,7 +2044,7 @@ bo-eps-converted-to.pdf ./slike/boxPlots/symb6-combo.eps>
 (epstopdf)             \includegraphics on input line 792.
 Package epstopdf Info: Output file is already uptodate.
 
-<./slike/boxPlots/symb6-combo-eps-converted-to.pdf, id=971, 752.8125pt x 552.06
+<./slike/boxPlots/symb6-combo-eps-converted-to.pdf, id=965, 752.8125pt x 552.06
 25pt>
 File: ./slike/boxPlots/symb6-combo-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -2111,7 +2111,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
 Here is how much of TeX's memory you used:
  26262 strings out of 493315
  465110 string characters out of 6137903
- 600921 words of memory out of 5000000
+ 600923 words of memory out of 5000000
  28995 multiletter control sequences out of 15000+600000
  13301 words of font info for 48 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -2145,10 +2145,10 @@ ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 13/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 3/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on diplomski.pdf (75 pages, 26905787 bytes).
+Output written on diplomski.pdf (75 pages, 7140701 bytes).
 PDF statistics:
- 1113 PDF objects out of 1200 (max. 8388607)
- 893 compressed objects within 9 object streams
+ 1107 PDF objects out of 1200 (max. 8388607)
+ 891 compressed objects within 9 object streams
  230 named destinations out of 1000 (max. 500000)
  670 words of extra memory for PDF output out of 10000 (max. 10000000)
 
