@@ -5,6 +5,3 @@ Implementirano:
 - determinističko
 - probabilističko
 - semantičko
-
-TO-DO:
-- problemi za testiranje
