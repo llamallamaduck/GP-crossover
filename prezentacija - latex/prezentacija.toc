@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.26pt}
+\beamer@sectionintoc {1}{Uvod}{3}{0}{1}
+\beamer@sectionintoc {2}{Operatori kri\IeC {\v z}anja}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Jednostavno kri\IeC {\v z}anje}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Kri\IeC {\v z}anje s jednom to\IeC {\v c}kom prekida}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{Kri\IeC {\v z}anje s o\IeC {\v c}uvanjem konteksta}{6}{0}{2}
+\beamer@subsectionintoc {2}{4}{Kri\IeC {\v z}anje pravedno s obzirom na veli\IeC {\v c}inu}{7}{0}{2}
+\beamer@subsectionintoc {2}{5}{Uniformno kri\IeC {\v z}anje}{8}{0}{2}
+\beamer@subsectionintoc {2}{6}{Homologno kri\IeC {\v z}anje}{9}{0}{2}
+\beamer@subsectionintoc {2}{7}{Deterministi\IeC {\v c}ko kri\IeC {\v z}anje}{10}{0}{2}
+\beamer@subsectionintoc {2}{8}{Probabilisti\IeC {\v c}ko kri\IeC {\v z}anje}{12}{0}{2}
+\beamer@subsectionintoc {2}{9}{Semanti\IeC {\v c}ko kri\IeC {\v z}anje}{13}{0}{2}
+\beamer@sectionintoc {3}{Ispitivanja}{14}{0}{3}
+\beamer@subsectionintoc {3}{1}{Problemi za ispitivanje}{14}{0}{3}
+\beamer@subsectionintoc {3}{2}{Rezultati}{15}{0}{3}
+\beamer@sectionintoc {4}{Zaklju\IeC {\v c}ak}{29}{0}{4}

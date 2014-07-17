@@ -11,66 +11,68 @@
 #include "Mux6EvalOp.h"
 #include "ecf/tree/Add.h"
 
-class Or : public Tree::Primitives::Primitive
+
+
+class OrB : public Tree::Primitives::Primitive
 {
 public:
-	Or()
+	OrB()
 	{
 		nArguments_ = 2;
-		name_ = "OR";
+		name_ = "ORB";
 	}
 
 	void execute(void* result, Tree::Tree& tree)
 	{
-		bool* or = (bool*)result;
+		bool* orB = (bool*)result;
 
 		bool arg1, arg2;
 
 		getNextArgument(&arg1, tree);
 		getNextArgument(&arg2, tree);
 
-		*or = arg1 || arg2;
+		*orB = arg1 || arg2;
 	}
 
-	~Or()
+	~OrB()
 	{	}
 };
 
 
-class Xor : public Tree::Primitives::Primitive
+class XorB : public Tree::Primitives::Primitive
 {
 public:
-	Xor()
+	XorB()
 	{
 		nArguments_ = 2;
-		name_ = "XOR";
+		name_ = "XORB";
 	}
 
 	void execute(void* result, Tree::Tree& tree)
 	{
-		bool* xor = (bool*)result;
+		bool* xorB = (bool*)result;
 
 		bool arg1, arg2;
 
 		getNextArgument(&arg1, tree);
 		getNextArgument(&arg2, tree);
 
-		*xor = (arg1 && !arg2) || (!arg1 && arg2);
+		*xorB = (arg1 && !arg2) || (!arg1 && arg2);
 	}
 
-	~Xor()
+	~XorB()
 	{	}
 };
 
 
 
-class And : public Tree::Primitives::Primitive
+class AndB : public Tree::Primitives::Primitive
 {
 public:
-	And()
+	AndB()
 	{
 		nArguments_ = 2;
-		name_ = "AND";
+		name_ = "ANDB";
 	}
 
 	void execute(void* result, Tree::Tree& tree)
@@ -85,43 +87,43 @@ public:
 		*and = (arg1 && arg2);
 	}
 
-	~And()
+	~AndB()
 	{	}
 };
 
 
-class Not : public Tree::Primitives::Primitive
+class NotB : public Tree::Primitives::Primitive
 {
 public:
-	Not()
+	NotB()
 	{
 		nArguments_ = 1;
-		name_ = "NOT";
+		name_ = "NOTB";
 	}
 
 	void execute(void* result, Tree::Tree& tree)
 	{
-		bool* not = (bool*)result;
+		bool* notB = (bool*)result;
 
 		bool arg1;
 
 		getNextArgument(&arg1, tree);
 
-		*not = !arg1;
+		*notB = !arg1;
 	}
 
-	~Not()
+	~NotB()
 	{	}
 };
 
 
-class If : public Tree::Primitives::Primitive
+class IfB : public Tree::Primitives::Primitive
 {
 public:
-	If()
+	IfB()
 	{
 		nArguments_ = 3;
-		name_ = "IF";
+		name_ = "IFB";
 	}
 
 	void execute(void* result, Tree::Tree& tree)
@@ -133,7 +135,7 @@ public:
 		getNextArgument(&res1, tree);
 		getNextArgument(&res2, tree);
 
-		if (arg) {
+		if(arg) {
 			*res = res1;
 		}
 		else {
@@ -141,33 +143,179 @@ public:
 		}
 	}
 
-	~If()
+	~IfB()
 	{	}
 };
+
+
+namespace Tree{
+
+	class TreeCrxSemanticBool : public CrossoverOp
+	{
+	public:
+		void TreeCrxSemanticBool::registerParameters(StateP state)
+		{
+			myGenotype_->registerParameter(state, "crx.semanticbool", (voidP) new double(0), ECF::DOUBLE);
+		}
+
+
+		bool TreeCrxSemanticBool::initialize(StateP state)
+		{
+			voidP sptr = myGenotype_->getParameterValue(state, "crx.semanticbool");
+			probability_ = *((double*)sptr.get());
+			return true;
+		}
+
+
+		int TreeCrxSemanticBool::calculateSize(int avg)
+		{
+			int sigma = avg - 1;
+			return avg + state_->getRandomizer()->getRandomInteger(-sigma, sigma);
+		}
+
+		bool TreeCrxSemanticBool::mate(GenotypeP gen1, GenotypeP gen2, GenotypeP ch)
+		{
+			Tree* male = (Tree*)(gen1.get());
+			Tree* female = (Tree*)(gen2.get());
+			Tree* child = new Tree();
+
+			child->clear();
+
+			//create random tree
+			Tree* randomTree = new Tree();
+			randomTree->maxDepth_ = 1;
+			randomTree->minDepth_ = 0;
+			randomTree->initMaxDepth_ = 1;
+			randomTree->initMinDepth_ = 0;
+
+			randomTree->growBuild(male->primitiveSet_);
+
+			//create negated random tree
+			Tree* negatedRandomTree = new Tree();
+			PrimitiveP subP(new NotB);
+			Node* nodeSub = new Node();
+			nodeSub->setPrimitive(subP);
+			negatedRandomTree->addNode(nodeSub);
+			for(uint i = 0; i < randomTree->size(); i++)
+			{
+				NodeP node = static_cast<NodeP> (new Node(randomTree->at(i)->primitive_));
+				negatedRandomTree->addNode(node);
+			}
+
+			//set the root of the child to +
+			PrimitiveP addP(new OrB);
+			Node* nodeAdd = new Node();
+			nodeAdd->setPrimitive(addP);
+			child->addNode(nodeAdd);
+
+			//generate left subtree
+			Tree* leftSubtree = new Tree();
+			PrimitiveP mulP(new AndB);
+			Node* nodeMul = new Node();
+			nodeMul->setPrimitive(mulP);
+			leftSubtree->addNode(nodeMul);
+			//leftSubtree->addFunction((PrimitiveP)mulP);
+			for(uint i = 0; i < male->size(); i++)
+			{
+				NodeP node = static_cast<NodeP> (new Node(male->at(i)->primitive_));
+				leftSubtree->addNode(node);
+			}
+			for(uint i = 0; i < randomTree->size(); i++)
+			{
+				NodeP node = static_cast<NodeP> (new Node(randomTree->at(i)->primitive_));
+				leftSubtree->addNode(node);
+			}
+
+			//append left subtree
+			for(uint i = 0; i < leftSubtree->size(); i++)
+			{
+				NodeP node = static_cast<NodeP> (new Node(leftSubtree->at(i)->primitive_));
+				child->addNode(node);
+			}
+
+			//create right subtree
+			Tree* rightSubtree = new Tree();
+			rightSubtree->addNode(nodeMul);
+			for(uint i = 0; i < negatedRandomTree->size(); i++)
+			{
+				NodeP node = static_cast<NodeP> (new Node(negatedRandomTree->at(i)->primitive_));
+				rightSubtree->addNode(node);
+			}
+			for(uint i = 0; i < female->size(); i++)
+			{
+				NodeP node = static_cast<NodeP> (new Node(female->at(i)->primitive_));
+				rightSubtree->addNode(node);
+			}
+
+			//append right subtree
+			for(uint i = 0; i < rightSubtree->size(); i++)
+			{
+				NodeP node = static_cast<NodeP> (new Node(rightSubtree->at(i)->primitive_));
+				child->addNode(node);
+			}
+			child->update();
+
+			return true;
+		}
+	};
+	typedef boost::shared_ptr<TreeCrxSemanticBool> TreeCrxSemanticBoolP;
+
+	class MyTree : public Tree
+	{
+	public:
+
+		MyTree(void) {
+			name_ = "MyTree";
+		}
+
+		MyTree* copy()
+		{
+			MyTree *newObject = new MyTree(*this);
+			return newObject;
+		}
+
+		vector<CrossoverOpP> getCrossoverOp()
+		{
+			vector<CrossoverOpP> crx;
+
+			crx = Tree::getCrossoverOp();
+
+			// dodati nas crx operatorB:
+			crx.push_back((CrossoverOpP)(new TreeCrxSemanticBool));
+
+			return crx;
+		}
+
+
+	};
+
+}
+typedef boost::shared_ptr<Tree::MyTree> MyTreeP;
 
 
 int main(int argc, char **argv)
 {
 	StateP state(new State);
 
-	// set the evaluation operator
+	// set the evaluation operatorB
 	state->setEvalOp(new Mux6EvalOp);
 
-	Tree::Tree*  tree = new Tree::Tree;
-	state->addGenotype((GenotypeP)tree);
+	Tree::MyTree*  tree = new Tree::MyTree;
+
 
 	// create new functions and add them to function set 
-	Tree::PrimitiveP ifl(new If);
-	tree->addFunction(ifl);
-	Tree::PrimitiveP or(new Or);
-	tree->addFunction(or);
-	Tree::PrimitiveP and(new And);
+	Tree::PrimitiveP ifBl(new IfB);
+	tree->addFunction(ifBl);
+	Tree::PrimitiveP orB(new OrB);
+	tree->addFunction(orB);
+	Tree::PrimitiveP and(new AndB);
 	tree->addFunction(and);
-	Tree::PrimitiveP not(new Not);
-	tree->addFunction(not);
-	Tree::PrimitiveP xor(new Xor);
-	tree->addFunction(xor);
+	Tree::PrimitiveP notB(new NotB);
+	tree->addFunction(notB);
+	Tree::PrimitiveP xorB(new XorB);
+	tree->addFunction(xorB);
 
+	state->addGenotype((GenotypeP)tree);
 	state->initialize(argc, argv);
 	state->run();
 

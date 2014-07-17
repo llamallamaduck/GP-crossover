@@ -34,7 +34,7 @@ namespace Tree
 			Tree* female = (Tree*)(gen2.get());
 			Tree* child = (Tree*)(ch.get());
 
-			int type = 1;
+			int type = 0;
 
 			//boolean
 			if (type == 0)
@@ -248,11 +248,7 @@ namespace Tree
 					child->push_back(node);
 					child->at(i + currentIndex)->depth_ = female->at(i)->depth_ + 1;
 				} 
-
-				//child->update();
 			}
-		//	free(maleCopy);
-		//	free(femaleCopy);
 			child->update();
 			return true;
 		}
